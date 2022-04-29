@@ -11,18 +11,14 @@ class CreateCustomField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/custom-fields';
-
-    /** @var NewCustomField */
-    protected $data;
+    final const METHOD_URL = '/v3/custom-fields';
 
 
     /**
      * @param NewCustomField $data
      */
-    public function __construct(NewCustomField $data)
+    public function __construct(protected NewCustomField $data)
     {
-        $this->data = $data;
     }
 
 

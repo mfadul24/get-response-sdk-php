@@ -5,51 +5,33 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewAddress extends BaseModel
 {
-    /** @var string */
-    private $countryCode;
+    private string $firstName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name;
+    private string $lastName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $firstName = self::FIELD_NOT_SET;
+    private string $address1 = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $lastName = self::FIELD_NOT_SET;
+    private string $address2 = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $address1 = self::FIELD_NOT_SET;
+    private string $city = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $address2 = self::FIELD_NOT_SET;
+    private string $zip = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $city = self::FIELD_NOT_SET;
+    private string $province = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $zip = self::FIELD_NOT_SET;
+    private string $provinceCode = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $province = self::FIELD_NOT_SET;
+    private string $phone = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $provinceCode = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $phone = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $company = self::FIELD_NOT_SET;
+    private string $company = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $countryCode
      * @param string $name
      */
-    public function __construct($countryCode, $name)
+    public function __construct(private $countryCode, private $name)
     {
-        $this->countryCode = $countryCode;
-        $this->name = $name;
     }
 
 

@@ -8,21 +8,16 @@ class GetForm extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/forms/{formId}';
+    final const METHOD_URL = '/v3/forms/{formId}';
 
-    /** @var string */
-    private $formId;
-
-    /** @var GetFormFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Forms\GetForm\GetFormFields $fields = null;
 
 
     /**
      * @param string $formId
      */
-    public function __construct($formId)
+    public function __construct(private $formId)
     {
-        $this->formId = $formId;
     }
 
 
@@ -40,7 +35,6 @@ class GetForm extends QueryOperation
 
 
     /**
-     * @param GetFormFields $fields
      * @return $this
      */
     public function setFields(GetFormFields $fields)

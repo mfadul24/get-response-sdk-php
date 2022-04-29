@@ -8,18 +8,14 @@ class GetCampaignStatisticsLocations extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/campaigns/statistics/locations';
-
-    /** @var GetCampaignStatisticsLocationsSearchQuery */
-    private $query;
+    final const METHOD_URL = '/v3/campaigns/statistics/locations';
 
 
     /**
      * @param GetCampaignStatisticsLocationsSearchQuery $query
      */
-    public function __construct(GetCampaignStatisticsLocationsSearchQuery $query)
+    public function __construct(private readonly GetCampaignStatisticsLocationsSearchQuery $query)
     {
-        $this->query = $query;
     }
 
 

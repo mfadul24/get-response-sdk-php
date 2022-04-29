@@ -9,18 +9,14 @@ class SetDefaultFromField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/from-fields/{fromFieldId}/default';
-
-    /** @var string */
-    private $fromFieldId;
+    final const METHOD_URL = '/v3/from-fields/{fromFieldId}/default';
 
 
     /**
      * @param string $fromFieldId
      */
-    public function __construct($fromFieldId)
+    public function __construct(private $fromFieldId)
     {
-        $this->fromFieldId = $fromFieldId;
     }
 
 

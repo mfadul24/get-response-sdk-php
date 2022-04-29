@@ -8,21 +8,16 @@ class GetShop extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}';
+    final const METHOD_URL = '/v3/shops/{shopId}';
 
-    /** @var string */
-    private $shopId;
-
-    /** @var GetShopFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\GetShop\GetShopFields $fields = null;
 
 
     /**
      * @param string $shopId
      */
-    public function __construct($shopId)
+    public function __construct(private $shopId)
     {
-        $this->shopId = $shopId;
     }
 
 
@@ -40,7 +35,6 @@ class GetShop extends QueryOperation
 
 
     /**
-     * @param GetShopFields $fields
      * @return $this
      */
     public function setFields(GetShopFields $fields)

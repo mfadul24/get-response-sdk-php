@@ -11,23 +11,15 @@ class UpdateSuppression extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/suppressions/{suppressionId}';
-
-    /** @var ModelUpdateSuppression */
-    protected $data;
-
-    /** @var string */
-    private $suppressionId;
+    final const METHOD_URL = '/v3/suppressions/{suppressionId}';
 
 
     /**
      * @param ModelUpdateSuppression $data
      * @param string $suppressionId
      */
-    public function __construct(ModelUpdateSuppression $data, $suppressionId)
+    public function __construct(protected ModelUpdateSuppression $data, private $suppressionId)
     {
-        $this->data = $data;
-        $this->suppressionId = $suppressionId;
     }
 
 

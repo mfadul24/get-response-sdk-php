@@ -5,26 +5,20 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateCart extends BaseModel
 {
-    /** @var string */
-    private $contactId = self::FIELD_NOT_SET;
+    private string $contactId = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $totalPrice = self::FIELD_NOT_SET;
+    private string|float $totalPrice = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $totalTaxPrice = self::FIELD_NOT_SET;
+    private string|float $totalTaxPrice = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $currency = self::FIELD_NOT_SET;
+    private string $currency = self::FIELD_NOT_SET;
 
     /** @var NewCartSelectedProductVariant[] */
-    private $selectedVariants = self::FIELD_NOT_SET;
+    private string|array $selectedVariants = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $externalId = self::FIELD_NOT_SET;
+    private string $externalId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $cartUrl = self::FIELD_NOT_SET;
+    private string $cartUrl = self::FIELD_NOT_SET;
 
 
     /**

@@ -3,20 +3,9 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class NotOpenedCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType;
+    private string $scope = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $operator;
-
-    /** @var string */
-    private $scope = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $dateOperator;
-
-    /** @var string */
-    private $value = self::FIELD_NOT_SET;
+    private string $value = self::FIELD_NOT_SET;
 
 
     /**
@@ -24,12 +13,9 @@ class NotOpenedCondition extends ConditionType
      * @param string $operator
      * @param string $dateOperator
      */
-    public function __construct($operatorType, $operator, $dateOperator)
+    public function __construct(private $operatorType, private $operator, private $dateOperator)
     {
         parent::__construct('not_opened');
-        $this->operatorType = $operatorType;
-        $this->operator = $operator;
-        $this->dateOperator = $dateOperator;
     }
 
 

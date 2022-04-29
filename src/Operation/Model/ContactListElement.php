@@ -5,47 +5,21 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class ContactListElement extends BaseModel
 {
-    /** @var string */
-    private $contactId = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
+    private string $email = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $note = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $email = self::FIELD_NOT_SET;
+    private string $dayOfCycle = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $note = self::FIELD_NOT_SET;
+    private string $changedOn = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $origin = self::FIELD_NOT_SET;
+    private string $timeZone = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $dayOfCycle = self::FIELD_NOT_SET;
+    private string $ipAddress = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $changedOn = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $timeZone = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $ipAddress = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $activities = self::FIELD_NOT_SET;
-
-    /** @var \Getresponse\Sdk\Operation\Model\ShortCampaign */
-    private $campaign = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $createdOn = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $scoring = self::FIELD_NOT_SET;
+    private string $scoring = self::FIELD_NOT_SET;
 
 
     /**
@@ -56,14 +30,8 @@ class ContactListElement extends BaseModel
      * @param \Getresponse\Sdk\Operation\Model\ShortCampaign $campaign
      * @param string $createdOn
      */
-    public function __construct($contactId, $href, $origin, $activities, ShortCampaign $campaign, $createdOn)
+    public function __construct(private $contactId, private $href, private $origin, private $activities, private readonly ShortCampaign $campaign, private $createdOn)
     {
-        $this->contactId = $contactId;
-        $this->href = $href;
-        $this->origin = $origin;
-        $this->activities = $activities;
-        $this->campaign = $campaign;
-        $this->createdOn = $createdOn;
     }
 
 

@@ -9,16 +9,13 @@ class GetTemplateCategories extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/template-categories';
+    final const METHOD_URL = '/v3/template-categories';
 
-    /** @var GetTemplateCategoriesSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\TemplateCategories\GetTemplateCategories\GetTemplateCategoriesSearchQuery $query = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetTemplateCategoriesFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\TemplateCategories\GetTemplateCategories\GetTemplateCategoriesFields $fields = null;
 
 
     /**
@@ -31,7 +28,6 @@ class GetTemplateCategories extends QueryOperation
 
 
     /**
-     * @param GetTemplateCategoriesSearchQuery $query
      * @return $this
      */
     public function setQuery(GetTemplateCategoriesSearchQuery $query)
@@ -42,7 +38,6 @@ class GetTemplateCategories extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -53,7 +48,6 @@ class GetTemplateCategories extends QueryOperation
 
 
     /**
-     * @param GetTemplateCategoriesFields $fields
      * @return $this
      */
     public function setFields(GetTemplateCategoriesFields $fields)

@@ -5,25 +5,17 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewSuppression extends BaseModel
 {
-    /** @var string */
-    private $name;
-
-    /** @var array */
-    private $masks = self::FIELD_NOT_SET;
+    private string|array $masks = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $name
      */
-    public function __construct($name)
+    public function __construct(private $name)
     {
-        $this->name = $name;
     }
 
 
-    /**
-     * @param array $masks
-     */
     public function setMasks(array $masks)
     {
         $this->masks = $masks;

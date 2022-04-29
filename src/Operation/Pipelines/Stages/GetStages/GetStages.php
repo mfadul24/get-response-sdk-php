@@ -9,21 +9,16 @@ class GetStages extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/pipelines/{pipelineId}/stages';
+    final const METHOD_URL = '/v3/pipelines/{pipelineId}/stages';
 
-    /** @var string */
-    private $pipelineId;
-
-    /** @var GetStagesFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Pipelines\Stages\GetStages\GetStagesFields $fields = null;
 
 
     /**
      * @param string $pipelineId
      */
-    public function __construct($pipelineId)
+    public function __construct(private $pipelineId)
     {
-        $this->pipelineId = $pipelineId;
     }
 
 
@@ -41,7 +36,6 @@ class GetStages extends QueryOperation
 
 
     /**
-     * @param GetStagesFields $fields
      * @return $this
      */
     public function setFields(GetStagesFields $fields)

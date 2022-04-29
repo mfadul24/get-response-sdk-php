@@ -11,18 +11,14 @@ class TriggerCustomEvent extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/custom-events/trigger';
-
-    /** @var ModelTriggerCustomEvent */
-    protected $data;
+    final const METHOD_URL = '/v3/custom-events/trigger';
 
 
     /**
      * @param ModelTriggerCustomEvent $data
      */
-    public function __construct(ModelTriggerCustomEvent $data)
+    public function __construct(protected ModelTriggerCustomEvent $data)
     {
-        $this->data = $data;
     }
 
 

@@ -5,20 +5,10 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewSelectedProductVariant extends BaseModel
 {
-    /** @var string */
-    private $variantId;
-
-    /** @var float */
-    private $price;
-
-    /** @var float */
-    private $priceTax = self::FIELD_NOT_SET;
-
-    /** @var int */
-    private $quantity;
+    private string|float $priceTax = self::FIELD_NOT_SET;
 
     /** @var NewTax[] */
-    private $taxes = self::FIELD_NOT_SET;
+    private string|array $taxes = self::FIELD_NOT_SET;
 
 
     /**
@@ -26,11 +16,8 @@ class NewSelectedProductVariant extends BaseModel
      * @param float $price
      * @param int $quantity
      */
-    public function __construct($variantId, $price, $quantity)
+    public function __construct(private $variantId, private $price, private $quantity)
     {
-        $this->variantId = $variantId;
-        $this->price = $price;
-        $this->quantity = $quantity;
     }
 
 

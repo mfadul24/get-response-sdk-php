@@ -8,19 +8,9 @@ class GetColor extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/template-categories/{templateCategoryId}/templates/{templateId}/colors/{colorId}';
+    final const METHOD_URL = '/v3/template-categories/{templateCategoryId}/templates/{templateId}/colors/{colorId}';
 
-    /** @var string */
-    private $templateCategoryId;
-
-    /** @var string */
-    private $templateId;
-
-    /** @var string */
-    private $colorId;
-
-    /** @var GetColorFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\TemplateCategories\Templates\Colors\GetColor\GetColorFields $fields = null;
 
 
     /**
@@ -28,11 +18,8 @@ class GetColor extends QueryOperation
      * @param string $templateId
      * @param string $colorId
      */
-    public function __construct($templateCategoryId, $templateId, $colorId)
+    public function __construct(private $templateCategoryId, private $templateId, private $colorId)
     {
-        $this->templateCategoryId = $templateCategoryId;
-        $this->templateId = $templateId;
-        $this->colorId = $colorId;
     }
 
 
@@ -50,7 +37,6 @@ class GetColor extends QueryOperation
 
 
     /**
-     * @param GetColorFields $fields
      * @return $this
      */
     public function setFields(GetColorFields $fields)

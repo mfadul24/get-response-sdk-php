@@ -9,30 +9,22 @@ class GetTaxes extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/taxes';
+    final const METHOD_URL = '/v3/shops/{shopId}/taxes';
 
-    /** @var string */
-    private $shopId;
+    private ?\Getresponse\Sdk\Operation\Shops\Taxes\GetTaxes\GetTaxesSearchQuery $query = null;
 
-    /** @var GetTaxesSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Shops\Taxes\GetTaxes\GetTaxesSortParams $sort = null;
 
-    /** @var GetTaxesSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var Pagination */
-    private $pagination;
-
-    /** @var GetTaxesFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\Taxes\GetTaxes\GetTaxesFields $fields = null;
 
 
     /**
      * @param string $shopId
      */
-    public function __construct($shopId)
+    public function __construct(private $shopId)
     {
-        $this->shopId = $shopId;
     }
 
 
@@ -50,7 +42,6 @@ class GetTaxes extends QueryOperation
 
 
     /**
-     * @param GetTaxesSearchQuery $query
      * @return $this
      */
     public function setQuery(GetTaxesSearchQuery $query)
@@ -61,7 +52,6 @@ class GetTaxes extends QueryOperation
 
 
     /**
-     * @param GetTaxesSortParams $sort
      * @return $this
      */
     public function setSort(GetTaxesSortParams $sort)
@@ -72,7 +62,6 @@ class GetTaxes extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -83,7 +72,6 @@ class GetTaxes extends QueryOperation
 
 
     /**
-     * @param GetTaxesFields $fields
      * @return $this
      */
     public function setFields(GetTaxesFields $fields)

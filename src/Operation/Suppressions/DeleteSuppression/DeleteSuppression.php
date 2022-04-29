@@ -9,18 +9,14 @@ class DeleteSuppression extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/suppressions/{suppressionId}';
-
-    /** @var string */
-    private $suppressionId;
+    final const METHOD_URL = '/v3/suppressions/{suppressionId}';
 
 
     /**
      * @param string $suppressionId
      */
-    public function __construct($suppressionId)
+    public function __construct(private $suppressionId)
     {
-        $this->suppressionId = $suppressionId;
     }
 
 

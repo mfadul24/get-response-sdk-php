@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class WorkflowStatus extends BaseModel
 {
-    /** @var string */
-    private $status = self::FIELD_NOT_SET;
-
-
     /**
      * @param string $status
      */
-    public function __construct($status)
+    public function __construct(private $status)
     {
-        $this->status = $status;
     }
 
 

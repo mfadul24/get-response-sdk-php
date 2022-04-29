@@ -9,17 +9,12 @@ class DeleteContact extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/contacts/{contactId}';
+    final const METHOD_URL = '/v3/contacts/{contactId}';
 
-    /** @var DeleteContactUrlQueryParameters */
-    private $urlParameterQuery;
-
-    /** @var string */
-    private $contactId;
+    private ?\Getresponse\Sdk\Operation\Contacts\DeleteContact\DeleteContactUrlQueryParameters $urlParameterQuery = null;
 
 
     /**
-     * @param DeleteContactUrlQueryParameters $urlParameterQuery
      * @return $this
      */
     public function setUrlParameterQuery(DeleteContactUrlQueryParameters $urlParameterQuery)
@@ -32,9 +27,8 @@ class DeleteContact extends CommandOperation
     /**
      * @param string $contactId
      */
-    public function __construct($contactId)
+    public function __construct(private $contactId)
     {
-        $this->contactId = $contactId;
     }
 
 

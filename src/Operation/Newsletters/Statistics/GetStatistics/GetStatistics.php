@@ -9,16 +9,13 @@ class GetStatistics extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/newsletters/statistics';
+    final const METHOD_URL = '/v3/newsletters/statistics';
 
-    /** @var GetStatisticsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Newsletters\Statistics\GetStatistics\GetStatisticsSearchQuery $query = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetStatisticsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Newsletters\Statistics\GetStatistics\GetStatisticsFields $fields = null;
 
 
     /**
@@ -31,7 +28,6 @@ class GetStatistics extends QueryOperation
 
 
     /**
-     * @param GetStatisticsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetStatisticsSearchQuery $query)
@@ -42,7 +38,6 @@ class GetStatistics extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -53,7 +48,6 @@ class GetStatistics extends QueryOperation
 
 
     /**
-     * @param GetStatisticsFields $fields
      * @return $this
      */
     public function setFields(GetStatisticsFields $fields)

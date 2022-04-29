@@ -9,13 +9,11 @@ class GetMultimedia extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/multimedia';
+    final const METHOD_URL = '/v3/multimedia';
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetMultimediaFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Multimedia\GetMultimedia\GetMultimediaFields $fields = null;
 
 
     /**
@@ -28,7 +26,6 @@ class GetMultimedia extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -39,7 +36,6 @@ class GetMultimedia extends QueryOperation
 
 
     /**
-     * @param GetMultimediaFields $fields
      * @return $this
      */
     public function setFields(GetMultimediaFields $fields)

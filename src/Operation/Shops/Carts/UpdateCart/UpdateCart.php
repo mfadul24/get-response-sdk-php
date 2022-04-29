@@ -11,16 +11,7 @@ class UpdateCart extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/carts/{cartId}';
-
-    /** @var ModelUpdateCart */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $cartId;
+    final const METHOD_URL = '/v3/shops/{shopId}/carts/{cartId}';
 
 
     /**
@@ -28,11 +19,8 @@ class UpdateCart extends CommandOperation
      * @param string $shopId
      * @param string $cartId
      */
-    public function __construct(ModelUpdateCart $data, $shopId, $cartId)
+    public function __construct(protected ModelUpdateCart $data, private $shopId, private $cartId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
-        $this->cartId = $cartId;
     }
 
 

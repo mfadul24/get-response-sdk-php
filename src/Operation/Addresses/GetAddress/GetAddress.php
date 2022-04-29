@@ -8,21 +8,16 @@ class GetAddress extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/addresses/{addressId}';
+    final const METHOD_URL = '/v3/addresses/{addressId}';
 
-    /** @var string */
-    private $addressId;
-
-    /** @var GetAddressFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Addresses\GetAddress\GetAddressFields $fields = null;
 
 
     /**
      * @param string $addressId
      */
-    public function __construct($addressId)
+    public function __construct(private $addressId)
     {
-        $this->addressId = $addressId;
     }
 
 
@@ -40,7 +35,6 @@ class GetAddress extends QueryOperation
 
 
     /**
-     * @param GetAddressFields $fields
      * @return $this
      */
     public function setFields(GetAddressFields $fields)

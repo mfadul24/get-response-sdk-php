@@ -3,23 +3,17 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class ScoringCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType;
+    private string $operator = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $operator = self::FIELD_NOT_SET;
-
-    /** @var int */
-    private $value = self::FIELD_NOT_SET;
+    private string|int $value = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $operatorType
      */
-    public function __construct($operatorType)
+    public function __construct(private $operatorType)
     {
         parent::__construct('scoring');
-        $this->operatorType = $operatorType;
     }
 
 

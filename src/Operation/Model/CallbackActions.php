@@ -5,23 +5,17 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CallbackActions extends BaseModel
 {
-    /** @var bool */
-    private $open = self::FIELD_NOT_SET;
+    private string|bool $open = self::FIELD_NOT_SET;
 
-    /** @var bool */
-    private $click = self::FIELD_NOT_SET;
+    private string|bool $click = self::FIELD_NOT_SET;
 
-    /** @var bool */
-    private $goal = self::FIELD_NOT_SET;
+    private string|bool $goal = self::FIELD_NOT_SET;
 
-    /** @var bool */
-    private $subscribe = self::FIELD_NOT_SET;
+    private string|bool $subscribe = self::FIELD_NOT_SET;
 
-    /** @var bool */
-    private $unsubscribe = self::FIELD_NOT_SET;
+    private string|bool $unsubscribe = self::FIELD_NOT_SET;
 
-    /** @var bool */
-    private $survey = self::FIELD_NOT_SET;
+    private string|bool $survey = self::FIELD_NOT_SET;
 
 
     /**

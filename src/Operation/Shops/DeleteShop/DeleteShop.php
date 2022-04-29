@@ -9,18 +9,14 @@ class DeleteShop extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}';
-
-    /** @var string */
-    private $shopId;
+    final const METHOD_URL = '/v3/shops/{shopId}';
 
 
     /**
      * @param string $shopId
      */
-    public function __construct($shopId)
+    public function __construct(private $shopId)
     {
-        $this->shopId = $shopId;
     }
 
 

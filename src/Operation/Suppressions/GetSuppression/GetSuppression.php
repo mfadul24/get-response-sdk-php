@@ -8,21 +8,16 @@ class GetSuppression extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/suppressions/{suppressionId}';
+    final const METHOD_URL = '/v3/suppressions/{suppressionId}';
 
-    /** @var string */
-    private $suppressionId;
-
-    /** @var GetSuppressionFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Suppressions\GetSuppression\GetSuppressionFields $fields = null;
 
 
     /**
      * @param string $suppressionId
      */
-    public function __construct($suppressionId)
+    public function __construct(private $suppressionId)
     {
-        $this->suppressionId = $suppressionId;
     }
 
 
@@ -40,7 +35,6 @@ class GetSuppression extends QueryOperation
 
 
     /**
-     * @param GetSuppressionFields $fields
      * @return $this
      */
     public function setFields(GetSuppressionFields $fields)

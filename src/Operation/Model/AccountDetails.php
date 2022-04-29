@@ -5,63 +5,41 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class AccountDetails extends BaseModel
 {
-    /** @var string */
-    private $accountId = self::FIELD_NOT_SET;
+    private string $firstName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $firstName = self::FIELD_NOT_SET;
+    private string $lastName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $lastName = self::FIELD_NOT_SET;
+    private string $phone = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $email = self::FIELD_NOT_SET;
+    private string $companyName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $phone = self::FIELD_NOT_SET;
+    private string $state = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $companyName = self::FIELD_NOT_SET;
+    private string $city = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $state = self::FIELD_NOT_SET;
+    private string $street = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $city = self::FIELD_NOT_SET;
+    private string $zipCode = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $street = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\AccountDetailsCountryCode $countryCode = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $zipCode = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\AccountDetailsIndustryTag $industryTag = self::FIELD_NOT_SET;
 
-    /** @var \Getresponse\Sdk\Operation\Model\AccountDetailsCountryCode */
-    private $countryCode = self::FIELD_NOT_SET;
+    private string $numberOfEmployees = self::FIELD_NOT_SET;
 
-    /** @var \Getresponse\Sdk\Operation\Model\AccountDetailsIndustryTag */
-    private $industryTag = self::FIELD_NOT_SET;
+    private string $timeFormat = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $numberOfEmployees = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\AccountDetailsTimeZone $timeZone = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $timeFormat = self::FIELD_NOT_SET;
-
-    /** @var \Getresponse\Sdk\Operation\Model\AccountDetailsTimeZone */
-    private $timeZone = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
+    private string $href = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $accountId
      * @param string $email
      */
-    public function __construct($accountId, $email)
+    public function __construct(private $accountId, private $email)
     {
-        $this->accountId = $accountId;
-        $this->email = $email;
     }
 
 
@@ -137,18 +115,12 @@ class AccountDetails extends BaseModel
     }
 
 
-    /**
-     * @param \Getresponse\Sdk\Operation\Model\AccountDetailsCountryCode $countryCode
-     */
     public function setCountryCode(AccountDetailsCountryCode $countryCode)
     {
         $this->countryCode = $countryCode;
     }
 
 
-    /**
-     * @param \Getresponse\Sdk\Operation\Model\AccountDetailsIndustryTag $industryTag
-     */
     public function setIndustryTag(AccountDetailsIndustryTag $industryTag)
     {
         $this->industryTag = $industryTag;
@@ -173,9 +145,6 @@ class AccountDetails extends BaseModel
     }
 
 
-    /**
-     * @param \Getresponse\Sdk\Operation\Model\AccountDetailsTimeZone $timeZone
-     */
     public function setTimeZone(AccountDetailsTimeZone $timeZone)
     {
         $this->timeZone = $timeZone;

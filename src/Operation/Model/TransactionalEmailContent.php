@@ -5,11 +5,9 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TransactionalEmailContent extends BaseModel
 {
-    /** @var string */
-    private $plain = self::FIELD_NOT_SET;
+    private string $plain = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $html = self::FIELD_NOT_SET;
+    private string $html = self::FIELD_NOT_SET;
 
 
     /**

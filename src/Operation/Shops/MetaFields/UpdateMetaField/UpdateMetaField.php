@@ -11,16 +11,7 @@ class UpdateMetaField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/meta-fields/{metaFieldId}';
-
-    /** @var ModelUpdateMetaField */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $metaFieldId;
+    final const METHOD_URL = '/v3/shops/{shopId}/meta-fields/{metaFieldId}';
 
 
     /**
@@ -28,11 +19,8 @@ class UpdateMetaField extends CommandOperation
      * @param string $shopId
      * @param string $metaFieldId
      */
-    public function __construct(ModelUpdateMetaField $data, $shopId, $metaFieldId)
+    public function __construct(protected ModelUpdateMetaField $data, private $shopId, private $metaFieldId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
-        $this->metaFieldId = $metaFieldId;
     }
 
 

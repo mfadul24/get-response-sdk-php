@@ -9,18 +9,14 @@ class DeleteAutoresponder extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/autoresponders/{autoresponderId}';
-
-    /** @var string */
-    private $autoresponderId;
+    final const METHOD_URL = '/v3/autoresponders/{autoresponderId}';
 
 
     /**
      * @param string $autoresponderId
      */
-    public function __construct($autoresponderId)
+    public function __construct(private $autoresponderId)
     {
-        $this->autoresponderId = $autoresponderId;
     }
 
 

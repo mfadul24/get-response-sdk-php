@@ -8,21 +8,16 @@ class GetImport extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/imports/{importId}';
+    final const METHOD_URL = '/v3/imports/{importId}';
 
-    /** @var string */
-    private $importId;
-
-    /** @var GetImportFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Imports\GetImport\GetImportFields $fields = null;
 
 
     /**
      * @param string $importId
      */
-    public function __construct($importId)
+    public function __construct(private $importId)
     {
-        $this->importId = $importId;
     }
 
 
@@ -40,7 +35,6 @@ class GetImport extends QueryOperation
 
 
     /**
-     * @param GetImportFields $fields
      * @return $this
      */
     public function setFields(GetImportFields $fields)

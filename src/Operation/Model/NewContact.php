@@ -5,39 +5,27 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewContact extends BaseModel
 {
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var CampaignReference */
-    private $campaign;
+    private string $dayOfCycle = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $email;
+    private string|float $scoring = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $dayOfCycle = self::FIELD_NOT_SET;
-
-    /** @var float */
-    private $scoring = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $ipAddress = self::FIELD_NOT_SET;
+    private string $ipAddress = self::FIELD_NOT_SET;
 
     /** @var NewContactTag[] */
-    private $tags = self::FIELD_NOT_SET;
+    private string|array $tags = self::FIELD_NOT_SET;
 
     /** @var NewContactCustomFieldValue[] */
-    private $customFieldValues = self::FIELD_NOT_SET;
+    private string|array $customFieldValues = self::FIELD_NOT_SET;
 
 
     /**
      * @param CampaignReference $campaign
      * @param string $email
      */
-    public function __construct(CampaignReference $campaign, $email)
+    public function __construct(private readonly CampaignReference $campaign, private $email)
     {
-        $this->campaign = $campaign;
-        $this->email = $email;
     }
 
 

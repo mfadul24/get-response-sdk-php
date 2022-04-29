@@ -9,19 +9,15 @@ class GetPredefinedFields extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/predefined-fields';
+    final const METHOD_URL = '/v3/predefined-fields';
 
-    /** @var GetPredefinedFieldsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\PredefinedFields\GetPredefinedFields\GetPredefinedFieldsSearchQuery $query = null;
 
-    /** @var GetPredefinedFieldsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\PredefinedFields\GetPredefinedFields\GetPredefinedFieldsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetPredefinedFieldsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\PredefinedFields\GetPredefinedFields\GetPredefinedFieldsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetPredefinedFields extends QueryOperation
 
 
     /**
-     * @param GetPredefinedFieldsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetPredefinedFieldsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetPredefinedFields extends QueryOperation
 
 
     /**
-     * @param GetPredefinedFieldsSortParams $sort
      * @return $this
      */
     public function setSort(GetPredefinedFieldsSortParams $sort)
@@ -56,7 +50,6 @@ class GetPredefinedFields extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetPredefinedFields extends QueryOperation
 
 
     /**
-     * @param GetPredefinedFieldsFields $fields
      * @return $this
      */
     public function setFields(GetPredefinedFieldsFields $fields)

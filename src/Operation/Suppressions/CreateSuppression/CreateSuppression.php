@@ -11,18 +11,14 @@ class CreateSuppression extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/suppressions';
-
-    /** @var NewSuppression */
-    protected $data;
+    final const METHOD_URL = '/v3/suppressions';
 
 
     /**
      * @param NewSuppression $data
      */
-    public function __construct(NewSuppression $data)
+    public function __construct(protected NewSuppression $data)
     {
-        $this->data = $data;
     }
 
 

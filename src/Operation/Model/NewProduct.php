@@ -5,39 +5,27 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewProduct extends BaseModel
 {
-    /** @var string */
-    private $name;
+    private string $type = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $type = self::FIELD_NOT_SET;
+    private string $url = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $url = self::FIELD_NOT_SET;
+    private string $vendor = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $vendor = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $externalId = self::FIELD_NOT_SET;
+    private string $externalId = self::FIELD_NOT_SET;
 
     /** @var NewProductCategory[] */
-    private $categories = self::FIELD_NOT_SET;
-
-    /** @var NewProductVariant[] */
-    private $variants;
+    private string|array $categories = self::FIELD_NOT_SET;
 
     /** @var NewMetaField[] */
-    private $metaFields = self::FIELD_NOT_SET;
+    private string|array $metaFields = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $name
      * @param NewProductVariant[] $variants
      */
-    public function __construct($name, array $variants)
+    public function __construct(private $name, private readonly array $variants)
     {
-        $this->name = $name;
-        $this->variants = $variants;
     }
 
 

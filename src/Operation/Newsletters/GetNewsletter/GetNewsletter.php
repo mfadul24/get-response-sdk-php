@@ -8,21 +8,16 @@ class GetNewsletter extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/newsletters/{newsletterId}';
+    final const METHOD_URL = '/v3/newsletters/{newsletterId}';
 
-    /** @var string */
-    private $newsletterId;
-
-    /** @var GetNewsletterFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Newsletters\GetNewsletter\GetNewsletterFields $fields = null;
 
 
     /**
      * @param string $newsletterId
      */
-    public function __construct($newsletterId)
+    public function __construct(private $newsletterId)
     {
-        $this->newsletterId = $newsletterId;
     }
 
 
@@ -40,7 +35,6 @@ class GetNewsletter extends QueryOperation
 
 
     /**
-     * @param GetNewsletterFields $fields
      * @return $this
      */
     public function setFields(GetNewsletterFields $fields)

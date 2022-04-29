@@ -9,18 +9,14 @@ class DeleteAddress extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/addresses/{addressId}';
-
-    /** @var string */
-    private $addressId;
+    final const METHOD_URL = '/v3/addresses/{addressId}';
 
 
     /**
      * @param string $addressId
      */
-    public function __construct($addressId)
+    public function __construct(private $addressId)
     {
-        $this->addressId = $addressId;
     }
 
 

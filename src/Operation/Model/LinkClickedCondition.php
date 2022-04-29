@@ -3,32 +3,15 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class LinkClickedCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType;
-
-    /** @var string */
-    private $operator;
-
-    /** @var string */
-    private $scope;
-
-    /** @var string */
-    private $clickTrackId;
-
-
     /**
      * @param string $operatorType
      * @param string $operator
      * @param string $scope
      * @param string $clickTrackId
      */
-    public function __construct($operatorType, $operator, $scope, $clickTrackId)
+    public function __construct(private $operatorType, private $operator, private $scope, private $clickTrackId)
     {
         parent::__construct('clicked');
-        $this->operatorType = $operatorType;
-        $this->operator = $operator;
-        $this->scope = $scope;
-        $this->clickTrackId = $clickTrackId;
     }
 
 

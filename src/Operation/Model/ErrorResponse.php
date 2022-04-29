@@ -5,28 +5,6 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class ErrorResponse extends BaseModel
 {
-    /** @var string */
-    private $httpStatus = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $code = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $codeDescription = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $message = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $moreInfo = self::FIELD_NOT_SET;
-
-    /** @var array */
-    private $context = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $uuid = self::FIELD_NOT_SET;
-
-
     /**
      * @param string $httpStatus
      * @param string $code
@@ -36,15 +14,8 @@ class ErrorResponse extends BaseModel
      * @param array $context
      * @param string $uuid
      */
-    public function __construct($httpStatus, $code, $codeDescription, $message, $moreInfo, array $context, $uuid)
+    public function __construct(private $httpStatus, private $code, private $codeDescription, private $message, private $moreInfo, private readonly array $context, private $uuid)
     {
-        $this->httpStatus = $httpStatus;
-        $this->code = $code;
-        $this->codeDescription = $codeDescription;
-        $this->message = $message;
-        $this->moreInfo = $moreInfo;
-        $this->context = $context;
-        $this->uuid = $uuid;
     }
 
 

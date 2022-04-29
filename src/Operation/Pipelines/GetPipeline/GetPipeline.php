@@ -8,21 +8,16 @@ class GetPipeline extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/pipelines/{pipelineId}';
+    final const METHOD_URL = '/v3/pipelines/{pipelineId}';
 
-    /** @var string */
-    private $pipelineId;
-
-    /** @var GetPipelineFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Pipelines\GetPipeline\GetPipelineFields $fields = null;
 
 
     /**
      * @param string $pipelineId
      */
-    public function __construct($pipelineId)
+    public function __construct(private $pipelineId)
     {
-        $this->pipelineId = $pipelineId;
     }
 
 
@@ -40,7 +35,6 @@ class GetPipeline extends QueryOperation
 
 
     /**
-     * @param GetPipelineFields $fields
      * @return $this
      */
     public function setFields(GetPipelineFields $fields)

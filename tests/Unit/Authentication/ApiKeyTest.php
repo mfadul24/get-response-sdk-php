@@ -11,10 +11,7 @@ use GuzzleHttp\Psr7\Request;
  */
 class ApiKeyTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var ApiKey
-     */
-    private $systemUnderTest;
+    private \Getresponse\Sdk\Authentication\ApiKey $systemUnderTest;
 
     protected function setUp(): void
     {

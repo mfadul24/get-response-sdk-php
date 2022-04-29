@@ -9,18 +9,14 @@ class DeletePredefinedField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/predefined-fields/{predefinedFieldId}';
-
-    /** @var string */
-    private $predefinedFieldId;
+    final const METHOD_URL = '/v3/predefined-fields/{predefinedFieldId}';
 
 
     /**
      * @param string $predefinedFieldId
      */
-    public function __construct($predefinedFieldId)
+    public function __construct(private $predefinedFieldId)
     {
-        $this->predefinedFieldId = $predefinedFieldId;
     }
 
 

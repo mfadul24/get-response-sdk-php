@@ -9,27 +9,20 @@ class GetActivities extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/newsletters/{newsletterId}/activities';
+    final const METHOD_URL = '/v3/newsletters/{newsletterId}/activities';
 
-    /** @var string */
-    private $newsletterId;
+    private ?\Getresponse\Sdk\Operation\Newsletters\Activities\GetActivities\GetActivitiesSearchQuery $query = null;
 
-    /** @var GetActivitiesSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Newsletters\Activities\GetActivities\GetActivitiesSortParams $sort = null;
 
-    /** @var GetActivitiesSortParams */
-    private $sort;
-
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
 
     /**
      * @param string $newsletterId
      */
-    public function __construct($newsletterId)
+    public function __construct(private $newsletterId)
     {
-        $this->newsletterId = $newsletterId;
     }
 
 
@@ -47,7 +40,6 @@ class GetActivities extends QueryOperation
 
 
     /**
-     * @param GetActivitiesSearchQuery $query
      * @return $this
      */
     public function setQuery(GetActivitiesSearchQuery $query)
@@ -58,7 +50,6 @@ class GetActivities extends QueryOperation
 
 
     /**
-     * @param GetActivitiesSortParams $sort
      * @return $this
      */
     public function setSort(GetActivitiesSortParams $sort)
@@ -69,7 +60,6 @@ class GetActivities extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)

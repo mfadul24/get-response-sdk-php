@@ -5,11 +5,9 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class AccountDetailsTimeZone extends BaseModel
 {
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $offset = self::FIELD_NOT_SET;
+    private string $offset = self::FIELD_NOT_SET;
 
 
     /**

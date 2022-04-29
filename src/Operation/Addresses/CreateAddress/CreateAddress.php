@@ -11,18 +11,14 @@ class CreateAddress extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/addresses';
-
-    /** @var NewAddress */
-    protected $data;
+    final const METHOD_URL = '/v3/addresses';
 
 
     /**
      * @param NewAddress $data
      */
-    public function __construct(NewAddress $data)
+    public function __construct(protected NewAddress $data)
     {
-        $this->data = $data;
     }
 
 

@@ -5,21 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TriggerCustomEventAttribute extends BaseModel
 {
-    /** @var string */
-    private $name;
-
-    /** @var string */
-    private $value;
-
-
     /**
      * @param string $name
      * @param string $value
      */
-    public function __construct($name, $value)
+    public function __construct(private $name, private $value)
     {
-        $this->name = $name;
-        $this->value = $value;
     }
 
 

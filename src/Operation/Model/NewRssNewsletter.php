@@ -5,35 +5,13 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewRssNewsletter extends BaseModel
 {
-    /** @var MessageFlagsArray */
-    private $flags = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\MessageFlagsArray $flags = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $rssFeedUrl;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $subject;
+    private string|\Getresponse\Sdk\Operation\Model\MessageEditorEnum $editor = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var StatusEnum */
-    private $status;
-
-    /** @var MessageEditorEnum */
-    private $editor = self::FIELD_NOT_SET;
-
-    /** @var FromFieldReference */
-    private $fromField;
-
-    /** @var FromFieldReference */
-    private $replyTo = self::FIELD_NOT_SET;
-
-    /** @var MessageContent */
-    private $content;
-
-    /** @var RssNewsletterSendSettings */
-    private $sendSettings;
+    private string|\Getresponse\Sdk\Operation\Model\FromFieldReference $replyTo = self::FIELD_NOT_SET;
 
 
     /**
@@ -44,26 +22,11 @@ class NewRssNewsletter extends BaseModel
      * @param MessageContent $content
      * @param RssNewsletterSendSettings $sendSettings
      */
-    public function __construct(
-        $rssFeedUrl,
-        $subject,
-        StatusEnum $status,
-        FromFieldReference $fromField,
-        MessageContent $content,
-        RssNewsletterSendSettings $sendSettings
-    ) {
-        $this->rssFeedUrl = $rssFeedUrl;
-        $this->subject = $subject;
-        $this->status = $status;
-        $this->fromField = $fromField;
-        $this->content = $content;
-        $this->sendSettings = $sendSettings;
+    public function __construct(private $rssFeedUrl, private $subject, private readonly StatusEnum $status, private readonly FromFieldReference $fromField, private readonly MessageContent $content, private readonly RssNewsletterSendSettings $sendSettings)
+    {
     }
 
 
-    /**
-     * @param MessageFlagsArray $flags
-     */
     public function setFlags(MessageFlagsArray $flags)
     {
         $this->flags = $flags;
@@ -79,18 +42,12 @@ class NewRssNewsletter extends BaseModel
     }
 
 
-    /**
-     * @param MessageEditorEnum $editor
-     */
     public function setEditor(MessageEditorEnum $editor)
     {
         $this->editor = $editor;
     }
 
 
-    /**
-     * @param FromFieldReference $replyTo
-     */
     public function setReplyTo(FromFieldReference $replyTo)
     {
         $this->replyTo = $replyTo;

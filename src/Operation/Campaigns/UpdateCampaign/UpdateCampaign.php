@@ -11,23 +11,15 @@ class UpdateCampaign extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/campaigns/{campaignId}';
-
-    /** @var ModelUpdateCampaign */
-    protected $data;
-
-    /** @var string */
-    private $campaignId;
+    final const METHOD_URL = '/v3/campaigns/{campaignId}';
 
 
     /**
      * @param ModelUpdateCampaign $data
      * @param string $campaignId
      */
-    public function __construct(ModelUpdateCampaign $data, $campaignId)
+    public function __construct(protected ModelUpdateCampaign $data, private $campaignId)
     {
-        $this->data = $data;
-        $this->campaignId = $campaignId;
     }
 
 

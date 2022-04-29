@@ -5,41 +5,20 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewNewsletter extends BaseModel
 {
-    /** @var MessageFlagsArray */
-    private $flags = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\MessageFlagsArray $flags = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $type = self::FIELD_NOT_SET;
+    private string $type = self::FIELD_NOT_SET;
 
-    /** @var MessageEditorEnum */
-    private $editor = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\MessageEditorEnum $editor = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $subject;
+    private string|\Getresponse\Sdk\Operation\Model\FromFieldReference $replyTo = self::FIELD_NOT_SET;
 
-    /** @var FromFieldReference */
-    private $fromField;
-
-    /** @var FromFieldReference */
-    private $replyTo = self::FIELD_NOT_SET;
-
-    /** @var CampaignReference */
-    private $campaign;
-
-    /** @var string */
-    private $sendOn = self::FIELD_NOT_SET;
-
-    /** @var MessageContent */
-    private $content;
+    private string $sendOn = self::FIELD_NOT_SET;
 
     /** @var NewsletterAttachment[] */
-    private $attachments = self::FIELD_NOT_SET;
-
-    /** @var NewsletterSendSettings */
-    private $sendSettings;
+    private string|array $attachments = self::FIELD_NOT_SET;
 
 
     /**
@@ -49,24 +28,11 @@ class NewNewsletter extends BaseModel
      * @param MessageContent $content
      * @param NewsletterSendSettings $sendSettings
      */
-    public function __construct(
-        $subject,
-        FromFieldReference $fromField,
-        CampaignReference $campaign,
-        MessageContent $content,
-        NewsletterSendSettings $sendSettings
-    ) {
-        $this->subject = $subject;
-        $this->fromField = $fromField;
-        $this->campaign = $campaign;
-        $this->content = $content;
-        $this->sendSettings = $sendSettings;
+    public function __construct(private $subject, private readonly FromFieldReference $fromField, private readonly CampaignReference $campaign, private readonly MessageContent $content, private readonly NewsletterSendSettings $sendSettings)
+    {
     }
 
 
-    /**
-     * @param MessageFlagsArray $flags
-     */
     public function setFlags(MessageFlagsArray $flags)
     {
         $this->flags = $flags;
@@ -91,18 +57,12 @@ class NewNewsletter extends BaseModel
     }
 
 
-    /**
-     * @param MessageEditorEnum $editor
-     */
     public function setEditor(MessageEditorEnum $editor)
     {
         $this->editor = $editor;
     }
 
 
-    /**
-     * @param FromFieldReference $replyTo
-     */
     public function setReplyTo(FromFieldReference $replyTo)
     {
         $this->replyTo = $replyTo;

@@ -3,32 +3,15 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class ECommerceNumberOfPurchasesCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType;
-
-    /** @var string */
-    private $operator;
-
-    /** @var string */
-    private $scope;
-
-    /** @var int */
-    private $value;
-
-
     /**
      * @param string $operatorType
      * @param string $operator
      * @param string $scope
      * @param int $value
      */
-    public function __construct($operatorType, $operator, $scope, $value)
+    public function __construct(private $operatorType, private $operator, private $scope, private $value)
     {
         parent::__construct('ecommerce_number_of_purchases');
-        $this->operatorType = $operatorType;
-        $this->operator = $operator;
-        $this->scope = $scope;
-        $this->value = $value;
     }
 
 

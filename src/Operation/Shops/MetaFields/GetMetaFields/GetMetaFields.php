@@ -9,30 +9,22 @@ class GetMetaFields extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/meta-fields';
+    final const METHOD_URL = '/v3/shops/{shopId}/meta-fields';
 
-    /** @var string */
-    private $shopId;
+    private ?\Getresponse\Sdk\Operation\Shops\MetaFields\GetMetaFields\GetMetaFieldsSearchQuery $query = null;
 
-    /** @var GetMetaFieldsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Shops\MetaFields\GetMetaFields\GetMetaFieldsSortParams $sort = null;
 
-    /** @var GetMetaFieldsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var Pagination */
-    private $pagination;
-
-    /** @var GetMetaFieldsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\MetaFields\GetMetaFields\GetMetaFieldsFields $fields = null;
 
 
     /**
      * @param string $shopId
      */
-    public function __construct($shopId)
+    public function __construct(private $shopId)
     {
-        $this->shopId = $shopId;
     }
 
 
@@ -50,7 +42,6 @@ class GetMetaFields extends QueryOperation
 
 
     /**
-     * @param GetMetaFieldsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetMetaFieldsSearchQuery $query)
@@ -61,7 +52,6 @@ class GetMetaFields extends QueryOperation
 
 
     /**
-     * @param GetMetaFieldsSortParams $sort
      * @return $this
      */
     public function setSort(GetMetaFieldsSortParams $sort)
@@ -72,7 +62,6 @@ class GetMetaFields extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -83,7 +72,6 @@ class GetMetaFields extends QueryOperation
 
 
     /**
-     * @param GetMetaFieldsFields $fields
      * @return $this
      */
     public function setFields(GetMetaFieldsFields $fields)

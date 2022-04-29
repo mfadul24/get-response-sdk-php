@@ -5,10 +5,10 @@ use Getresponse\Sdk\Client\Operation\BaseEnum;
 
 class MessageTypeOperator extends BaseEnum
 {
-    const AUTORESPONDER = 'autoresponder';
-    const NEWSLETTER = 'newsletter';
-    const SPLITTEST = 'splittest';
-    const AUTOMATION = 'automation';
+    final const AUTORESPONDER = 'autoresponder';
+    final const NEWSLETTER = 'newsletter';
+    final const SPLITTEST = 'splittest';
+    final const AUTOMATION = 'automation';
 
     /**
      * @return bool

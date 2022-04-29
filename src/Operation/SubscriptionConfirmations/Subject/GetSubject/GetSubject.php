@@ -8,21 +8,16 @@ class GetSubject extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/subscription-confirmations/subject/{languageCode}';
+    final const METHOD_URL = '/v3/subscription-confirmations/subject/{languageCode}';
 
-    /** @var string */
-    private $languageCode;
-
-    /** @var GetSubjectFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\SubscriptionConfirmations\Subject\GetSubject\GetSubjectFields $fields = null;
 
 
     /**
      * @param string $languageCode
      */
-    public function __construct($languageCode)
+    public function __construct(private $languageCode)
     {
-        $this->languageCode = $languageCode;
     }
 
 
@@ -40,7 +35,6 @@ class GetSubject extends QueryOperation
 
 
     /**
-     * @param GetSubjectFields $fields
      * @return $this
      */
     public function setFields(GetSubjectFields $fields)

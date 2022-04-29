@@ -5,34 +5,23 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CampaignPostal extends BaseModel
 {
-    /** @var StringBooleanEnum */
-    private $addPostalToMessages = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\StringBooleanEnum $addPostalToMessages = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $city = self::FIELD_NOT_SET;
+    private string $city = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $companyName = self::FIELD_NOT_SET;
+    private string $companyName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $country = self::FIELD_NOT_SET;
+    private string $country = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $design = self::FIELD_NOT_SET;
+    private string $design = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $state = self::FIELD_NOT_SET;
+    private string $state = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $street = self::FIELD_NOT_SET;
+    private string $street = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $zipCode = self::FIELD_NOT_SET;
+    private string $zipCode = self::FIELD_NOT_SET;
 
 
-    /**
-     * @param StringBooleanEnum $addPostalToMessages
-     */
     public function setAddPostalToMessages(StringBooleanEnum $addPostalToMessages)
     {
         $this->addPostalToMessages = $addPostalToMessages;

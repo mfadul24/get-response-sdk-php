@@ -5,29 +5,21 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class ContactGeolocation extends BaseModel
 {
-    /** @var string */
-    private $latitude = self::FIELD_NOT_SET;
+    private string $latitude = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $longitude = self::FIELD_NOT_SET;
+    private string $longitude = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $continentCode = self::FIELD_NOT_SET;
+    private string $continentCode = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $countryCode = self::FIELD_NOT_SET;
+    private string $countryCode = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $region = self::FIELD_NOT_SET;
+    private string $region = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $postalCode = self::FIELD_NOT_SET;
+    private string $postalCode = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $dmaCode = self::FIELD_NOT_SET;
+    private string $dmaCode = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $city = self::FIELD_NOT_SET;
+    private string $city = self::FIELD_NOT_SET;
 
 
     /**

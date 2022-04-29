@@ -9,16 +9,13 @@ class GetTransactionalEmails extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/transactional-emails';
+    final const METHOD_URL = '/v3/transactional-emails';
 
-    /** @var GetTransactionalEmailsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\TransactionalEmails\GetTransactionalEmails\GetTransactionalEmailsSearchQuery $query = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetTransactionalEmailsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\TransactionalEmails\GetTransactionalEmails\GetTransactionalEmailsFields $fields = null;
 
 
     /**
@@ -31,7 +28,6 @@ class GetTransactionalEmails extends QueryOperation
 
 
     /**
-     * @param GetTransactionalEmailsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetTransactionalEmailsSearchQuery $query)
@@ -42,7 +38,6 @@ class GetTransactionalEmails extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -53,7 +48,6 @@ class GetTransactionalEmails extends QueryOperation
 
 
     /**
-     * @param GetTransactionalEmailsFields $fields
      * @return $this
      */
     public function setFields(GetTransactionalEmailsFields $fields)

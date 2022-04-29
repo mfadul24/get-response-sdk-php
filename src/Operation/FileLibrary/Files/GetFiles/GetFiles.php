@@ -9,19 +9,15 @@ class GetFiles extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/file-library/files';
+    final const METHOD_URL = '/v3/file-library/files';
 
-    /** @var GetFilesSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\FileLibrary\Files\GetFiles\GetFilesSearchQuery $query = null;
 
-    /** @var GetFilesSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\FileLibrary\Files\GetFiles\GetFilesSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetFilesFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\FileLibrary\Files\GetFiles\GetFilesFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetFiles extends QueryOperation
 
 
     /**
-     * @param GetFilesSearchQuery $query
      * @return $this
      */
     public function setQuery(GetFilesSearchQuery $query)
@@ -45,7 +40,6 @@ class GetFiles extends QueryOperation
 
 
     /**
-     * @param GetFilesSortParams $sort
      * @return $this
      */
     public function setSort(GetFilesSortParams $sort)
@@ -56,7 +50,6 @@ class GetFiles extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetFiles extends QueryOperation
 
 
     /**
-     * @param GetFilesFields $fields
      * @return $this
      */
     public function setFields(GetFilesFields $fields)

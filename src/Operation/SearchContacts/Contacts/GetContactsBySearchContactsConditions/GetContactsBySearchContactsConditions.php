@@ -11,18 +11,14 @@ class GetContactsBySearchContactsConditions extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/search-contacts/contacts';
-
-    /** @var SearchContactsConditionsDetails */
-    protected $data;
+    final const METHOD_URL = '/v3/search-contacts/contacts';
 
 
     /**
      * @param SearchContactsConditionsDetails $data
      */
-    public function __construct(SearchContactsConditionsDetails $data)
+    public function __construct(protected SearchContactsConditionsDetails $data)
     {
-        $this->data = $data;
     }
 
 

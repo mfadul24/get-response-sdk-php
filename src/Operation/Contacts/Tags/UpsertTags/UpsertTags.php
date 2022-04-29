@@ -11,23 +11,15 @@ class UpsertTags extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/contacts/{contactId}/tags';
-
-    /** @var UpsertContactTags */
-    protected $data;
-
-    /** @var string */
-    private $contactId;
+    final const METHOD_URL = '/v3/contacts/{contactId}/tags';
 
 
     /**
      * @param UpsertContactTags $data
      * @param string $contactId
      */
-    public function __construct(UpsertContactTags $data, $contactId)
+    public function __construct(protected UpsertContactTags $data, private $contactId)
     {
-        $this->data = $data;
-        $this->contactId = $contactId;
     }
 
 

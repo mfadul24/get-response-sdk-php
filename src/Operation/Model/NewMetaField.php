@@ -5,17 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewMetaField extends BaseModel
 {
-    /** @var string */
-    private $name;
-
-    /** @var string */
-    private $value;
-
-    /** @var string */
-    private $valueType;
-
-    /** @var string */
-    private $description = self::FIELD_NOT_SET;
+    private string $description = self::FIELD_NOT_SET;
 
 
     /**
@@ -23,11 +13,8 @@ class NewMetaField extends BaseModel
      * @param string $value
      * @param string $valueType
      */
-    public function __construct($name, $value, $valueType)
+    public function __construct(private $name, private $value, private $valueType)
     {
-        $this->name = $name;
-        $this->value = $value;
-        $this->valueType = $valueType;
     }
 
 

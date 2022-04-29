@@ -11,23 +11,15 @@ class UpdatePredefinedField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/predefined-fields/{predefinedFieldId}';
-
-    /** @var ModelUpdatePredefinedField */
-    protected $data;
-
-    /** @var string */
-    private $predefinedFieldId;
+    final const METHOD_URL = '/v3/predefined-fields/{predefinedFieldId}';
 
 
     /**
      * @param ModelUpdatePredefinedField $data
      * @param string $predefinedFieldId
      */
-    public function __construct(ModelUpdatePredefinedField $data, $predefinedFieldId)
+    public function __construct(protected ModelUpdatePredefinedField $data, private $predefinedFieldId)
     {
-        $this->data = $data;
-        $this->predefinedFieldId = $predefinedFieldId;
     }
 
 

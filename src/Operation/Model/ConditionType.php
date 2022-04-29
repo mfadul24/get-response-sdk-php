@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 abstract class ConditionType extends BaseModel
 {
-    /** @var string */
-    private $conditionType;
-
-
     /**
      * @param string $conditionType
      */
-    public function __construct($conditionType)
+    public function __construct(private $conditionType)
     {
-        $this->conditionType = $conditionType;
     }
 
 

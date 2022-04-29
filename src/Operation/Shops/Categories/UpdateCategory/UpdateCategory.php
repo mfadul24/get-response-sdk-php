@@ -11,16 +11,7 @@ class UpdateCategory extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/categories/{categoryId}';
-
-    /** @var ModelUpdateCategory */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $categoryId;
+    final const METHOD_URL = '/v3/shops/{shopId}/categories/{categoryId}';
 
 
     /**
@@ -28,11 +19,8 @@ class UpdateCategory extends CommandOperation
      * @param string $shopId
      * @param string $categoryId
      */
-    public function __construct(ModelUpdateCategory $data, $shopId, $categoryId)
+    public function __construct(protected ModelUpdateCategory $data, private $shopId, private $categoryId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
-        $this->categoryId = $categoryId;
     }
 
 

@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateWorkflow extends BaseModel
 {
-    /** @var string */
-    private $status;
-
-
     /**
      * @param string $status
      */
-    public function __construct($status)
+    public function __construct(private $status)
     {
-        $this->status = $status;
     }
 
 

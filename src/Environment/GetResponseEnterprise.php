@@ -12,10 +12,7 @@ use Psr\Http\Message\RequestInterface;
  */
 abstract class GetResponseEnterprise implements Environment
 {
-    /**
-     * @var string
-     */
-    private $domain;
+    private readonly string $domain;
 
     /**
      * GetResponseEnterprise constructor.
@@ -29,7 +26,6 @@ abstract class GetResponseEnterprise implements Environment
     }
 
     /**
-     * @param RequestInterface $request
      * @return RequestInterface
      */
     public function processRequest(RequestInterface $request)

@@ -3,17 +3,7 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class GoalCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType;
-
-    /** @var string */
-    private $operator;
-
-    /** @var int */
-    private $value = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $scope;
+    private string|int $value = self::FIELD_NOT_SET;
 
 
     /**
@@ -21,12 +11,9 @@ class GoalCondition extends ConditionType
      * @param string $operator
      * @param string $scope
      */
-    public function __construct($operatorType, $operator, $scope)
+    public function __construct(private $operatorType, private $operator, private $scope)
     {
         parent::__construct('goal');
-        $this->operatorType = $operatorType;
-        $this->operator = $operator;
-        $this->scope = $scope;
     }
 
 

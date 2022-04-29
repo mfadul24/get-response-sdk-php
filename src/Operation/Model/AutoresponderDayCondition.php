@@ -3,25 +3,16 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class AutoresponderDayCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType;
-
-    /** @var string */
-    private $operator;
-
-    /** @var int */
-    private $value = self::FIELD_NOT_SET;
+    private string|int $value = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $operatorType
      * @param string $operator
      */
-    public function __construct($operatorType, $operator)
+    public function __construct(private $operatorType, private $operator)
     {
         parent::__construct('phase');
-        $this->operatorType = $operatorType;
-        $this->operator = $operator;
     }
 
 

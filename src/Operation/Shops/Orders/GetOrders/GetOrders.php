@@ -9,30 +9,22 @@ class GetOrders extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/orders';
+    final const METHOD_URL = '/v3/shops/{shopId}/orders';
 
-    /** @var string */
-    private $shopId;
+    private ?\Getresponse\Sdk\Operation\Shops\Orders\GetOrders\GetOrdersSearchQuery $query = null;
 
-    /** @var GetOrdersSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Shops\Orders\GetOrders\GetOrdersSortParams $sort = null;
 
-    /** @var GetOrdersSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var Pagination */
-    private $pagination;
-
-    /** @var GetOrdersFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\Orders\GetOrders\GetOrdersFields $fields = null;
 
 
     /**
      * @param string $shopId
      */
-    public function __construct($shopId)
+    public function __construct(private $shopId)
     {
-        $this->shopId = $shopId;
     }
 
 
@@ -50,7 +42,6 @@ class GetOrders extends QueryOperation
 
 
     /**
-     * @param GetOrdersSearchQuery $query
      * @return $this
      */
     public function setQuery(GetOrdersSearchQuery $query)
@@ -61,7 +52,6 @@ class GetOrders extends QueryOperation
 
 
     /**
-     * @param GetOrdersSortParams $sort
      * @return $this
      */
     public function setSort(GetOrdersSortParams $sort)
@@ -72,7 +62,6 @@ class GetOrders extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -83,7 +72,6 @@ class GetOrders extends QueryOperation
 
 
     /**
-     * @param GetOrdersFields $fields
      * @return $this
      */
     public function setFields(GetOrdersFields $fields)

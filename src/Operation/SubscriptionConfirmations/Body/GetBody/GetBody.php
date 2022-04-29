@@ -8,21 +8,16 @@ class GetBody extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/subscription-confirmations/body/{languageCode}';
+    final const METHOD_URL = '/v3/subscription-confirmations/body/{languageCode}';
 
-    /** @var string */
-    private $languageCode;
-
-    /** @var GetBodyFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\SubscriptionConfirmations\Body\GetBody\GetBodyFields $fields = null;
 
 
     /**
      * @param string $languageCode
      */
-    public function __construct($languageCode)
+    public function __construct(private $languageCode)
     {
-        $this->languageCode = $languageCode;
     }
 
 
@@ -40,7 +35,6 @@ class GetBody extends QueryOperation
 
 
     /**
-     * @param GetBodyFields $fields
      * @return $this
      */
     public function setFields(GetBodyFields $fields)

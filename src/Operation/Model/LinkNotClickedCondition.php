@@ -3,23 +3,11 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class LinkNotClickedCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType;
+    private string $value = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $operator;
+    private string $scope = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $dateOperator;
-
-    /** @var string */
-    private $value = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $scope = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $clickTrackId = self::FIELD_NOT_SET;
+    private string $clickTrackId = self::FIELD_NOT_SET;
 
 
     /**
@@ -27,12 +15,9 @@ class LinkNotClickedCondition extends ConditionType
      * @param string $operator
      * @param string $dateOperator
      */
-    public function __construct($operatorType, $operator, $dateOperator)
+    public function __construct(private $operatorType, private $operator, private $dateOperator)
     {
         parent::__construct('not_clicked');
-        $this->operatorType = $operatorType;
-        $this->operator = $operator;
-        $this->dateOperator = $dateOperator;
     }
 
 

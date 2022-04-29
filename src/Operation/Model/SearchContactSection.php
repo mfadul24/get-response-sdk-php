@@ -5,20 +5,8 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 abstract class SearchContactSection extends BaseModel
 {
-    /** @var array */
-    private $campaignIdsList;
-
-    /** @var string */
-    private $logicOperator;
-
-    /** @var array */
-    private $subscriberCycle;
-
     /** @var ConditionType[] */
-    private $conditions = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $subscriptionDate;
+    private string|array $conditions = self::FIELD_NOT_SET;
 
 
     /**
@@ -27,12 +15,8 @@ abstract class SearchContactSection extends BaseModel
      * @param array $subscriberCycle
      * @param string $subscriptionDate
      */
-    public function __construct(array $campaignIdsList, $logicOperator, array $subscriberCycle, $subscriptionDate)
+    public function __construct(private readonly array $campaignIdsList, private $logicOperator, private readonly array $subscriberCycle, private $subscriptionDate)
     {
-        $this->campaignIdsList = $campaignIdsList;
-        $this->logicOperator = $logicOperator;
-        $this->subscriberCycle = $subscriberCycle;
-        $this->subscriptionDate = $subscriptionDate;
     }
 
 

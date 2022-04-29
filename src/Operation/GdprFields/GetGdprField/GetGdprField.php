@@ -8,21 +8,16 @@ class GetGdprField extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/gdpr-fields/{gdprFieldId}';
+    final const METHOD_URL = '/v3/gdpr-fields/{gdprFieldId}';
 
-    /** @var string */
-    private $gdprFieldId;
-
-    /** @var GetGdprFieldFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\GdprFields\GetGdprField\GetGdprFieldFields $fields = null;
 
 
     /**
      * @param string $gdprFieldId
      */
-    public function __construct($gdprFieldId)
+    public function __construct(private $gdprFieldId)
     {
-        $this->gdprFieldId = $gdprFieldId;
     }
 
 
@@ -40,7 +35,6 @@ class GetGdprField extends QueryOperation
 
 
     /**
-     * @param GetGdprFieldFields $fields
      * @return $this
      */
     public function setFields(GetGdprFieldFields $fields)

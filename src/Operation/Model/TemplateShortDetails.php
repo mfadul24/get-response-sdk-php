@@ -5,24 +5,16 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TemplateShortDetails extends BaseModel
 {
-    /** @var string */
-    private $templateId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
-
     /** @var \Getresponse\Sdk\Operation\Model\TemplateCategoryShort[] */
-    private $category = self::FIELD_NOT_SET;
+    private string|array $category = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $templateId
      * @param string $href
      */
-    public function __construct($templateId, $href)
+    public function __construct(private $templateId, private $href)
     {
-        $this->templateId = $templateId;
-        $this->href = $href;
     }
 
 

@@ -9,27 +9,20 @@ class GetAutoresponderStatistics extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/autoresponders/{autoresponderId}/statistics';
+    final const METHOD_URL = '/v3/autoresponders/{autoresponderId}/statistics';
 
-    /** @var string */
-    private $autoresponderId;
+    private ?\Getresponse\Sdk\Operation\Autoresponders\Statistics\GetAutoresponderStatistics\GetAutoresponderStatisticsSearchQuery $query = null;
 
-    /** @var GetAutoresponderStatisticsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var Pagination */
-    private $pagination;
-
-    /** @var GetAutoresponderStatisticsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Autoresponders\Statistics\GetAutoresponderStatistics\GetAutoresponderStatisticsFields $fields = null;
 
 
     /**
      * @param string $autoresponderId
      */
-    public function __construct($autoresponderId)
+    public function __construct(private $autoresponderId)
     {
-        $this->autoresponderId = $autoresponderId;
     }
 
 
@@ -47,7 +40,6 @@ class GetAutoresponderStatistics extends QueryOperation
 
 
     /**
-     * @param GetAutoresponderStatisticsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetAutoresponderStatisticsSearchQuery $query)
@@ -58,7 +50,6 @@ class GetAutoresponderStatistics extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -69,7 +60,6 @@ class GetAutoresponderStatistics extends QueryOperation
 
 
     /**
-     * @param GetAutoresponderStatisticsFields $fields
      * @return $this
      */
     public function setFields(GetAutoresponderStatisticsFields $fields)

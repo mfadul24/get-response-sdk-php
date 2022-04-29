@@ -8,18 +8,14 @@ class GetCampaignStatisticsRemovals extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/campaigns/statistics/removals';
-
-    /** @var GetCampaignStatisticsRemovalsSearchQuery */
-    private $query;
+    final const METHOD_URL = '/v3/campaigns/statistics/removals';
 
 
     /**
      * @param GetCampaignStatisticsRemovalsSearchQuery $query
      */
-    public function __construct(GetCampaignStatisticsRemovalsSearchQuery $query)
+    public function __construct(private readonly GetCampaignStatisticsRemovalsSearchQuery $query)
     {
-        $this->query = $query;
     }
 
 

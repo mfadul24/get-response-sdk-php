@@ -8,10 +8,9 @@ class GetAccounts extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/accounts';
+    final const METHOD_URL = '/v3/accounts';
 
-    /** @var GetAccountsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Accounts\GetAccounts\GetAccountsFields $fields = null;
 
 
     /**
@@ -24,7 +23,6 @@ class GetAccounts extends QueryOperation
 
 
     /**
-     * @param GetAccountsFields $fields
      * @return $this
      */
     public function setFields(GetAccountsFields $fields)

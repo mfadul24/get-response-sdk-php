@@ -5,19 +5,14 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpsertSingleProductCategory extends BaseModel
 {
-    /** @var string */
-    private $categoryId;
-
-    /** @var bool */
-    private $isDefault = self::FIELD_NOT_SET;
+    private string|bool $isDefault = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $categoryId
      */
-    public function __construct($categoryId)
+    public function __construct(private $categoryId)
     {
-        $this->categoryId = $categoryId;
     }
 
 

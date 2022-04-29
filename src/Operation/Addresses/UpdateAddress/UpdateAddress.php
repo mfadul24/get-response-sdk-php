@@ -11,23 +11,15 @@ class UpdateAddress extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/addresses/{addressId}';
-
-    /** @var ModelUpdateAddress */
-    protected $data;
-
-    /** @var string */
-    private $addressId;
+    final const METHOD_URL = '/v3/addresses/{addressId}';
 
 
     /**
      * @param ModelUpdateAddress $data
      * @param string $addressId
      */
-    public function __construct(ModelUpdateAddress $data, $addressId)
+    public function __construct(protected ModelUpdateAddress $data, private $addressId)
     {
-        $this->data = $data;
-        $this->addressId = $addressId;
     }
 
 

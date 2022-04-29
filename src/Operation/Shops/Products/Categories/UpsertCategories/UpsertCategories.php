@@ -11,16 +11,7 @@ class UpsertCategories extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/categories';
-
-    /** @var UpsertProductCategory */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $productId;
+    final const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/categories';
 
 
     /**
@@ -28,11 +19,8 @@ class UpsertCategories extends CommandOperation
      * @param string $shopId
      * @param string $productId
      */
-    public function __construct(UpsertProductCategory $data, $shopId, $productId)
+    public function __construct(protected UpsertProductCategory $data, private $shopId, private $productId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
-        $this->productId = $productId;
     }
 
 

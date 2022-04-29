@@ -3,18 +3,13 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class RssNewsletterSendDailySettings extends RssNewsletterSendSettings
 {
-    /** @var int */
-    private $sendAtHour;
-
-
     /**
      * @param string $filter
      * @param int $sendAtHour
      */
-    public function __construct($filter, $sendAtHour)
+    public function __construct($filter, private $sendAtHour)
     {
         parent::__construct('daily', $filter);
-        $this->sendAtHour = $sendAtHour;
     }
 
 

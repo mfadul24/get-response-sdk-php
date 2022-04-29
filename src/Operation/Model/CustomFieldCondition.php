@@ -3,28 +3,18 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class CustomFieldCondition extends ConditionType
 {
-    /** @var string */
-    private $scope;
+    private string $operatorType = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $operatorType = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $operator;
-
-    /** @var string */
-    private $value = self::FIELD_NOT_SET;
+    private string $value = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $scope
      * @param string $operator
      */
-    public function __construct($scope, $operator)
+    public function __construct(private $scope, private $operator)
     {
         parent::__construct('custom');
-        $this->scope = $scope;
-        $this->operator = $operator;
     }
 
 

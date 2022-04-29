@@ -9,19 +9,15 @@ class GetWebinars extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/webinars';
+    final const METHOD_URL = '/v3/webinars';
 
-    /** @var GetWebinarsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Webinars\GetWebinars\GetWebinarsSearchQuery $query = null;
 
-    /** @var GetWebinarsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Webinars\GetWebinars\GetWebinarsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetWebinarsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Webinars\GetWebinars\GetWebinarsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetWebinars extends QueryOperation
 
 
     /**
-     * @param GetWebinarsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetWebinarsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetWebinars extends QueryOperation
 
 
     /**
-     * @param GetWebinarsSortParams $sort
      * @return $this
      */
     public function setSort(GetWebinarsSortParams $sort)
@@ -56,7 +50,6 @@ class GetWebinars extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetWebinars extends QueryOperation
 
 
     /**
-     * @param GetWebinarsFields $fields
      * @return $this
      */
     public function setFields(GetWebinarsFields $fields)

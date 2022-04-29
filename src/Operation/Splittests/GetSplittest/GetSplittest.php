@@ -8,21 +8,16 @@ class GetSplittest extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/splittests/{splittestId}';
+    final const METHOD_URL = '/v3/splittests/{splittestId}';
 
-    /** @var string */
-    private $splittestId;
-
-    /** @var GetSplittestFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Splittests\GetSplittest\GetSplittestFields $fields = null;
 
 
     /**
      * @param string $splittestId
      */
-    public function __construct($splittestId)
+    public function __construct(private $splittestId)
     {
-        $this->splittestId = $splittestId;
     }
 
 
@@ -40,7 +35,6 @@ class GetSplittest extends QueryOperation
 
 
     /**
-     * @param GetSplittestFields $fields
      * @return $this
      */
     public function setFields(GetSplittestFields $fields)

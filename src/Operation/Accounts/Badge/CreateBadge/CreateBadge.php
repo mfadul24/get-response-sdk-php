@@ -10,18 +10,14 @@ class CreateBadge extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/accounts/badge';
-
-    /** @var \Getresponse\Sdk\Operation\Model\AccountBadgeStatus */
-    protected $data;
+    final const METHOD_URL = '/v3/accounts/badge';
 
 
     /**
      * @param \Getresponse\Sdk\Operation\Model\AccountBadgeStatus $data
      */
-    public function __construct(\Getresponse\Sdk\Operation\Model\AccountBadgeStatus $data)
+    public function __construct(protected \Getresponse\Sdk\Operation\Model\AccountBadgeStatus $data)
     {
-        $this->data = $data;
     }
 
 

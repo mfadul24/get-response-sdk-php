@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CampaignReference extends BaseModel
 {
-    /** @var string */
-    private $campaignId;
-
-
     /**
      * @param string $campaignId
      */
-    public function __construct($campaignId)
+    public function __construct(private $campaignId)
     {
-        $this->campaignId = $campaignId;
     }
 
 

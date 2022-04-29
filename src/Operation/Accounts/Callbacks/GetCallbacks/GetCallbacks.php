@@ -8,7 +8,7 @@ class GetCallbacks extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/accounts/callbacks';
+    final const METHOD_URL = '/v3/accounts/callbacks';
 
     /**
      * @return string

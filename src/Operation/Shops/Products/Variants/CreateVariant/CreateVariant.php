@@ -11,16 +11,7 @@ class CreateVariant extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/variants';
-
-    /** @var NewProductVariant */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $productId;
+    final const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/variants';
 
 
     /**
@@ -28,11 +19,8 @@ class CreateVariant extends CommandOperation
      * @param string $shopId
      * @param string $productId
      */
-    public function __construct(NewProductVariant $data, $shopId, $productId)
+    public function __construct(protected NewProductVariant $data, private $shopId, private $productId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
-        $this->productId = $productId;
     }
 
 

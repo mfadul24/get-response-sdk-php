@@ -5,39 +5,25 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 abstract class RssNewsletterSendSettings extends BaseModel
 {
-    /** @var string */
-    private $frequency;
+    private string|int $maxArticles = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $filter;
+    private string|array $selectedCampaigns = self::FIELD_NOT_SET;
 
-    /** @var int */
-    private $maxArticles = self::FIELD_NOT_SET;
+    private string|array $selectedSegments = self::FIELD_NOT_SET;
 
-    /** @var array */
-    private $selectedCampaigns = self::FIELD_NOT_SET;
+    private string|array $selectedSuppressions = self::FIELD_NOT_SET;
 
-    /** @var array */
-    private $selectedSegments = self::FIELD_NOT_SET;
+    private string|array $excludedCampaigns = self::FIELD_NOT_SET;
 
-    /** @var array */
-    private $selectedSuppressions = self::FIELD_NOT_SET;
-
-    /** @var array */
-    private $excludedCampaigns = self::FIELD_NOT_SET;
-
-    /** @var array */
-    private $excludedSegments = self::FIELD_NOT_SET;
+    private string|array $excludedSegments = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $frequency
      * @param string $filter
      */
-    public function __construct($frequency, $filter)
+    public function __construct(private $frequency, private $filter)
     {
-        $this->frequency = $frequency;
-        $this->filter = $filter;
     }
 
 

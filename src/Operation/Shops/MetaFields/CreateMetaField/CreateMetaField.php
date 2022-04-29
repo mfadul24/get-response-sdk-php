@@ -11,23 +11,15 @@ class CreateMetaField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/meta-fields';
-
-    /** @var NewMetaField */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
+    final const METHOD_URL = '/v3/shops/{shopId}/meta-fields';
 
 
     /**
      * @param NewMetaField $data
      * @param string $shopId
      */
-    public function __construct(NewMetaField $data, $shopId)
+    public function __construct(protected NewMetaField $data, private $shopId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
     }
 
 

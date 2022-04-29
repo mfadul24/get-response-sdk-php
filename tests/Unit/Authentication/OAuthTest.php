@@ -11,10 +11,7 @@ use GuzzleHttp\Psr7\Request;
  */
 class OAuthTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var OAuth
-     */
-    private $systemUnderTest;
+    private \Getresponse\Sdk\Authentication\OAuth $systemUnderTest;
 
     protected function setUp(): void
     {

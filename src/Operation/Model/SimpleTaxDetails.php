@@ -5,17 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class SimpleTaxDetails extends BaseModel
 {
-    /** @var string */
-    private $taxId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $rate = self::FIELD_NOT_SET;
+    private string $href = self::FIELD_NOT_SET;
 
 
     /**
@@ -23,11 +13,8 @@ class SimpleTaxDetails extends BaseModel
      * @param string $name
      * @param string $rate
      */
-    public function __construct($taxId, $name, $rate)
+    public function __construct(private $taxId, private $name, private $rate)
     {
-        $this->taxId = $taxId;
-        $this->name = $name;
-        $this->rate = $rate;
     }
 
 

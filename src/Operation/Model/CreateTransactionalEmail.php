@@ -5,26 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CreateTransactionalEmail extends BaseModel
 {
-    /** @var FromFieldReference */
-    private $fromField;
+    private string|\Getresponse\Sdk\Operation\Model\FromFieldReference $replyTo = self::FIELD_NOT_SET;
 
-    /** @var FromFieldReference */
-    private $replyTo = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $subject;
-
-    /** @var NewTransactionalEmailTag */
-    private $tag = self::FIELD_NOT_SET;
-
-    /** @var TransactionalEmailContent */
-    private $content;
-
-    /** @var TransactionalEmailRecipients */
-    private $recipients;
+    private string|\Getresponse\Sdk\Operation\Model\NewTransactionalEmailTag $tag = self::FIELD_NOT_SET;
 
     /** @var TransactionalEmailAttachment[] */
-    private $attachments = self::FIELD_NOT_SET;
+    private string|array $attachments = self::FIELD_NOT_SET;
 
 
     /**
@@ -33,31 +19,17 @@ class CreateTransactionalEmail extends BaseModel
      * @param TransactionalEmailContent $content
      * @param TransactionalEmailRecipients $recipients
      */
-    public function __construct(
-        FromFieldReference $fromField,
-        $subject,
-        TransactionalEmailContent $content,
-        TransactionalEmailRecipients $recipients
-    ) {
-        $this->fromField = $fromField;
-        $this->subject = $subject;
-        $this->content = $content;
-        $this->recipients = $recipients;
+    public function __construct(private readonly FromFieldReference $fromField, private $subject, private readonly TransactionalEmailContent $content, private readonly TransactionalEmailRecipients $recipients)
+    {
     }
 
 
-    /**
-     * @param FromFieldReference $replyTo
-     */
     public function setReplyTo(FromFieldReference $replyTo)
     {
         $this->replyTo = $replyTo;
     }
 
 
-    /**
-     * @param NewTransactionalEmailTag $tag
-     */
     public function setTag(NewTransactionalEmailTag $tag)
     {
         $this->tag = $tag;

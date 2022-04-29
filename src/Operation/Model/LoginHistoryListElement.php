@@ -5,17 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class LoginHistoryListElement extends BaseModel
 {
-    /** @var string */
-    private $loginTime = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $logoutTime = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $isSuccessful = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $ip = self::FIELD_NOT_SET;
+    private string $logoutTime = self::FIELD_NOT_SET;
 
 
     /**
@@ -23,11 +13,8 @@ class LoginHistoryListElement extends BaseModel
      * @param string $isSuccessful
      * @param string $ip
      */
-    public function __construct($loginTime, $isSuccessful, $ip)
+    public function __construct(private $loginTime, private $isSuccessful, private $ip)
     {
-        $this->loginTime = $loginTime;
-        $this->isSuccessful = $isSuccessful;
-        $this->ip = $ip;
     }
 
 

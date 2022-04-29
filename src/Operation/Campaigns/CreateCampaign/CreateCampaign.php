@@ -11,18 +11,14 @@ class CreateCampaign extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/campaigns';
-
-    /** @var NewCampaign */
-    protected $data;
+    final const METHOD_URL = '/v3/campaigns';
 
 
     /**
      * @param NewCampaign $data
      */
-    public function __construct(NewCampaign $data)
+    public function __construct(protected NewCampaign $data)
     {
-        $this->data = $data;
     }
 
 

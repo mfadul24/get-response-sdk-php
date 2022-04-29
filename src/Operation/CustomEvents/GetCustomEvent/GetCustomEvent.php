@@ -8,21 +8,16 @@ class GetCustomEvent extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/custom-events/{customEventId}';
+    final const METHOD_URL = '/v3/custom-events/{customEventId}';
 
-    /** @var string */
-    private $customEventId;
-
-    /** @var GetCustomEventFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\CustomEvents\GetCustomEvent\GetCustomEventFields $fields = null;
 
 
     /**
      * @param string $customEventId
      */
-    public function __construct($customEventId)
+    public function __construct(private $customEventId)
     {
-        $this->customEventId = $customEventId;
     }
 
 
@@ -40,7 +35,6 @@ class GetCustomEvent extends QueryOperation
 
 
     /**
-     * @param GetCustomEventFields $fields
      * @return $this
      */
     public function setFields(GetCustomEventFields $fields)

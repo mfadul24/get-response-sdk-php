@@ -11,26 +11,17 @@ class CreateOrder extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/orders';
+    final const METHOD_URL = '/v3/shops/{shopId}/orders';
 
-    /** @var NewOrder */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
-
-    /** @var CreateOrderAdditionalFlags */
-    private $additionalFlags;
+    private ?\Getresponse\Sdk\Operation\Shops\Orders\CreateOrder\CreateOrderAdditionalFlags $additionalFlags = null;
 
 
     /**
      * @param NewOrder $data
      * @param string $shopId
      */
-    public function __construct(NewOrder $data, $shopId)
+    public function __construct(protected NewOrder $data, private $shopId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
     }
 
 
@@ -77,7 +68,6 @@ class CreateOrder extends CommandOperation
 
 
     /**
-     * @param CreateOrderAdditionalFlags $additionalFlags
      * @return $this
      */
     public function setAdditionalFlags(CreateOrderAdditionalFlags $additionalFlags)

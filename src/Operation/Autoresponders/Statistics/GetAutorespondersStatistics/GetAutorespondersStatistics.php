@@ -9,16 +9,13 @@ class GetAutorespondersStatistics extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/autoresponders/statistics';
+    final const METHOD_URL = '/v3/autoresponders/statistics';
 
-    /** @var GetAutorespondersStatisticsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Autoresponders\Statistics\GetAutorespondersStatistics\GetAutorespondersStatisticsSearchQuery $query = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetAutorespondersStatisticsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Autoresponders\Statistics\GetAutorespondersStatistics\GetAutorespondersStatisticsFields $fields = null;
 
 
     /**
@@ -31,7 +28,6 @@ class GetAutorespondersStatistics extends QueryOperation
 
 
     /**
-     * @param GetAutorespondersStatisticsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetAutorespondersStatisticsSearchQuery $query)
@@ -42,7 +38,6 @@ class GetAutorespondersStatistics extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -53,7 +48,6 @@ class GetAutorespondersStatistics extends QueryOperation
 
 
     /**
-     * @param GetAutorespondersStatisticsFields $fields
      * @return $this
      */
     public function setFields(GetAutorespondersStatisticsFields $fields)

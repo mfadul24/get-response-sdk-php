@@ -8,21 +8,16 @@ class GetClickTrack extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/click-tracks/{clickTrackId}';
+    final const METHOD_URL = '/v3/click-tracks/{clickTrackId}';
 
-    /** @var string */
-    private $clickTrackId;
-
-    /** @var GetClickTrackFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\ClickTracks\GetClickTrack\GetClickTrackFields $fields = null;
 
 
     /**
      * @param string $clickTrackId
      */
-    public function __construct($clickTrackId)
+    public function __construct(private $clickTrackId)
     {
-        $this->clickTrackId = $clickTrackId;
     }
 
 
@@ -40,7 +35,6 @@ class GetClickTrack extends QueryOperation
 
 
     /**
-     * @param GetClickTrackFields $fields
      * @return $this
      */
     public function setFields(GetClickTrackFields $fields)

@@ -5,32 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CustomFieldDetail extends BaseModel
 {
-    /** @var string */
-    private $customFieldId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $fieldType = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $format = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $valueType = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $type = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $hidden = self::FIELD_NOT_SET;
-
-    /** @var array */
-    private $values = self::FIELD_NOT_SET;
+    private string $format = self::FIELD_NOT_SET;
 
 
     /**
@@ -43,16 +18,8 @@ class CustomFieldDetail extends BaseModel
      * @param string $hidden
      * @param array $values
      */
-    public function __construct($customFieldId, $href, $name, $fieldType, $valueType, $type, $hidden, array $values)
+    public function __construct(private $customFieldId, private $href, private $name, private $fieldType, private $valueType, private $type, private $hidden, private readonly array $values)
     {
-        $this->customFieldId = $customFieldId;
-        $this->href = $href;
-        $this->name = $name;
-        $this->fieldType = $fieldType;
-        $this->valueType = $valueType;
-        $this->type = $type;
-        $this->hidden = $hidden;
-        $this->values = $values;
     }
 
 

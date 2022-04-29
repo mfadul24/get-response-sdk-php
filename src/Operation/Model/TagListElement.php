@@ -5,17 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TagListElement extends BaseModel
 {
-    /** @var string */
-    private $tagId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $color = self::FIELD_NOT_SET;
+    private string $color = self::FIELD_NOT_SET;
 
 
     /**
@@ -23,11 +13,8 @@ class TagListElement extends BaseModel
      * @param string $name
      * @param string $href
      */
-    public function __construct($tagId, $name, $href)
+    public function __construct(private $tagId, private $name, private $href)
     {
-        $this->tagId = $tagId;
-        $this->name = $name;
-        $this->href = $href;
     }
 
 

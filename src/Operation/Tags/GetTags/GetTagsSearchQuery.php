@@ -30,7 +30,6 @@ class GetTagsSearchQuery extends SearchQuery
 
 
     /**
-     * @param DateRangeSearch $createdAt
      * @return $this
      * @throws \InvalidArgumentException
      */

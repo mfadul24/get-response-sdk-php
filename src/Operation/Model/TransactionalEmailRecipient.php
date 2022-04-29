@@ -5,19 +5,14 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TransactionalEmailRecipient extends BaseModel
 {
-    /** @var string */
-    private $email;
-
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $email
      */
-    public function __construct($email)
+    public function __construct(private $email)
     {
-        $this->email = $email;
     }
 
 

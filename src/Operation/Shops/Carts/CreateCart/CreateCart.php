@@ -11,23 +11,15 @@ class CreateCart extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/carts';
-
-    /** @var NewCart */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
+    final const METHOD_URL = '/v3/shops/{shopId}/carts';
 
 
     /**
      * @param NewCart $data
      * @param string $shopId
      */
-    public function __construct(NewCart $data, $shopId)
+    public function __construct(protected NewCart $data, private $shopId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
     }
 
 

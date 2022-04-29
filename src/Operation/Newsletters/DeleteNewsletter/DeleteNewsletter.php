@@ -9,18 +9,14 @@ class DeleteNewsletter extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/newsletters/{newsletterId}';
-
-    /** @var string */
-    private $newsletterId;
+    final const METHOD_URL = '/v3/newsletters/{newsletterId}';
 
 
     /**
      * @param string $newsletterId
      */
-    public function __construct($newsletterId)
+    public function __construct(private $newsletterId)
     {
-        $this->newsletterId = $newsletterId;
     }
 
 

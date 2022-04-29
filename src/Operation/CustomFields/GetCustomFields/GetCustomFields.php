@@ -9,19 +9,15 @@ class GetCustomFields extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/custom-fields';
+    final const METHOD_URL = '/v3/custom-fields';
 
-    /** @var GetCustomFieldsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\CustomFields\GetCustomFields\GetCustomFieldsSearchQuery $query = null;
 
-    /** @var GetCustomFieldsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\CustomFields\GetCustomFields\GetCustomFieldsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetCustomFieldsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\CustomFields\GetCustomFields\GetCustomFieldsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetCustomFields extends QueryOperation
 
 
     /**
-     * @param GetCustomFieldsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetCustomFieldsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetCustomFields extends QueryOperation
 
 
     /**
-     * @param GetCustomFieldsSortParams $sort
      * @return $this
      */
     public function setSort(GetCustomFieldsSortParams $sort)
@@ -56,7 +50,6 @@ class GetCustomFields extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetCustomFields extends QueryOperation
 
 
     /**
-     * @param GetCustomFieldsFields $fields
      * @return $this
      */
     public function setFields(GetCustomFieldsFields $fields)

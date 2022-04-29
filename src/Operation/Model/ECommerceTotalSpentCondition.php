@@ -3,22 +3,6 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class ECommerceTotalSpentCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType;
-
-    /** @var string */
-    private $operator;
-
-    /** @var string */
-    private $scope;
-
-    /** @var float */
-    private $value;
-
-    /** @var string */
-    private $currency;
-
-
     /**
      * @param string $operatorType
      * @param string $operator
@@ -26,14 +10,9 @@ class ECommerceTotalSpentCondition extends ConditionType
      * @param float $value
      * @param string $currency
      */
-    public function __construct($operatorType, $operator, $scope, $value, $currency)
+    public function __construct(private $operatorType, private $operator, private $scope, private $value, private $currency)
     {
         parent::__construct('ecommerce_total_spent');
-        $this->operatorType = $operatorType;
-        $this->operator = $operator;
-        $this->scope = $scope;
-        $this->value = $value;
-        $this->currency = $currency;
     }
 
 

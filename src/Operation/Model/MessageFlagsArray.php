@@ -5,9 +5,9 @@ use Getresponse\Sdk\Client\Operation\BaseEnum;
 
 class MessageFlagsArray extends BaseEnum
 {
-    const OPENRATE = 'openrate';
-    const CLICKTRACK = 'clicktrack';
-    const GOOGLE_ANALYTICS = 'google_analytics';
+    final const OPENRATE = 'openrate';
+    final const CLICKTRACK = 'clicktrack';
+    final const GOOGLE_ANALYTICS = 'google_analytics';
 
     /**
      * @return bool

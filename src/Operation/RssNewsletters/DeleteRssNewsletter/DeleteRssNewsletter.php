@@ -9,18 +9,14 @@ class DeleteRssNewsletter extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/rss-newsletters/{rssNewsletterId}';
-
-    /** @var string */
-    private $rssNewsletterId;
+    final const METHOD_URL = '/v3/rss-newsletters/{rssNewsletterId}';
 
 
     /**
      * @param string $rssNewsletterId
      */
-    public function __construct($rssNewsletterId)
+    public function __construct(private $rssNewsletterId)
     {
-        $this->rssNewsletterId = $rssNewsletterId;
     }
 
 

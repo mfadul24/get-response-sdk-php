@@ -5,14 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class AccountBillingAddOn extends BaseModel
 {
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $price = self::FIELD_NOT_SET;
+    private string $price = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $active = self::FIELD_NOT_SET;
+    private string $active = self::FIELD_NOT_SET;
 
 
     /**

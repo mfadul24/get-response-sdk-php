@@ -5,50 +5,38 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateProductVariant extends BaseModel
 {
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $url = self::FIELD_NOT_SET;
+    private string $url = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $sku = self::FIELD_NOT_SET;
+    private string $sku = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $price = self::FIELD_NOT_SET;
+    private string|float $price = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $priceTax = self::FIELD_NOT_SET;
+    private string|float $priceTax = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $previousPrice = self::FIELD_NOT_SET;
+    private string|float $previousPrice = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $previousPriceTax = self::FIELD_NOT_SET;
+    private string|float $previousPriceTax = self::FIELD_NOT_SET;
 
-    /** @var int */
-    private $quantity = self::FIELD_NOT_SET;
+    private string|int $quantity = self::FIELD_NOT_SET;
 
-    /** @var int */
-    private $position = self::FIELD_NOT_SET;
+    private string|int $position = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $barcode = self::FIELD_NOT_SET;
+    private string $barcode = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $externalId = self::FIELD_NOT_SET;
+    private string $externalId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $description = self::FIELD_NOT_SET;
+    private string $description = self::FIELD_NOT_SET;
 
     /** @var NewProductVariantImage[] */
-    private $images = self::FIELD_NOT_SET;
+    private string|array $images = self::FIELD_NOT_SET;
 
     /** @var NewMetaField[] */
-    private $metaFields = self::FIELD_NOT_SET;
+    private string|array $metaFields = self::FIELD_NOT_SET;
 
     /** @var NewTax[] */
-    private $taxes = self::FIELD_NOT_SET;
+    private string|array $taxes = self::FIELD_NOT_SET;
 
 
     /**

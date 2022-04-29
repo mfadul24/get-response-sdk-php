@@ -5,17 +5,13 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CampaignOptinTypes extends BaseModel
 {
-    /** @var string */
-    private $email = self::FIELD_NOT_SET;
+    private string $email = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $api = self::FIELD_NOT_SET;
+    private string $api = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $import = self::FIELD_NOT_SET;
+    private string $import = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $webform = self::FIELD_NOT_SET;
+    private string $webform = self::FIELD_NOT_SET;
 
 
     /**

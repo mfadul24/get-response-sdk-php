@@ -9,19 +9,15 @@ class GetNewsletters extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/newsletters';
+    final const METHOD_URL = '/v3/newsletters';
 
-    /** @var GetNewslettersSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Newsletters\GetNewsletters\GetNewslettersSearchQuery $query = null;
 
-    /** @var GetNewslettersSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Newsletters\GetNewsletters\GetNewslettersSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetNewslettersFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Newsletters\GetNewsletters\GetNewslettersFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetNewsletters extends QueryOperation
 
 
     /**
-     * @param GetNewslettersSearchQuery $query
      * @return $this
      */
     public function setQuery(GetNewslettersSearchQuery $query)
@@ -45,7 +40,6 @@ class GetNewsletters extends QueryOperation
 
 
     /**
-     * @param GetNewslettersSortParams $sort
      * @return $this
      */
     public function setSort(GetNewslettersSortParams $sort)
@@ -56,7 +50,6 @@ class GetNewsletters extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetNewsletters extends QueryOperation
 
 
     /**
-     * @param GetNewslettersFields $fields
      * @return $this
      */
     public function setFields(GetNewslettersFields $fields)

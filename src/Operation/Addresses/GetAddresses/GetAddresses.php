@@ -9,19 +9,15 @@ class GetAddresses extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/addresses';
+    final const METHOD_URL = '/v3/addresses';
 
-    /** @var GetAddressesSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Addresses\GetAddresses\GetAddressesSearchQuery $query = null;
 
-    /** @var GetAddressesSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Addresses\GetAddresses\GetAddressesSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetAddressesFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Addresses\GetAddresses\GetAddressesFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetAddresses extends QueryOperation
 
 
     /**
-     * @param GetAddressesSearchQuery $query
      * @return $this
      */
     public function setQuery(GetAddressesSearchQuery $query)
@@ -45,7 +40,6 @@ class GetAddresses extends QueryOperation
 
 
     /**
-     * @param GetAddressesSortParams $sort
      * @return $this
      */
     public function setSort(GetAddressesSortParams $sort)
@@ -56,7 +50,6 @@ class GetAddresses extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetAddresses extends QueryOperation
 
 
     /**
-     * @param GetAddressesFields $fields
      * @return $this
      */
     public function setFields(GetAddressesFields $fields)

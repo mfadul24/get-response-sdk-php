@@ -5,23 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TemplateColorVariantShort extends BaseModel
 {
-    /** @var string */
-    private $templateColorId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $colorHex = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $thumbnail = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $preview = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
+    private string $thumbnail = self::FIELD_NOT_SET;
 
 
     /**
@@ -31,13 +15,8 @@ class TemplateColorVariantShort extends BaseModel
      * @param string $preview
      * @param string $href
      */
-    public function __construct($templateColorId, $name, $colorHex, $preview, $href)
+    public function __construct(private $templateColorId, private $name, private $colorHex, private $preview, private $href)
     {
-        $this->templateColorId = $templateColorId;
-        $this->name = $name;
-        $this->colorHex = $colorHex;
-        $this->preview = $preview;
-        $this->href = $href;
     }
 
 

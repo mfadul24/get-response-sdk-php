@@ -8,26 +8,17 @@ class GetOrder extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/orders/{orderId}';
+    final const METHOD_URL = '/v3/shops/{shopId}/orders/{orderId}';
 
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $orderId;
-
-    /** @var GetOrderFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\Orders\GetOrder\GetOrderFields $fields = null;
 
 
     /**
      * @param string $shopId
      * @param string $orderId
      */
-    public function __construct($shopId, $orderId)
+    public function __construct(private $shopId, private $orderId)
     {
-        $this->shopId = $shopId;
-        $this->orderId = $orderId;
     }
 
 
@@ -45,7 +36,6 @@ class GetOrder extends QueryOperation
 
 
     /**
-     * @param GetOrderFields $fields
      * @return $this
      */
     public function setFields(GetOrderFields $fields)

@@ -9,18 +9,14 @@ class DeleteCustomEvent extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/custom-events/{customEventId}';
-
-    /** @var string */
-    private $customEventId;
+    final const METHOD_URL = '/v3/custom-events/{customEventId}';
 
 
     /**
      * @param string $customEventId
      */
-    public function __construct($customEventId)
+    public function __construct(private $customEventId)
     {
-        $this->customEventId = $customEventId;
     }
 
 

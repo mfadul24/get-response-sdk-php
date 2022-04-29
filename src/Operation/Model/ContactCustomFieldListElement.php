@@ -5,26 +5,9 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class ContactCustomFieldListElement extends BaseModel
 {
-    /** @var string */
-    private $customFieldId = self::FIELD_NOT_SET;
+    private string $fieldType = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $value = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $values = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $type = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $fieldType = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $valueType = self::FIELD_NOT_SET;
+    private string $valueType = self::FIELD_NOT_SET;
 
 
     /**
@@ -34,13 +17,8 @@ class ContactCustomFieldListElement extends BaseModel
      * @param string $values
      * @param string $type
      */
-    public function __construct($customFieldId, $name, $value, $values, $type)
+    public function __construct(private $customFieldId, private $name, private $value, private $values, private $type)
     {
-        $this->customFieldId = $customFieldId;
-        $this->name = $name;
-        $this->value = $value;
-        $this->values = $values;
-        $this->type = $type;
     }
 
 

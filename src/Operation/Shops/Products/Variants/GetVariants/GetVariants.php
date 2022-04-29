@@ -9,35 +9,23 @@ class GetVariants extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/variants';
+    final const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/variants';
 
-    /** @var string */
-    private $shopId;
+    private ?\Getresponse\Sdk\Operation\Shops\Products\Variants\GetVariants\GetVariantsSearchQuery $query = null;
 
-    /** @var string */
-    private $productId;
+    private ?\Getresponse\Sdk\Operation\Shops\Products\Variants\GetVariants\GetVariantsSortParams $sort = null;
 
-    /** @var GetVariantsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetVariantsSortParams */
-    private $sort;
-
-    /** @var Pagination */
-    private $pagination;
-
-    /** @var GetVariantsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\Products\Variants\GetVariants\GetVariantsFields $fields = null;
 
 
     /**
      * @param string $shopId
      * @param string $productId
      */
-    public function __construct($shopId, $productId)
+    public function __construct(private $shopId, private $productId)
     {
-        $this->shopId = $shopId;
-        $this->productId = $productId;
     }
 
 
@@ -55,7 +43,6 @@ class GetVariants extends QueryOperation
 
 
     /**
-     * @param GetVariantsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetVariantsSearchQuery $query)
@@ -66,7 +53,6 @@ class GetVariants extends QueryOperation
 
 
     /**
-     * @param GetVariantsSortParams $sort
      * @return $this
      */
     public function setSort(GetVariantsSortParams $sort)
@@ -77,7 +63,6 @@ class GetVariants extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -88,7 +73,6 @@ class GetVariants extends QueryOperation
 
 
     /**
-     * @param GetVariantsFields $fields
      * @return $this
      */
     public function setFields(GetVariantsFields $fields)

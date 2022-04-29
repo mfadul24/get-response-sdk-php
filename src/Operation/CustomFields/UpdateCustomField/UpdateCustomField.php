@@ -11,23 +11,15 @@ class UpdateCustomField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/custom-fields/{customFieldId}';
-
-    /** @var ModelUpdateCustomField */
-    protected $data;
-
-    /** @var string */
-    private $customFieldId;
+    final const METHOD_URL = '/v3/custom-fields/{customFieldId}';
 
 
     /**
      * @param ModelUpdateCustomField $data
      * @param string $customFieldId
      */
-    public function __construct(ModelUpdateCustomField $data, $customFieldId)
+    public function __construct(protected ModelUpdateCustomField $data, private $customFieldId)
     {
-        $this->data = $data;
-        $this->customFieldId = $customFieldId;
     }
 
 

@@ -5,26 +5,13 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class SimpleProductCategory extends BaseModel
 {
-    /** @var string */
-    private $categoryId = self::FIELD_NOT_SET;
+    private string $url = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $externalId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $url = self::FIELD_NOT_SET;
+    private string $parentId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $externalId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $parentId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $isDefault = self::FIELD_NOT_SET;
+    private string $isDefault = self::FIELD_NOT_SET;
 
 
     /**
@@ -32,11 +19,8 @@ class SimpleProductCategory extends BaseModel
      * @param string $name
      * @param string $href
      */
-    public function __construct($categoryId, $name, $href)
+    public function __construct(private $categoryId, private $name, private $href)
     {
-        $this->categoryId = $categoryId;
-        $this->name = $name;
-        $this->href = $href;
     }
 
 

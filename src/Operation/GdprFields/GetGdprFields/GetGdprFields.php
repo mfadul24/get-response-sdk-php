@@ -9,16 +9,13 @@ class GetGdprFields extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/gdpr-fields';
+    final const METHOD_URL = '/v3/gdpr-fields';
 
-    /** @var GetGdprFieldsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\GdprFields\GetGdprFields\GetGdprFieldsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetGdprFieldsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\GdprFields\GetGdprFields\GetGdprFieldsFields $fields = null;
 
 
     /**
@@ -31,7 +28,6 @@ class GetGdprFields extends QueryOperation
 
 
     /**
-     * @param GetGdprFieldsSortParams $sort
      * @return $this
      */
     public function setSort(GetGdprFieldsSortParams $sort)
@@ -42,7 +38,6 @@ class GetGdprFields extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -53,7 +48,6 @@ class GetGdprFields extends QueryOperation
 
 
     /**
-     * @param GetGdprFieldsFields $fields
      * @return $this
      */
     public function setFields(GetGdprFieldsFields $fields)

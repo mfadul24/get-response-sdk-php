@@ -9,13 +9,11 @@ class GetLoginHistory extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/accounts/login-history';
+    final const METHOD_URL = '/v3/accounts/login-history';
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetLoginHistoryFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Accounts\LoginHistory\GetLoginHistory\GetLoginHistoryFields $fields = null;
 
 
     /**
@@ -28,7 +26,6 @@ class GetLoginHistory extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -39,7 +36,6 @@ class GetLoginHistory extends QueryOperation
 
 
     /**
-     * @param GetLoginHistoryFields $fields
      * @return $this
      */
     public function setFields(GetLoginHistoryFields $fields)

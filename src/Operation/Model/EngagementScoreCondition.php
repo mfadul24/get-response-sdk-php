@@ -3,25 +3,16 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class EngagementScoreCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $operator;
-
-    /** @var int */
-    private $value;
+    private string $operatorType = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $operator
      * @param int $value
      */
-    public function __construct($operator, $value)
+    public function __construct(private $operator, private $value)
     {
         parent::__construct('engagement_score');
-        $this->operator = $operator;
-        $this->value = $value;
     }
 
 

@@ -5,26 +5,13 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TemplateCategoryShort extends BaseModel
 {
-    /** @var string */
-    private $categoryId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $templates = self::FIELD_NOT_SET;
-
-
     /**
      * @param string $categoryId
      * @param string $name
      * @param string $templates
      */
-    public function __construct($categoryId, $name, $templates)
+    public function __construct(private $categoryId, private $name, private $templates)
     {
-        $this->categoryId = $categoryId;
-        $this->name = $name;
-        $this->templates = $templates;
     }
 
 

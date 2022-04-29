@@ -5,35 +5,26 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class AccountBilling extends BaseModel
 {
-    /** @var string */
-    private $listSize = self::FIELD_NOT_SET;
+    private string $listSize = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $paymentPlan = self::FIELD_NOT_SET;
+    private string $paymentPlan = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $subscriptionPrice = self::FIELD_NOT_SET;
+    private string $subscriptionPrice = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $renewalDate = self::FIELD_NOT_SET;
+    private string $renewalDate = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $currencyCode = self::FIELD_NOT_SET;
+    private string $currencyCode = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $accountBalance = self::FIELD_NOT_SET;
+    private string $accountBalance = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $price = self::FIELD_NOT_SET;
+    private string $price = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $paymentMethod = self::FIELD_NOT_SET;
+    private string $paymentMethod = self::FIELD_NOT_SET;
 
-    /** @var \Getresponse\Sdk\Operation\Model\AccountBillingCreditCard */
-    private $creditCard = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\AccountBillingCreditCard $creditCard = self::FIELD_NOT_SET;
 
     /** @var \Getresponse\Sdk\Operation\Model\AccountBillingAddOn[] */
-    private $addons = self::FIELD_NOT_SET;
+    private string|array $addons = self::FIELD_NOT_SET;
 
 
     /**
@@ -108,9 +99,6 @@ class AccountBilling extends BaseModel
     }
 
 
-    /**
-     * @param \Getresponse\Sdk\Operation\Model\AccountBillingCreditCard $creditCard
-     */
     public function setCreditCard(AccountBillingCreditCard $creditCard)
     {
         $this->creditCard = $creditCard;

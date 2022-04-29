@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewContactTag extends BaseModel
 {
-    /** @var string */
-    private $tagId;
-
-
     /**
      * @param string $tagId
      */
-    public function __construct($tagId)
+    public function __construct(private $tagId)
     {
-        $this->tagId = $tagId;
     }
 
 

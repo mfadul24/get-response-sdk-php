@@ -8,21 +8,16 @@ class GetFile extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/file-library/files/{fileId}';
+    final const METHOD_URL = '/v3/file-library/files/{fileId}';
 
-    /** @var string */
-    private $fileId;
-
-    /** @var GetFileFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\FileLibrary\Files\GetFile\GetFileFields $fields = null;
 
 
     /**
      * @param string $fileId
      */
-    public function __construct($fileId)
+    public function __construct(private $fileId)
     {
-        $this->fileId = $fileId;
     }
 
 
@@ -40,7 +35,6 @@ class GetFile extends QueryOperation
 
 
     /**
-     * @param GetFileFields $fields
      * @return $this
      */
     public function setFields(GetFileFields $fields)

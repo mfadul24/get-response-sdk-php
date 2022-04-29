@@ -11,18 +11,14 @@ class CreateFolder extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/file-library/folders';
-
-    /** @var NewFolder */
-    protected $data;
+    final const METHOD_URL = '/v3/file-library/folders';
 
 
     /**
      * @param NewFolder $data
      */
-    public function __construct(NewFolder $data)
+    public function __construct(protected NewFolder $data)
     {
-        $this->data = $data;
     }
 
 

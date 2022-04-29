@@ -5,50 +5,30 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewProductVariant extends BaseModel
 {
-    /** @var string */
-    private $name;
+    private string $url = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $url = self::FIELD_NOT_SET;
+    private string|float $previousPrice = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $sku;
+    private string|float $previousPriceTax = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $price;
+    private string|int $quantity = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $priceTax;
+    private string|int $position = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $previousPrice = self::FIELD_NOT_SET;
+    private string $barcode = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $previousPriceTax = self::FIELD_NOT_SET;
+    private string $externalId = self::FIELD_NOT_SET;
 
-    /** @var int */
-    private $quantity = self::FIELD_NOT_SET;
-
-    /** @var int */
-    private $position = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $barcode = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $externalId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $description = self::FIELD_NOT_SET;
+    private string $description = self::FIELD_NOT_SET;
 
     /** @var NewProductVariantImage[] */
-    private $images = self::FIELD_NOT_SET;
+    private string|array $images = self::FIELD_NOT_SET;
 
     /** @var NewMetaField[] */
-    private $metaFields = self::FIELD_NOT_SET;
+    private string|array $metaFields = self::FIELD_NOT_SET;
 
     /** @var NewTax[] */
-    private $taxes = self::FIELD_NOT_SET;
+    private string|array $taxes = self::FIELD_NOT_SET;
 
 
     /**
@@ -57,12 +37,8 @@ class NewProductVariant extends BaseModel
      * @param float $price
      * @param float $priceTax
      */
-    public function __construct($name, $sku, $price, $priceTax)
+    public function __construct(private $name, private $sku, private $price, private $priceTax)
     {
-        $this->name = $name;
-        $this->sku = $sku;
-        $this->price = $price;
-        $this->priceTax = $priceTax;
     }
 
 

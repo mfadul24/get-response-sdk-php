@@ -5,31 +5,14 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewCartSelectedProductVariant extends BaseModel
 {
-    /** @var string */
-    private $variantId;
-
-    /** @var int */
-    private $quantity;
-
-    /** @var float */
-    private $price;
-
-    /** @var float */
-    private $priceTax;
-
-
     /**
      * @param string $variantId
      * @param int $quantity
      * @param float $price
      * @param float $priceTax
      */
-    public function __construct($variantId, $quantity, $price, $priceTax)
+    public function __construct(private $variantId, private $quantity, private $price, private $priceTax)
     {
-        $this->variantId = $variantId;
-        $this->quantity = $quantity;
-        $this->price = $price;
-        $this->priceTax = $priceTax;
     }
 
 

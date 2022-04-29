@@ -5,38 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CartListElement extends BaseModel
 {
-    /** @var string */
-    private $cartId = self::FIELD_NOT_SET;
+    private string $externalId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $contactId = self::FIELD_NOT_SET;
+    private string $totalTaxPrice = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $currency = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $totalPrice = self::FIELD_NOT_SET;
-
-    /** @var \Getresponse\Sdk\Operation\Model\CartSelectedVariants[] */
-    private $selectedVariants = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $externalId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $totalTaxPrice = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $cartUrl = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $createdOn = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $updatedOn = self::FIELD_NOT_SET;
+    private string $cartUrl = self::FIELD_NOT_SET;
 
 
     /**
@@ -49,16 +22,8 @@ class CartListElement extends BaseModel
      * @param string $createdOn
      * @param string $updatedOn
      */
-    public function __construct($cartId, $contactId, $currency, $totalPrice, array $selectedVariants, $href, $createdOn, $updatedOn)
+    public function __construct(private $cartId, private $contactId, private $currency, private $totalPrice, private readonly array $selectedVariants, private $href, private $createdOn, private $updatedOn)
     {
-        $this->cartId = $cartId;
-        $this->contactId = $contactId;
-        $this->currency = $currency;
-        $this->totalPrice = $totalPrice;
-        $this->selectedVariants = $selectedVariants;
-        $this->href = $href;
-        $this->createdOn = $createdOn;
-        $this->updatedOn = $updatedOn;
     }
 
 

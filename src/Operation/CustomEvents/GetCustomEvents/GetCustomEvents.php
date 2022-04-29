@@ -9,19 +9,15 @@ class GetCustomEvents extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/custom-events';
+    final const METHOD_URL = '/v3/custom-events';
 
-    /** @var GetCustomEventsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\CustomEvents\GetCustomEvents\GetCustomEventsSearchQuery $query = null;
 
-    /** @var GetCustomEventsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\CustomEvents\GetCustomEvents\GetCustomEventsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetCustomEventsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\CustomEvents\GetCustomEvents\GetCustomEventsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetCustomEvents extends QueryOperation
 
 
     /**
-     * @param GetCustomEventsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetCustomEventsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetCustomEvents extends QueryOperation
 
 
     /**
-     * @param GetCustomEventsSortParams $sort
      * @return $this
      */
     public function setSort(GetCustomEventsSortParams $sort)
@@ -56,7 +50,6 @@ class GetCustomEvents extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetCustomEvents extends QueryOperation
 
 
     /**
-     * @param GetCustomEventsFields $fields
      * @return $this
      */
     public function setFields(GetCustomEventsFields $fields)

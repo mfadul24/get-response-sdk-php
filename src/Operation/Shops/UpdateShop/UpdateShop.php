@@ -11,23 +11,15 @@ class UpdateShop extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}';
-
-    /** @var ModelUpdateShop */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
+    final const METHOD_URL = '/v3/shops/{shopId}';
 
 
     /**
      * @param ModelUpdateShop $data
      * @param string $shopId
      */
-    public function __construct(ModelUpdateShop $data, $shopId)
+    public function __construct(protected ModelUpdateShop $data, private $shopId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
     }
 
 

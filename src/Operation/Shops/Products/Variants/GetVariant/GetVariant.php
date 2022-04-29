@@ -8,19 +8,9 @@ class GetVariant extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/variants/{variantId}';
+    final const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/variants/{variantId}';
 
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $productId;
-
-    /** @var string */
-    private $variantId;
-
-    /** @var GetVariantFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\Products\Variants\GetVariant\GetVariantFields $fields = null;
 
 
     /**
@@ -28,11 +18,8 @@ class GetVariant extends QueryOperation
      * @param string $productId
      * @param string $variantId
      */
-    public function __construct($shopId, $productId, $variantId)
+    public function __construct(private $shopId, private $productId, private $variantId)
     {
-        $this->shopId = $shopId;
-        $this->productId = $productId;
-        $this->variantId = $variantId;
     }
 
 
@@ -50,7 +37,6 @@ class GetVariant extends QueryOperation
 
 
     /**
-     * @param GetVariantFields $fields
      * @return $this
      */
     public function setFields(GetVariantFields $fields)

@@ -9,19 +9,15 @@ class GetShops extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops';
+    final const METHOD_URL = '/v3/shops';
 
-    /** @var GetShopsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Shops\GetShops\GetShopsSearchQuery $query = null;
 
-    /** @var GetShopsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Shops\GetShops\GetShopsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetShopsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\GetShops\GetShopsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetShops extends QueryOperation
 
 
     /**
-     * @param GetShopsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetShopsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetShops extends QueryOperation
 
 
     /**
-     * @param GetShopsSortParams $sort
      * @return $this
      */
     public function setSort(GetShopsSortParams $sort)
@@ -56,7 +50,6 @@ class GetShops extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetShops extends QueryOperation
 
 
     /**
-     * @param GetShopsFields $fields
      * @return $this
      */
     public function setFields(GetShopsFields $fields)

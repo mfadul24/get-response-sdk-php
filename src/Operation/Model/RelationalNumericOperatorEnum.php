@@ -5,12 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseEnum;
 
 class RelationalNumericOperatorEnum extends BaseEnum
 {
-    const NUMERIC_LT = 'numeric_lt';
-    const NUMERIC_GT = 'numeric_gt';
-    const NUMERIC_EQ = 'numeric_eq';
-    const NUMERIC_NOT_EQ = 'numeric_not_eq';
-    const NUMERIC_LT_EQ = 'numeric_lt_eq';
-    const NUMERIC_GT_EQ = 'numeric_gt_eq';
+    final const NUMERIC_LT = 'numeric_lt';
+    final const NUMERIC_GT = 'numeric_gt';
+    final const NUMERIC_EQ = 'numeric_eq';
+    final const NUMERIC_NOT_EQ = 'numeric_not_eq';
+    final const NUMERIC_LT_EQ = 'numeric_lt_eq';
+    final const NUMERIC_GT_EQ = 'numeric_gt_eq';
 
     /**
      * @return bool

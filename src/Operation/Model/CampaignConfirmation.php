@@ -5,31 +5,21 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CampaignConfirmation extends BaseModel
 {
-    /** @var FromFieldReference */
-    private $fromField = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\FromFieldReference $fromField = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $redirectType = self::FIELD_NOT_SET;
+    private string $redirectType = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $mimeType = self::FIELD_NOT_SET;
+    private string $mimeType = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $redirectUrl = self::FIELD_NOT_SET;
+    private string $redirectUrl = self::FIELD_NOT_SET;
 
-    /** @var FromFieldReference */
-    private $replyTo = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\FromFieldReference $replyTo = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $subscriptionConfirmationBodyId = self::FIELD_NOT_SET;
+    private string $subscriptionConfirmationBodyId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $subscriptionConfirmationSubjectId = self::FIELD_NOT_SET;
+    private string $subscriptionConfirmationSubjectId = self::FIELD_NOT_SET;
 
 
-    /**
-     * @param FromFieldReference $fromField
-     */
     public function setFromField(FromFieldReference $fromField)
     {
         $this->fromField = $fromField;
@@ -63,9 +53,6 @@ class CampaignConfirmation extends BaseModel
     }
 
 
-    /**
-     * @param FromFieldReference $replyTo
-     */
     public function setReplyTo(FromFieldReference $replyTo)
     {
         $this->replyTo = $replyTo;

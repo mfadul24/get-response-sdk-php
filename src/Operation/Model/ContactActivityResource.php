@@ -5,14 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class ContactActivityResource extends BaseModel
 {
-    /** @var string */
-    private $resourceId = self::FIELD_NOT_SET;
+    private string $resourceId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $resourceType = self::FIELD_NOT_SET;
+    private string $resourceType = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
+    private string $href = self::FIELD_NOT_SET;
 
 
     /**

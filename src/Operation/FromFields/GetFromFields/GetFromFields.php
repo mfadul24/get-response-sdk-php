@@ -9,19 +9,15 @@ class GetFromFields extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/from-fields';
+    final const METHOD_URL = '/v3/from-fields';
 
-    /** @var GetFromFieldsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\FromFields\GetFromFields\GetFromFieldsSearchQuery $query = null;
 
-    /** @var GetFromFieldsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\FromFields\GetFromFields\GetFromFieldsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetFromFieldsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\FromFields\GetFromFields\GetFromFieldsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetFromFields extends QueryOperation
 
 
     /**
-     * @param GetFromFieldsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetFromFieldsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetFromFields extends QueryOperation
 
 
     /**
-     * @param GetFromFieldsSortParams $sort
      * @return $this
      */
     public function setSort(GetFromFieldsSortParams $sort)
@@ -56,7 +50,6 @@ class GetFromFields extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetFromFields extends QueryOperation
 
 
     /**
-     * @param GetFromFieldsFields $fields
      * @return $this
      */
     public function setFields(GetFromFieldsFields $fields)

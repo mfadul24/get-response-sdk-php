@@ -9,16 +9,7 @@ class DeleteVariant extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/variants/{variantId}';
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $productId;
-
-    /** @var string */
-    private $variantId;
+    final const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/variants/{variantId}';
 
 
     /**
@@ -26,11 +17,8 @@ class DeleteVariant extends CommandOperation
      * @param string $productId
      * @param string $variantId
      */
-    public function __construct($shopId, $productId, $variantId)
+    public function __construct(private $shopId, private $productId, private $variantId)
     {
-        $this->shopId = $shopId;
-        $this->productId = $productId;
-        $this->variantId = $variantId;
     }
 
 

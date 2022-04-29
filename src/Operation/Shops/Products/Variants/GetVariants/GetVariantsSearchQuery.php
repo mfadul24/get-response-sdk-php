@@ -66,7 +66,6 @@ class GetVariantsSearchQuery extends SearchQuery
 
 
     /**
-     * @param DateRangeSearch $createdAt
      * @return $this
      * @throws \InvalidArgumentException
      */

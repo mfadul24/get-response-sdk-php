@@ -8,21 +8,16 @@ class GetFromField extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/from-fields/{fromFieldId}';
+    final const METHOD_URL = '/v3/from-fields/{fromFieldId}';
 
-    /** @var string */
-    private $fromFieldId;
-
-    /** @var GetFromFieldFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\FromFields\GetFromField\GetFromFieldFields $fields = null;
 
 
     /**
      * @param string $fromFieldId
      */
-    public function __construct($fromFieldId)
+    public function __construct(private $fromFieldId)
     {
-        $this->fromFieldId = $fromFieldId;
     }
 
 
@@ -40,7 +35,6 @@ class GetFromField extends QueryOperation
 
 
     /**
-     * @param GetFromFieldFields $fields
      * @return $this
      */
     public function setFields(GetFromFieldFields $fields)

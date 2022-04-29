@@ -5,17 +5,13 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class FormStatistics extends BaseModel
 {
-    /** @var string */
-    private $visitors = self::FIELD_NOT_SET;
+    private string $visitors = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $uniqueVisitors = self::FIELD_NOT_SET;
+    private string $uniqueVisitors = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $subscribed = self::FIELD_NOT_SET;
+    private string $subscribed = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $subscriptionRate = self::FIELD_NOT_SET;
+    private string $subscriptionRate = self::FIELD_NOT_SET;
 
 
     /**

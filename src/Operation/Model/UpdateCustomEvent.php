@@ -5,11 +5,10 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateCustomEvent extends BaseModel
 {
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
     /** @var CustomEventAttributeDetails[] */
-    private $attributes = self::FIELD_NOT_SET;
+    private string|array $attributes = self::FIELD_NOT_SET;
 
 
     /**

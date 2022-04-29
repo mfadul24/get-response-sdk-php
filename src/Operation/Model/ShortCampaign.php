@@ -5,14 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class ShortCampaign extends BaseModel
 {
-    /** @var string */
-    private $campaignId = self::FIELD_NOT_SET;
+    private string $campaignId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
+    private string $href = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
 
     /**

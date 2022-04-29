@@ -108,7 +108,6 @@ class GetresponseClientFactory
     }
     
     /**
-     * @param GetresponseClient $client
      * @return Debugger
      */
     public static function createDebugger(GetresponseClient $client)

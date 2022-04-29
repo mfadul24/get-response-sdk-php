@@ -8,21 +8,16 @@ class GetLandingPage extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/landing-pages/{landingPageId}';
+    final const METHOD_URL = '/v3/landing-pages/{landingPageId}';
 
-    /** @var string */
-    private $landingPageId;
-
-    /** @var GetLandingPageFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\LandingPages\GetLandingPage\GetLandingPageFields $fields = null;
 
 
     /**
      * @param string $landingPageId
      */
-    public function __construct($landingPageId)
+    public function __construct(private $landingPageId)
     {
-        $this->landingPageId = $landingPageId;
     }
 
 
@@ -40,7 +35,6 @@ class GetLandingPage extends QueryOperation
 
 
     /**
-     * @param GetLandingPageFields $fields
      * @return $this
      */
     public function setFields(GetLandingPageFields $fields)

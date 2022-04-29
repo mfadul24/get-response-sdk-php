@@ -8,21 +8,16 @@ class GetAutoresponderThumbnail extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/autoresponders/{autoresponderId}/thumbnail';
+    final const METHOD_URL = '/v3/autoresponders/{autoresponderId}/thumbnail';
 
-    /** @var string */
-    private $autoresponderId;
-
-    /** @var GetAutoresponderThumbnailUrlQueryParameters */
-    private $urlParameterQuery;
+    private ?\Getresponse\Sdk\Operation\Autoresponders\Thumbnail\GetAutoresponderThumbnail\GetAutoresponderThumbnailUrlQueryParameters $urlParameterQuery = null;
 
 
     /**
      * @param string $autoresponderId
      */
-    public function __construct($autoresponderId)
+    public function __construct(private $autoresponderId)
     {
-        $this->autoresponderId = $autoresponderId;
     }
 
 
@@ -40,7 +35,6 @@ class GetAutoresponderThumbnail extends QueryOperation
 
 
     /**
-     * @param GetAutoresponderThumbnailUrlQueryParameters $urlParameterQuery
      * @return $this
      */
     public function setUrlParameterQuery(GetAutoresponderThumbnailUrlQueryParameters $urlParameterQuery)

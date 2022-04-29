@@ -9,19 +9,15 @@ class GetForms extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/forms';
+    final const METHOD_URL = '/v3/forms';
 
-    /** @var GetFormsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Forms\GetForms\GetFormsSearchQuery $query = null;
 
-    /** @var GetFormsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Forms\GetForms\GetFormsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetFormsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Forms\GetForms\GetFormsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetForms extends QueryOperation
 
 
     /**
-     * @param GetFormsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetFormsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetForms extends QueryOperation
 
 
     /**
-     * @param GetFormsSortParams $sort
      * @return $this
      */
     public function setSort(GetFormsSortParams $sort)
@@ -56,7 +50,6 @@ class GetForms extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetForms extends QueryOperation
 
 
     /**
-     * @param GetFormsFields $fields
      * @return $this
      */
     public function setFields(GetFormsFields $fields)

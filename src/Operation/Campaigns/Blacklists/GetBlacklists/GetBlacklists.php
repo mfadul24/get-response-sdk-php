@@ -8,21 +8,16 @@ class GetBlacklists extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/campaigns/{campaignId}/blacklists';
+    final const METHOD_URL = '/v3/campaigns/{campaignId}/blacklists';
 
-    /** @var string */
-    private $campaignId;
-
-    /** @var GetBlacklistsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Campaigns\Blacklists\GetBlacklists\GetBlacklistsSearchQuery $query = null;
 
 
     /**
      * @param string $campaignId
      */
-    public function __construct($campaignId)
+    public function __construct(private $campaignId)
     {
-        $this->campaignId = $campaignId;
     }
 
 
@@ -40,7 +35,6 @@ class GetBlacklists extends QueryOperation
 
 
     /**
-     * @param GetBlacklistsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetBlacklistsSearchQuery $query)

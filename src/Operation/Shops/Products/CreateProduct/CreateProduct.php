@@ -11,23 +11,15 @@ class CreateProduct extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/products';
-
-    /** @var NewProduct */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
+    final const METHOD_URL = '/v3/shops/{shopId}/products';
 
 
     /**
      * @param NewProduct $data
      * @param string $shopId
      */
-    public function __construct(NewProduct $data, $shopId)
+    public function __construct(protected NewProduct $data, private $shopId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
     }
 
 

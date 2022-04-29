@@ -11,18 +11,14 @@ class CreateCustomEvent extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/custom-events';
-
-    /** @var NewCustomEvent */
-    protected $data;
+    final const METHOD_URL = '/v3/custom-events';
 
 
     /**
      * @param NewCustomEvent $data
      */
-    public function __construct(NewCustomEvent $data)
+    public function __construct(protected NewCustomEvent $data)
     {
-        $this->data = $data;
     }
 
 

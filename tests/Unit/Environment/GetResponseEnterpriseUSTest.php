@@ -11,10 +11,7 @@ use GuzzleHttp\Psr7\Request;
  */
 class GetResponseEnterpriseUSTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var GetResponseEnterpriseUS
-     */
-    private $systemUnderTest;
+    private \Getresponse\Sdk\Environment\GetResponseEnterpriseUS $systemUnderTest;
 
     protected function setUp(): void
     {

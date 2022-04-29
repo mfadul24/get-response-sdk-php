@@ -42,7 +42,6 @@ class GetContactsSearchQuery extends SearchQuery
 
 
     /**
-     * @param DateRangeSearch $createdOn
      * @return $this
      * @throws \InvalidArgumentException
      */

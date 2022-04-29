@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewFolder extends BaseModel
 {
-    /** @var string */
-    private $name;
-
-
     /**
      * @param string $name
      */
-    public function __construct($name)
+    public function __construct(private $name)
     {
-        $this->name = $name;
     }
 
 

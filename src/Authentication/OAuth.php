@@ -11,24 +11,17 @@ use Psr\Http\Message\RequestInterface;
  */
 class OAuth implements AuthenticationProvider
 {
-    const HEADER_PREFIX = 'Bearer ';
-
-    /**
-     * @var string
-     */
-    private $accessToken;
+    final const HEADER_PREFIX = 'Bearer ';
 
     /**
      * OAuth constructor.
      * @param string $accessToken
      */
-    public function __construct($accessToken)
+    public function __construct(private $accessToken)
     {
-        $this->accessToken = $accessToken;
     }
 
     /**
-     * @param RequestInterface $request
      * @return RequestInterface
      */
     public function authenticate(RequestInterface $request)

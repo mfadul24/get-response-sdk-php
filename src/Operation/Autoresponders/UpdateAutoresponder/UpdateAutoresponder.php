@@ -11,23 +11,15 @@ class UpdateAutoresponder extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/autoresponders/{autoresponderId}';
-
-    /** @var ModelUpdateAutoresponder */
-    protected $data;
-
-    /** @var string */
-    private $autoresponderId;
+    final const METHOD_URL = '/v3/autoresponders/{autoresponderId}';
 
 
     /**
      * @param ModelUpdateAutoresponder $data
      * @param string $autoresponderId
      */
-    public function __construct(ModelUpdateAutoresponder $data, $autoresponderId)
+    public function __construct(protected ModelUpdateAutoresponder $data, private $autoresponderId)
     {
-        $this->data = $data;
-        $this->autoresponderId = $autoresponderId;
     }
 
 

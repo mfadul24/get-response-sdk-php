@@ -5,43 +5,6 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class MessageStatisticsListElement extends BaseModel
 {
-    /** @var string */
-    private $timeInterval = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $sent = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $totalOpened = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $uniqueOpened = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $totalClicked = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $uniqueClicked = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $goals = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $uniqueGoals = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $forwarded = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $unsubscribed = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $bounced = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $complaints = self::FIELD_NOT_SET;
-
-
     /**
      * @param string $timeInterval
      * @param string $sent
@@ -56,20 +19,8 @@ class MessageStatisticsListElement extends BaseModel
      * @param string $bounced
      * @param string $complaints
      */
-    public function __construct($timeInterval, $sent, $totalOpened, $uniqueOpened, $totalClicked, $uniqueClicked, $goals, $uniqueGoals, $forwarded, $unsubscribed, $bounced, $complaints)
+    public function __construct(private $timeInterval, private $sent, private $totalOpened, private $uniqueOpened, private $totalClicked, private $uniqueClicked, private $goals, private $uniqueGoals, private $forwarded, private $unsubscribed, private $bounced, private $complaints)
     {
-        $this->timeInterval = $timeInterval;
-        $this->sent = $sent;
-        $this->totalOpened = $totalOpened;
-        $this->uniqueOpened = $uniqueOpened;
-        $this->totalClicked = $totalClicked;
-        $this->uniqueClicked = $uniqueClicked;
-        $this->goals = $goals;
-        $this->uniqueGoals = $uniqueGoals;
-        $this->forwarded = $forwarded;
-        $this->unsubscribed = $unsubscribed;
-        $this->bounced = $bounced;
-        $this->complaints = $complaints;
     }
 
 

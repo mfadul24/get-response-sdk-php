@@ -5,38 +5,27 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class FormVariantListElement extends BaseModel
 {
-    /** @var string */
-    private $formId = self::FIELD_NOT_SET;
+    private string $formId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $webformId = self::FIELD_NOT_SET;
+    private string $webformId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $variant = self::FIELD_NOT_SET;
+    private string $variant = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $variantName = self::FIELD_NOT_SET;
+    private string $variantName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $winner = self::FIELD_NOT_SET;
+    private string $winner = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $status = self::FIELD_NOT_SET;
+    private string $status = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $createdOn = self::FIELD_NOT_SET;
+    private string $createdOn = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $numberOfVisitors = self::FIELD_NOT_SET;
+    private string $numberOfVisitors = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $numberOfUniqueVisitors = self::FIELD_NOT_SET;
+    private string $numberOfUniqueVisitors = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $numberOfSubscribers = self::FIELD_NOT_SET;
+    private string $numberOfSubscribers = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $subscriptionRate = self::FIELD_NOT_SET;
+    private string $subscriptionRate = self::FIELD_NOT_SET;
 
 
     /**

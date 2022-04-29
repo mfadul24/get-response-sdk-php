@@ -11,18 +11,14 @@ class CreateFromField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/from-fields';
-
-    /** @var NewFromField */
-    protected $data;
+    final const METHOD_URL = '/v3/from-fields';
 
 
     /**
      * @param NewFromField $data
      */
-    public function __construct(NewFromField $data)
+    public function __construct(protected NewFromField $data)
     {
-        $this->data = $data;
     }
 
 

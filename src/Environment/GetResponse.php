@@ -11,7 +11,7 @@ use Psr\Http\Message\RequestInterface;
  */
 class GetResponse implements Environment
 {
-    const URL = 'https://api.getresponse.com';
+    final const URL = 'https://api.getresponse.com';
 
     /**
      * @return string
@@ -22,7 +22,6 @@ class GetResponse implements Environment
     }
 
     /**
-     * @param RequestInterface $request
      * @return RequestInterface
      */
     public function processRequest(RequestInterface $request)

@@ -3,27 +3,14 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class LastOpenDateCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType;
-
-    /** @var string */
-    private $operator;
-
-    /** @var string */
-    private $value;
-
-
     /**
      * @param string $operatorType
      * @param string $operator
      * @param string $value
      */
-    public function __construct($operatorType, $operator, $value)
+    public function __construct(private $operatorType, private $operator, private $value)
     {
         parent::__construct('last_open_date');
-        $this->operatorType = $operatorType;
-        $this->operator = $operator;
-        $this->value = $value;
     }
 
 

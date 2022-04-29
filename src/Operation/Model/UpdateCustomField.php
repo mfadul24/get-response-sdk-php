@@ -5,21 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateCustomField extends BaseModel
 {
-    /** @var StringBooleanEnum */
-    private $hidden;
-
-    /** @var array */
-    private $values;
-
-
     /**
      * @param StringBooleanEnum $hidden
      * @param array $values
      */
-    public function __construct(StringBooleanEnum $hidden, array $values)
+    public function __construct(private readonly StringBooleanEnum $hidden, private readonly array $values)
     {
-        $this->hidden = $hidden;
-        $this->values = $values;
     }
 
 

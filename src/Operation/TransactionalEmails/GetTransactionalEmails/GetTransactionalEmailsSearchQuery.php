@@ -51,7 +51,6 @@ class GetTransactionalEmailsSearchQuery extends SearchQuery
 
 
     /**
-     * @param DateRangeSearch $sentOn
      * @return $this
      * @throws \InvalidArgumentException
      */

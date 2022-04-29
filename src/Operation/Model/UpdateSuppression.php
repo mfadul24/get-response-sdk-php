@@ -5,21 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateSuppression extends BaseModel
 {
-    /** @var string */
-    private $name;
-
-    /** @var array */
-    private $masks;
-
-
     /**
      * @param string $name
      * @param array $masks
      */
-    public function __construct($name, array $masks)
+    public function __construct(private $name, private readonly array $masks)
     {
-        $this->name = $name;
-        $this->masks = $masks;
     }
 
 

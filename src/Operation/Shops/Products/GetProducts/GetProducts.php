@@ -9,30 +9,22 @@ class GetProducts extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/products';
+    final const METHOD_URL = '/v3/shops/{shopId}/products';
 
-    /** @var string */
-    private $shopId;
+    private ?\Getresponse\Sdk\Operation\Shops\Products\GetProducts\GetProductsSearchQuery $query = null;
 
-    /** @var GetProductsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Shops\Products\GetProducts\GetProductsSortParams $sort = null;
 
-    /** @var GetProductsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var Pagination */
-    private $pagination;
-
-    /** @var GetProductsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\Products\GetProducts\GetProductsFields $fields = null;
 
 
     /**
      * @param string $shopId
      */
-    public function __construct($shopId)
+    public function __construct(private $shopId)
     {
-        $this->shopId = $shopId;
     }
 
 
@@ -50,7 +42,6 @@ class GetProducts extends QueryOperation
 
 
     /**
-     * @param GetProductsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetProductsSearchQuery $query)
@@ -61,7 +52,6 @@ class GetProducts extends QueryOperation
 
 
     /**
-     * @param GetProductsSortParams $sort
      * @return $this
      */
     public function setSort(GetProductsSortParams $sort)
@@ -72,7 +62,6 @@ class GetProducts extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -83,7 +72,6 @@ class GetProducts extends QueryOperation
 
 
     /**
-     * @param GetProductsFields $fields
      * @return $this
      */
     public function setFields(GetProductsFields $fields)

@@ -5,26 +5,13 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewShop extends BaseModel
 {
-    /** @var string */
-    private $name;
-
-    /** @var string */
-    private $locale;
-
-    /** @var string */
-    private $currency;
-
-
     /**
      * @param string $name
      * @param string $locale
      * @param string $currency
      */
-    public function __construct($name, $locale, $currency)
+    public function __construct(private $name, private $locale, private $currency)
     {
-        $this->name = $name;
-        $this->locale = $locale;
-        $this->currency = $currency;
     }
 
 

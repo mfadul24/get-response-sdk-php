@@ -11,18 +11,14 @@ class UpdateBadge extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/accounts/badge';
-
-    /** @var UpdateAccountBadge */
-    protected $data;
+    final const METHOD_URL = '/v3/accounts/badge';
 
 
     /**
      * @param UpdateAccountBadge $data
      */
-    public function __construct(UpdateAccountBadge $data)
+    public function __construct(protected UpdateAccountBadge $data)
     {
-        $this->data = $data;
     }
 
 

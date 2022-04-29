@@ -9,19 +9,15 @@ class GetAutoresponders extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/autoresponders';
+    final const METHOD_URL = '/v3/autoresponders';
 
-    /** @var GetAutorespondersSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Autoresponders\GetAutoresponders\GetAutorespondersSearchQuery $query = null;
 
-    /** @var GetAutorespondersSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Autoresponders\GetAutoresponders\GetAutorespondersSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetAutorespondersFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Autoresponders\GetAutoresponders\GetAutorespondersFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetAutoresponders extends QueryOperation
 
 
     /**
-     * @param GetAutorespondersSearchQuery $query
      * @return $this
      */
     public function setQuery(GetAutorespondersSearchQuery $query)
@@ -45,7 +40,6 @@ class GetAutoresponders extends QueryOperation
 
 
     /**
-     * @param GetAutorespondersSortParams $sort
      * @return $this
      */
     public function setSort(GetAutorespondersSortParams $sort)
@@ -56,7 +50,6 @@ class GetAutoresponders extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetAutoresponders extends QueryOperation
 
 
     /**
-     * @param GetAutorespondersFields $fields
      * @return $this
      */
     public function setFields(GetAutorespondersFields $fields)

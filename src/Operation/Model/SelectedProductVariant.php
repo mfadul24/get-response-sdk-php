@@ -5,23 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class SelectedProductVariant extends BaseModel
 {
-    /** @var string */
-    private $variantId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $quantity = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $price = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $priceTax = self::FIELD_NOT_SET;
-
-    /** @var \Getresponse\Sdk\Operation\Model\SimpleTaxDetails[] */
-    private $taxes = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
+    private string $href = self::FIELD_NOT_SET;
 
 
     /**
@@ -31,13 +15,8 @@ class SelectedProductVariant extends BaseModel
      * @param string $priceTax
      * @param \Getresponse\Sdk\Operation\Model\SimpleTaxDetails[] $taxes
      */
-    public function __construct($variantId, $quantity, $price, $priceTax, array $taxes)
+    public function __construct(private $variantId, private $quantity, private $price, private $priceTax, private readonly array $taxes)
     {
-        $this->variantId = $variantId;
-        $this->quantity = $quantity;
-        $this->price = $price;
-        $this->priceTax = $priceTax;
-        $this->taxes = $taxes;
     }
 
 

@@ -11,23 +11,15 @@ class UpdateSearchContact extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/search-contacts/{searchContactId}';
-
-    /** @var UpdateSearchContacts */
-    protected $data;
-
-    /** @var string */
-    private $searchContactId;
+    final const METHOD_URL = '/v3/search-contacts/{searchContactId}';
 
 
     /**
      * @param UpdateSearchContacts $data
      * @param string $searchContactId
      */
-    public function __construct(UpdateSearchContacts $data, $searchContactId)
+    public function __construct(protected UpdateSearchContacts $data, private $searchContactId)
     {
-        $this->data = $data;
-        $this->searchContactId = $searchContactId;
     }
 
 

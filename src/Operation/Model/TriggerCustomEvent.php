@@ -5,24 +5,16 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TriggerCustomEvent extends BaseModel
 {
-    /** @var string */
-    private $name;
-
-    /** @var string */
-    private $contactId;
-
     /** @var TriggerCustomEventAttribute[] */
-    private $attributes = self::FIELD_NOT_SET;
+    private string|array $attributes = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $name
      * @param string $contactId
      */
-    public function __construct($name, $contactId)
+    public function __construct(private $name, private $contactId)
     {
-        $this->name = $name;
-        $this->contactId = $contactId;
     }
 
 

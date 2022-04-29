@@ -72,7 +72,6 @@ class GetStatisticsSearchQuery extends SearchQuery
 
 
     /**
-     * @param DateRangeSearch $timeFrame
      * @return $this
      * @throws \InvalidArgumentException
      */

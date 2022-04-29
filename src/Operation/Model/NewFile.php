@@ -5,31 +5,14 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewFile extends BaseModel
 {
-    /** @var string */
-    private $content;
-
-    /** @var string */
-    private $name;
-
-    /** @var string */
-    private $extension;
-
-    /** @var FolderShort */
-    private $folder;
-
-
     /**
      * @param string $content
      * @param string $name
      * @param string $extension
      * @param FolderShort $folder
      */
-    public function __construct($content, $name, $extension, FolderShort $folder = null)
+    public function __construct(private $content, private $name, private $extension, private readonly FolderShort $folder = null)
     {
-        $this->content = $content;
-        $this->name = $name;
-        $this->extension = $extension;
-        $this->folder = $folder;
     }
 
 

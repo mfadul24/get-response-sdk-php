@@ -5,16 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CampaignSubscriptionNotifications extends BaseModel
 {
-    /** @var StatusEnum */
-    private $status = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\StatusEnum $status = self::FIELD_NOT_SET;
 
     /** @var FromFieldReference[] */
-    private $recipients = self::FIELD_NOT_SET;
+    private string|array $recipients = self::FIELD_NOT_SET;
 
 
-    /**
-     * @param StatusEnum $status
-     */
     public function setStatus(StatusEnum $status)
     {
         $this->status = $status;

@@ -8,18 +8,14 @@ class GetCampaignStatisticsListSize extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/campaigns/statistics/list-size';
-
-    /** @var GetCampaignStatisticsListSizeSearchQuery */
-    private $query;
+    final const METHOD_URL = '/v3/campaigns/statistics/list-size';
 
 
     /**
      * @param GetCampaignStatisticsListSizeSearchQuery $query
      */
-    public function __construct(GetCampaignStatisticsListSizeSearchQuery $query)
+    public function __construct(private readonly GetCampaignStatisticsListSizeSearchQuery $query)
     {
-        $this->query = $query;
     }
 
 

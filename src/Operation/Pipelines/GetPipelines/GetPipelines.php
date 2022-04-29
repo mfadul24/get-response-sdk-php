@@ -9,16 +9,13 @@ class GetPipelines extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/pipelines';
+    final const METHOD_URL = '/v3/pipelines';
 
-    /** @var GetPipelinesSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Pipelines\GetPipelines\GetPipelinesSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetPipelinesFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Pipelines\GetPipelines\GetPipelinesFields $fields = null;
 
 
     /**
@@ -31,7 +28,6 @@ class GetPipelines extends QueryOperation
 
 
     /**
-     * @param GetPipelinesSortParams $sort
      * @return $this
      */
     public function setSort(GetPipelinesSortParams $sort)
@@ -42,7 +38,6 @@ class GetPipelines extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -53,7 +48,6 @@ class GetPipelines extends QueryOperation
 
 
     /**
-     * @param GetPipelinesFields $fields
      * @return $this
      */
     public function setFields(GetPipelinesFields $fields)

@@ -8,21 +8,16 @@ class GetAutoresponder extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/autoresponders/{autoresponderId}';
+    final const METHOD_URL = '/v3/autoresponders/{autoresponderId}';
 
-    /** @var string */
-    private $autoresponderId;
-
-    /** @var GetAutoresponderFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Autoresponders\GetAutoresponder\GetAutoresponderFields $fields = null;
 
 
     /**
      * @param string $autoresponderId
      */
-    public function __construct($autoresponderId)
+    public function __construct(private $autoresponderId)
     {
-        $this->autoresponderId = $autoresponderId;
     }
 
 
@@ -40,7 +35,6 @@ class GetAutoresponder extends QueryOperation
 
 
     /**
-     * @param GetAutoresponderFields $fields
      * @return $this
      */
     public function setFields(GetAutoresponderFields $fields)

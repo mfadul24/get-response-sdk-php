@@ -8,26 +8,17 @@ class GetTax extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/taxes/{taxId}';
+    final const METHOD_URL = '/v3/shops/{shopId}/taxes/{taxId}';
 
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $taxId;
-
-    /** @var GetTaxFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\Taxes\GetTax\GetTaxFields $fields = null;
 
 
     /**
      * @param string $shopId
      * @param string $taxId
      */
-    public function __construct($shopId, $taxId)
+    public function __construct(private $shopId, private $taxId)
     {
-        $this->shopId = $shopId;
-        $this->taxId = $taxId;
     }
 
 
@@ -45,7 +36,6 @@ class GetTax extends QueryOperation
 
 
     /**
-     * @param GetTaxFields $fields
      * @return $this
      */
     public function setFields(GetTaxFields $fields)

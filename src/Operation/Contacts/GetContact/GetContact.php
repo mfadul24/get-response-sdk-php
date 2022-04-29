@@ -8,21 +8,16 @@ class GetContact extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/contacts/{contactId}';
+    final const METHOD_URL = '/v3/contacts/{contactId}';
 
-    /** @var string */
-    private $contactId;
-
-    /** @var GetContactFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Contacts\GetContact\GetContactFields $fields = null;
 
 
     /**
      * @param string $contactId
      */
-    public function __construct($contactId)
+    public function __construct(private $contactId)
     {
-        $this->contactId = $contactId;
     }
 
 
@@ -40,7 +35,6 @@ class GetContact extends QueryOperation
 
 
     /**
-     * @param GetContactFields $fields
      * @return $this
      */
     public function setFields(GetContactFields $fields)

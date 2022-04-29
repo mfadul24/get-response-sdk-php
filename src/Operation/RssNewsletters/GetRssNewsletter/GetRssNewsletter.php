@@ -8,21 +8,16 @@ class GetRssNewsletter extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/rss-newsletters/{rssNewsletterId}';
+    final const METHOD_URL = '/v3/rss-newsletters/{rssNewsletterId}';
 
-    /** @var string */
-    private $rssNewsletterId;
-
-    /** @var GetRssNewsletterFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\RssNewsletters\GetRssNewsletter\GetRssNewsletterFields $fields = null;
 
 
     /**
      * @param string $rssNewsletterId
      */
-    public function __construct($rssNewsletterId)
+    public function __construct(private $rssNewsletterId)
     {
-        $this->rssNewsletterId = $rssNewsletterId;
     }
 
 
@@ -40,7 +35,6 @@ class GetRssNewsletter extends QueryOperation
 
 
     /**
-     * @param GetRssNewsletterFields $fields
      * @return $this
      */
     public function setFields(GetRssNewsletterFields $fields)

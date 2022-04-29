@@ -11,18 +11,14 @@ class UpdateAccount extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/accounts';
-
-    /** @var ModelUpdateAccount */
-    protected $data;
+    final const METHOD_URL = '/v3/accounts';
 
 
     /**
      * @param ModelUpdateAccount $data
      */
-    public function __construct(ModelUpdateAccount $data)
+    public function __construct(protected ModelUpdateAccount $data)
     {
-        $this->data = $data;
     }
 
 

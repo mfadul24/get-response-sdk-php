@@ -5,31 +5,22 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 abstract class AutoresponderSendSettings extends BaseModel
 {
-    /** @var string */
-    private $type;
+    private string|int $delayInHours = self::FIELD_NOT_SET;
 
-    /** @var int */
-    private $delayInHours = self::FIELD_NOT_SET;
+    private string|int $sendAtHour = self::FIELD_NOT_SET;
 
-    /** @var int */
-    private $sendAtHour = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\StringBooleanEnum $recurrence = self::FIELD_NOT_SET;
 
-    /** @var StringBooleanEnum */
-    private $recurrence = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\StringBooleanEnum $timeTravel = self::FIELD_NOT_SET;
 
-    /** @var StringBooleanEnum */
-    private $timeTravel = self::FIELD_NOT_SET;
-
-    /** @var array */
-    private $excludedDaysOfWeek = self::FIELD_NOT_SET;
+    private string|array $excludedDaysOfWeek = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $type
      */
-    public function __construct($type)
+    public function __construct(private $type)
     {
-        $this->type = $type;
     }
 
 

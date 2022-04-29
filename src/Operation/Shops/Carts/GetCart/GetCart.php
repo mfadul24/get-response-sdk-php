@@ -8,26 +8,17 @@ class GetCart extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/carts/{cartId}';
+    final const METHOD_URL = '/v3/shops/{shopId}/carts/{cartId}';
 
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $cartId;
-
-    /** @var GetCartFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\Carts\GetCart\GetCartFields $fields = null;
 
 
     /**
      * @param string $shopId
      * @param string $cartId
      */
-    public function __construct($shopId, $cartId)
+    public function __construct(private $shopId, private $cartId)
     {
-        $this->shopId = $shopId;
-        $this->cartId = $cartId;
     }
 
 
@@ -45,7 +36,6 @@ class GetCart extends QueryOperation
 
 
     /**
-     * @param GetCartFields $fields
      * @return $this
      */
     public function setFields(GetCartFields $fields)

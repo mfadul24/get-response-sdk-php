@@ -5,22 +5,18 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TransactionalEmailRecipients extends BaseModel
 {
-    /** @var TransactionalEmailRecipientTo */
-    private $to;
+    /** @var TransactionalEmailRecipient[] */
+    private string|array $cc = self::FIELD_NOT_SET;
 
     /** @var TransactionalEmailRecipient[] */
-    private $cc = self::FIELD_NOT_SET;
-
-    /** @var TransactionalEmailRecipient[] */
-    private $bcc = self::FIELD_NOT_SET;
+    private string|array $bcc = self::FIELD_NOT_SET;
 
 
     /**
      * @param TransactionalEmailRecipientTo $to
      */
-    public function __construct(TransactionalEmailRecipientTo $to)
+    public function __construct(private readonly TransactionalEmailRecipientTo $to)
     {
-        $this->to = $to;
     }
 
 

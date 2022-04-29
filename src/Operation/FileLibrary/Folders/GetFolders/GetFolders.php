@@ -9,19 +9,15 @@ class GetFolders extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/file-library/folders';
+    final const METHOD_URL = '/v3/file-library/folders';
 
-    /** @var GetFoldersSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\FileLibrary\Folders\GetFolders\GetFoldersSearchQuery $query = null;
 
-    /** @var GetFoldersSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\FileLibrary\Folders\GetFolders\GetFoldersSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetFoldersFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\FileLibrary\Folders\GetFolders\GetFoldersFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetFolders extends QueryOperation
 
 
     /**
-     * @param GetFoldersSearchQuery $query
      * @return $this
      */
     public function setQuery(GetFoldersSearchQuery $query)
@@ -45,7 +40,6 @@ class GetFolders extends QueryOperation
 
 
     /**
-     * @param GetFoldersSortParams $sort
      * @return $this
      */
     public function setSort(GetFoldersSortParams $sort)
@@ -56,7 +50,6 @@ class GetFolders extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetFolders extends QueryOperation
 
 
     /**
-     * @param GetFoldersFields $fields
      * @return $this
      */
     public function setFields(GetFoldersFields $fields)

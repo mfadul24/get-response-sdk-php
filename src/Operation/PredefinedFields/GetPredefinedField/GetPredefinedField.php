@@ -8,21 +8,16 @@ class GetPredefinedField extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/predefined-fields/{predefinedFieldId}';
+    final const METHOD_URL = '/v3/predefined-fields/{predefinedFieldId}';
 
-    /** @var string */
-    private $predefinedFieldId;
-
-    /** @var GetPredefinedFieldFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\PredefinedFields\GetPredefinedField\GetPredefinedFieldFields $fields = null;
 
 
     /**
      * @param string $predefinedFieldId
      */
-    public function __construct($predefinedFieldId)
+    public function __construct(private $predefinedFieldId)
     {
-        $this->predefinedFieldId = $predefinedFieldId;
     }
 
 
@@ -40,7 +35,6 @@ class GetPredefinedField extends QueryOperation
 
 
     /**
-     * @param GetPredefinedFieldFields $fields
      * @return $this
      */
     public function setFields(GetPredefinedFieldFields $fields)

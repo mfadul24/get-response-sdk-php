@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdatePredefinedField extends BaseModel
 {
-    /** @var string */
-    private $value;
-
-
     /**
      * @param string $value
      */
-    public function __construct($value)
+    public function __construct(private $value)
     {
-        $this->value = $value;
     }
 
 

@@ -5,23 +5,17 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class FormVariantShort extends BaseModel
 {
-    /** @var string */
-    private $variant = self::FIELD_NOT_SET;
+    private string $variant = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $winner = self::FIELD_NOT_SET;
+    private string $winner = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $status = self::FIELD_NOT_SET;
+    private string $status = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $createdOn = self::FIELD_NOT_SET;
+    private string $createdOn = self::FIELD_NOT_SET;
 
-    /** @var \Getresponse\Sdk\Operation\Model\FormStatistics */
-    private $statistics = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\FormStatistics $statistics = self::FIELD_NOT_SET;
 
 
     /**
@@ -69,9 +63,6 @@ class FormVariantShort extends BaseModel
     }
 
 
-    /**
-     * @param \Getresponse\Sdk\Operation\Model\FormStatistics $statistics
-     */
     public function setStatistics(FormStatistics $statistics)
     {
         $this->statistics = $statistics;

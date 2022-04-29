@@ -5,20 +5,8 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TemplateListElement extends BaseModel
 {
-    /** @var string */
-    private $templateId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $isFavourite = self::FIELD_NOT_SET;
-
     /** @var \Getresponse\Sdk\Operation\Model\TemplateCategoryShort[] */
-    private $category = self::FIELD_NOT_SET;
-
-    /** @var \Getresponse\Sdk\Operation\Model\TemplateColorVariantShort[] */
-    private $colorVariants = self::FIELD_NOT_SET;
+    private string|array $category = self::FIELD_NOT_SET;
 
 
     /**
@@ -27,12 +15,8 @@ class TemplateListElement extends BaseModel
      * @param string $isFavourite
      * @param \Getresponse\Sdk\Operation\Model\TemplateColorVariantShort[] $colorVariants
      */
-    public function __construct($templateId, $href, $isFavourite, array $colorVariants)
+    public function __construct(private $templateId, private $href, private $isFavourite, private readonly array $colorVariants)
     {
-        $this->templateId = $templateId;
-        $this->href = $href;
-        $this->isFavourite = $isFavourite;
-        $this->colorVariants = $colorVariants;
     }
 
 

@@ -11,16 +11,7 @@ class UpdateTax extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/taxes/{taxId}';
-
-    /** @var ModelUpdateTax */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $taxId;
+    final const METHOD_URL = '/v3/shops/{shopId}/taxes/{taxId}';
 
 
     /**
@@ -28,11 +19,8 @@ class UpdateTax extends CommandOperation
      * @param string $shopId
      * @param string $taxId
      */
-    public function __construct(ModelUpdateTax $data, $shopId, $taxId)
+    public function __construct(protected ModelUpdateTax $data, private $shopId, private $taxId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
-        $this->taxId = $taxId;
     }
 
 

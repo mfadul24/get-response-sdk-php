@@ -5,29 +5,24 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateProduct extends BaseModel
 {
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $type = self::FIELD_NOT_SET;
+    private string $type = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $url = self::FIELD_NOT_SET;
+    private string $url = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $vendor = self::FIELD_NOT_SET;
+    private string $vendor = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $externalId = self::FIELD_NOT_SET;
+    private string $externalId = self::FIELD_NOT_SET;
 
     /** @var NewProductCategory[] */
-    private $categories = self::FIELD_NOT_SET;
+    private string|array $categories = self::FIELD_NOT_SET;
 
     /** @var NewProductVariant[] */
-    private $variants = self::FIELD_NOT_SET;
+    private string|array $variants = self::FIELD_NOT_SET;
 
     /** @var NewMetaField[] */
-    private $metaFields = self::FIELD_NOT_SET;
+    private string|array $metaFields = self::FIELD_NOT_SET;
 
 
     /**

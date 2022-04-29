@@ -3,23 +3,14 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class RssNewsletterSendMonthlySettings extends RssNewsletterSendSettings
 {
-    /** @var int */
-    private $sendAtHour;
-
-    /** @var int */
-    private $sendAtMonthDay;
-
-
     /**
      * @param string $filter
      * @param int $sendAtHour
      * @param int $sendAtMonthDay
      */
-    public function __construct($filter, $sendAtHour, $sendAtMonthDay)
+    public function __construct($filter, private $sendAtHour, private $sendAtMonthDay)
     {
         parent::__construct('monthly', $filter);
-        $this->sendAtHour = $sendAtHour;
-        $this->sendAtMonthDay = $sendAtMonthDay;
     }
 
 

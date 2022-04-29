@@ -8,10 +8,9 @@ class GetBlacklists extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/accounts/blacklists';
+    final const METHOD_URL = '/v3/accounts/blacklists';
 
-    /** @var GetBlacklistsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Accounts\Blacklists\GetBlacklists\GetBlacklistsSearchQuery $query = null;
 
 
     /**
@@ -24,7 +23,6 @@ class GetBlacklists extends QueryOperation
 
 
     /**
-     * @param GetBlacklistsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetBlacklistsSearchQuery $query)

@@ -9,17 +9,12 @@ class DeleteFromField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/from-fields/{fromFieldId}';
+    final const METHOD_URL = '/v3/from-fields/{fromFieldId}';
 
-    /** @var DeleteFromFieldUrlQueryParameters */
-    private $urlParameterQuery;
-
-    /** @var string */
-    private $fromFieldId;
+    private ?\Getresponse\Sdk\Operation\FromFields\DeleteFromField\DeleteFromFieldUrlQueryParameters $urlParameterQuery = null;
 
 
     /**
-     * @param DeleteFromFieldUrlQueryParameters $urlParameterQuery
      * @return $this
      */
     public function setUrlParameterQuery(DeleteFromFieldUrlQueryParameters $urlParameterQuery)
@@ -32,9 +27,8 @@ class DeleteFromField extends CommandOperation
     /**
      * @param string $fromFieldId
      */
-    public function __construct($fromFieldId)
+    public function __construct(private $fromFieldId)
     {
-        $this->fromFieldId = $fromFieldId;
     }
 
 

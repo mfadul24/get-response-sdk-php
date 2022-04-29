@@ -9,19 +9,15 @@ class GetTags extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/tags';
+    final const METHOD_URL = '/v3/tags';
 
-    /** @var GetTagsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Tags\GetTags\GetTagsSearchQuery $query = null;
 
-    /** @var GetTagsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Tags\GetTags\GetTagsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetTagsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Tags\GetTags\GetTagsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetTags extends QueryOperation
 
 
     /**
-     * @param GetTagsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetTagsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetTags extends QueryOperation
 
 
     /**
-     * @param GetTagsSortParams $sort
      * @return $this
      */
     public function setSort(GetTagsSortParams $sort)
@@ -56,7 +50,6 @@ class GetTags extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetTags extends QueryOperation
 
 
     /**
-     * @param GetTagsFields $fields
      * @return $this
      */
     public function setFields(GetTagsFields $fields)

@@ -8,26 +8,17 @@ class GetMetaField extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/meta-fields/{metaFieldId}';
+    final const METHOD_URL = '/v3/shops/{shopId}/meta-fields/{metaFieldId}';
 
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $metaFieldId;
-
-    /** @var GetMetaFieldFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\MetaFields\GetMetaField\GetMetaFieldFields $fields = null;
 
 
     /**
      * @param string $shopId
      * @param string $metaFieldId
      */
-    public function __construct($shopId, $metaFieldId)
+    public function __construct(private $shopId, private $metaFieldId)
     {
-        $this->shopId = $shopId;
-        $this->metaFieldId = $metaFieldId;
     }
 
 
@@ -45,7 +36,6 @@ class GetMetaField extends QueryOperation
 
 
     /**
-     * @param GetMetaFieldFields $fields
      * @return $this
      */
     public function setFields(GetMetaFieldFields $fields)

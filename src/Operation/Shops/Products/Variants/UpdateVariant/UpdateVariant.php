@@ -11,19 +11,7 @@ class UpdateVariant extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/variants/{variantId}';
-
-    /** @var UpdateProductVariant */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $productId;
-
-    /** @var string */
-    private $variantId;
+    final const METHOD_URL = '/v3/shops/{shopId}/products/{productId}/variants/{variantId}';
 
 
     /**
@@ -32,12 +20,8 @@ class UpdateVariant extends CommandOperation
      * @param string $productId
      * @param string $variantId
      */
-    public function __construct(UpdateProductVariant $data, $shopId, $productId, $variantId)
+    public function __construct(protected UpdateProductVariant $data, private $shopId, private $productId, private $variantId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
-        $this->productId = $productId;
-        $this->variantId = $variantId;
     }
 
 

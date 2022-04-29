@@ -8,21 +8,16 @@ class GetTemplates extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/template-categories/{templateCategoryId}/templates';
+    final const METHOD_URL = '/v3/template-categories/{templateCategoryId}/templates';
 
-    /** @var string */
-    private $templateCategoryId;
-
-    /** @var GetTemplatesFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\TemplateCategories\Templates\GetTemplates\GetTemplatesFields $fields = null;
 
 
     /**
      * @param string $templateCategoryId
      */
-    public function __construct($templateCategoryId)
+    public function __construct(private $templateCategoryId)
     {
-        $this->templateCategoryId = $templateCategoryId;
     }
 
 
@@ -40,7 +35,6 @@ class GetTemplates extends QueryOperation
 
 
     /**
-     * @param GetTemplatesFields $fields
      * @return $this
      */
     public function setFields(GetTemplatesFields $fields)

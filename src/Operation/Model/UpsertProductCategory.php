@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpsertProductCategory extends BaseModel
 {
-    /** @var UpsertSingleProductCategory[] */
-    private $categories;
-
-
     /**
      * @param UpsertSingleProductCategory[] $categories
      */
-    public function __construct(array $categories)
+    public function __construct(private readonly array $categories)
     {
-        $this->categories = $categories;
     }
 
 

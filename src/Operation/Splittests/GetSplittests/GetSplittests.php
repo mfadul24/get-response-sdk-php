@@ -9,19 +9,15 @@ class GetSplittests extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/splittests';
+    final const METHOD_URL = '/v3/splittests';
 
-    /** @var GetSplittestsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Splittests\GetSplittests\GetSplittestsSearchQuery $query = null;
 
-    /** @var GetSplittestsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Splittests\GetSplittests\GetSplittestsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetSplittestsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Splittests\GetSplittests\GetSplittestsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetSplittests extends QueryOperation
 
 
     /**
-     * @param GetSplittestsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetSplittestsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetSplittests extends QueryOperation
 
 
     /**
-     * @param GetSplittestsSortParams $sort
      * @return $this
      */
     public function setSort(GetSplittestsSortParams $sort)
@@ -56,7 +50,6 @@ class GetSplittests extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetSplittests extends QueryOperation
 
 
     /**
-     * @param GetSplittestsFields $fields
      * @return $this
      */
     public function setFields(GetSplittestsFields $fields)

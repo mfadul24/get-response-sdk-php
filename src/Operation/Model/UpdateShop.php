@@ -5,14 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateShop extends BaseModel
 {
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $locale = self::FIELD_NOT_SET;
+    private string $locale = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $currency = self::FIELD_NOT_SET;
+    private string $currency = self::FIELD_NOT_SET;
 
 
     /**

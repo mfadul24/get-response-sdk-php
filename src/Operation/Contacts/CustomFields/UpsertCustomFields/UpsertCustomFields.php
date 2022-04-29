@@ -11,23 +11,15 @@ class UpsertCustomFields extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/contacts/{contactId}/custom-fields';
-
-    /** @var UpsertContactCustomFields */
-    protected $data;
-
-    /** @var string */
-    private $contactId;
+    final const METHOD_URL = '/v3/contacts/{contactId}/custom-fields';
 
 
     /**
      * @param UpsertContactCustomFields $data
      * @param string $contactId
      */
-    public function __construct(UpsertContactCustomFields $data, $contactId)
+    public function __construct(protected UpsertContactCustomFields $data, private $contactId)
     {
-        $this->data = $data;
-        $this->contactId = $contactId;
     }
 
 

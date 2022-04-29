@@ -5,8 +5,8 @@ use Getresponse\Sdk\Client\Operation\BaseEnum;
 
 class StatusEnum extends BaseEnum
 {
-    const ENABLED = 'enabled';
-    const DISABLED = 'disabled';
+    final const ENABLED = 'enabled';
+    final const DISABLED = 'disabled';
 
     /**
      * @return bool

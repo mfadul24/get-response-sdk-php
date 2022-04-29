@@ -9,18 +9,14 @@ class DeleteFile extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/file-library/files/{fileId}';
-
-    /** @var string */
-    private $fileId;
+    final const METHOD_URL = '/v3/file-library/files/{fileId}';
 
 
     /**
      * @param string $fileId
      */
-    public function __construct($fileId)
+    public function __construct(private $fileId)
     {
-        $this->fileId = $fileId;
     }
 
 

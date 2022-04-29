@@ -5,17 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TagDetails extends BaseModel
 {
-    /** @var string */
-    private $tagId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $color = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $createdAt = self::FIELD_NOT_SET;
+    private string $color = self::FIELD_NOT_SET;
 
 
     /**
@@ -23,11 +13,8 @@ class TagDetails extends BaseModel
      * @param string $name
      * @param string $createdAt
      */
-    public function __construct($tagId, $name, $createdAt)
+    public function __construct(private $tagId, private $name, private $createdAt)
     {
-        $this->tagId = $tagId;
-        $this->name = $name;
-        $this->createdAt = $createdAt;
     }
 
 

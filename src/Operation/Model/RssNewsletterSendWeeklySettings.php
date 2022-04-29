@@ -3,23 +3,14 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class RssNewsletterSendWeeklySettings extends RssNewsletterSendSettings
 {
-    /** @var int */
-    private $sendAtHour;
-
-    /** @var string */
-    private $sendAtWeekDay;
-
-
     /**
      * @param string $filter
      * @param int $sendAtHour
      * @param string $sendAtWeekDay
      */
-    public function __construct($filter, $sendAtHour, $sendAtWeekDay)
+    public function __construct($filter, private $sendAtHour, private $sendAtWeekDay)
     {
         parent::__construct('weekly', $filter);
-        $this->sendAtHour = $sendAtHour;
-        $this->sendAtWeekDay = $sendAtWeekDay;
     }
 
 

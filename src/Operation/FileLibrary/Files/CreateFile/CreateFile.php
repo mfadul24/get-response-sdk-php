@@ -11,18 +11,14 @@ class CreateFile extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/file-library/files';
-
-    /** @var NewFile */
-    protected $data;
+    final const METHOD_URL = '/v3/file-library/files';
 
 
     /**
      * @param NewFile $data
      */
-    public function __construct(NewFile $data)
+    public function __construct(protected NewFile $data)
     {
-        $this->data = $data;
     }
 
 

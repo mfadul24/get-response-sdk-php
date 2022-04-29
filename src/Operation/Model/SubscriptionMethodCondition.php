@@ -3,23 +3,17 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class SubscriptionMethodCondition extends ConditionType
 {
-    /** @var string */
-    private $method;
+    private string $webformType = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $webformType = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $value = self::FIELD_NOT_SET;
+    private string $value = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $method
      */
-    public function __construct($method)
+    public function __construct(private $method)
     {
         parent::__construct('subscription_method');
-        $this->method = $method;
     }
 
 

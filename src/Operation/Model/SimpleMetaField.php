@@ -5,22 +5,6 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class SimpleMetaField extends BaseModel
 {
-    /** @var string */
-    private $metaFieldId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $value = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $valueType = self::FIELD_NOT_SET;
-
-
     /**
      * @param string $metaFieldId
      * @param string $href
@@ -28,13 +12,8 @@ class SimpleMetaField extends BaseModel
      * @param string $value
      * @param string $valueType
      */
-    public function __construct($metaFieldId, $href, $name, $value, $valueType)
+    public function __construct(private $metaFieldId, private $href, private $name, private $value, private $valueType)
     {
-        $this->metaFieldId = $metaFieldId;
-        $this->href = $href;
-        $this->name = $name;
-        $this->value = $value;
-        $this->valueType = $valueType;
     }
 
 

@@ -8,21 +8,16 @@ class GetCustomField extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/custom-fields/{customFieldId}';
+    final const METHOD_URL = '/v3/custom-fields/{customFieldId}';
 
-    /** @var string */
-    private $customFieldId;
-
-    /** @var GetCustomFieldFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\CustomFields\GetCustomField\GetCustomFieldFields $fields = null;
 
 
     /**
      * @param string $customFieldId
      */
-    public function __construct($customFieldId)
+    public function __construct(private $customFieldId)
     {
-        $this->customFieldId = $customFieldId;
     }
 
 
@@ -40,7 +35,6 @@ class GetCustomField extends QueryOperation
 
 
     /**
-     * @param GetCustomFieldFields $fields
      * @return $this
      */
     public function setFields(GetCustomFieldFields $fields)

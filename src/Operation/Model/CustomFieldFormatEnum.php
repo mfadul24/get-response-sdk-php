@@ -5,12 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseEnum;
 
 class CustomFieldFormatEnum extends BaseEnum
 {
-    const TEXT = 'text';
-    const TEXTAREA = 'textarea';
-    const RADIO = 'radio';
-    const CHECKBOX = 'checkbox';
-    const SINGLE_SELECT = 'single_select';
-    const MULTI_SELECT = 'multi_select';
+    final const TEXT = 'text';
+    final const TEXTAREA = 'textarea';
+    final const RADIO = 'radio';
+    final const CHECKBOX = 'checkbox';
+    final const SINGLE_SELECT = 'single_select';
+    final const MULTI_SELECT = 'multi_select';
 
     /**
      * @return bool

@@ -5,21 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpsertSingleContactCustomField extends BaseModel
 {
-    /** @var string */
-    private $customFieldId = self::FIELD_NOT_SET;
-
-    /** @var array */
-    private $value = self::FIELD_NOT_SET;
-
-
     /**
      * @param string $customFieldId
      * @param array $value
      */
-    public function __construct($customFieldId, array $value)
+    public function __construct(private $customFieldId, private readonly array $value)
     {
-        $this->customFieldId = $customFieldId;
-        $this->value = $value;
     }
 
 

@@ -5,25 +5,18 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TimezoneListElement extends BaseModel
 {
-    /** @var string */
-    private $timezoneId = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $offset = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $offset = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $country = self::FIELD_NOT_SET;
+    private string $country = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $timezoneId
      */
-    public function __construct($timezoneId)
+    public function __construct(private $timezoneId)
     {
-        $this->timezoneId = $timezoneId;
     }
 
 

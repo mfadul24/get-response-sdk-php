@@ -5,11 +5,9 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class AccountDetailsCountryCode extends BaseModel
 {
-    /** @var string */
-    private $countryCodeId = self::FIELD_NOT_SET;
+    private string $countryCodeId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $countryCode = self::FIELD_NOT_SET;
+    private string $countryCode = self::FIELD_NOT_SET;
 
 
     /**

@@ -11,18 +11,14 @@ class UpdateBlacklists extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/accounts/blacklists';
-
-    /** @var UpdateBlacklist */
-    protected $data;
+    final const METHOD_URL = '/v3/accounts/blacklists';
 
 
     /**
      * @param UpdateBlacklist $data
      */
-    public function __construct(UpdateBlacklist $data)
+    public function __construct(protected UpdateBlacklist $data)
     {
-        $this->data = $data;
     }
 
 

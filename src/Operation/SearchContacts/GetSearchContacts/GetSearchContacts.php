@@ -9,19 +9,15 @@ class GetSearchContacts extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/search-contacts';
+    final const METHOD_URL = '/v3/search-contacts';
 
-    /** @var GetSearchContactsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\SearchContacts\GetSearchContacts\GetSearchContactsSearchQuery $query = null;
 
-    /** @var GetSearchContactsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\SearchContacts\GetSearchContacts\GetSearchContactsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetSearchContactsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\SearchContacts\GetSearchContacts\GetSearchContactsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetSearchContacts extends QueryOperation
 
 
     /**
-     * @param GetSearchContactsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetSearchContactsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetSearchContacts extends QueryOperation
 
 
     /**
-     * @param GetSearchContactsSortParams $sort
      * @return $this
      */
     public function setSort(GetSearchContactsSortParams $sort)
@@ -56,7 +50,6 @@ class GetSearchContacts extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetSearchContacts extends QueryOperation
 
 
     /**
-     * @param GetSearchContactsFields $fields
      * @return $this
      */
     public function setFields(GetSearchContactsFields $fields)

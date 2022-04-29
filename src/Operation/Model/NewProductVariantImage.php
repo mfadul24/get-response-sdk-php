@@ -5,21 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewProductVariantImage extends BaseModel
 {
-    /** @var string */
-    private $src;
-
-    /** @var int */
-    private $position;
-
-
     /**
      * @param string $src
      * @param int $position
      */
-    public function __construct($src, $position)
+    public function __construct(private $src, private $position)
     {
-        $this->src = $src;
-        $this->position = $position;
     }
 
 

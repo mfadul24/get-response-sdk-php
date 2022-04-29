@@ -8,21 +8,16 @@ class GetCampaign extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/campaigns/{campaignId}';
+    final const METHOD_URL = '/v3/campaigns/{campaignId}';
 
-    /** @var string */
-    private $campaignId;
-
-    /** @var GetCampaignFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Campaigns\GetCampaign\GetCampaignFields $fields = null;
 
 
     /**
      * @param string $campaignId
      */
-    public function __construct($campaignId)
+    public function __construct(private $campaignId)
     {
-        $this->campaignId = $campaignId;
     }
 
 
@@ -40,7 +35,6 @@ class GetCampaign extends QueryOperation
 
 
     /**
-     * @param GetCampaignFields $fields
      * @return $this
      */
     public function setFields(GetCampaignFields $fields)

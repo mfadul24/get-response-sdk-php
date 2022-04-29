@@ -5,21 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewFromField extends BaseModel
 {
-    /** @var string */
-    private $email;
-
-    /** @var string */
-    private $name;
-
-
     /**
      * @param string $email
      * @param string $name
      */
-    public function __construct($email, $name)
+    public function __construct(private $email, private $name)
     {
-        $this->email = $email;
-        $this->name = $name;
     }
 
 

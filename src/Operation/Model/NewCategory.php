@@ -5,28 +5,20 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewCategory extends BaseModel
 {
-    /** @var string */
-    private $name;
+    private string $parentId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $parentId = self::FIELD_NOT_SET;
+    private string|bool $isDefault = self::FIELD_NOT_SET;
 
-    /** @var bool */
-    private $isDefault = self::FIELD_NOT_SET;
+    private string $url = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $url = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $externalId = self::FIELD_NOT_SET;
+    private string $externalId = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $name
      */
-    public function __construct($name)
+    public function __construct(private $name)
     {
-        $this->name = $name;
     }
 
 

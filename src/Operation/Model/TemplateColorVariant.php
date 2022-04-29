@@ -5,29 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TemplateColorVariant extends BaseModel
 {
-    /** @var string */
-    private $templateColorId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $colorHex = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $thumbnail = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $preview = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $href = self::FIELD_NOT_SET;
-
-    /** @var \Getresponse\Sdk\Operation\Model\TemplateShortDetails[] */
-    private $template = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $htmlContent = self::FIELD_NOT_SET;
+    private string $thumbnail = self::FIELD_NOT_SET;
 
 
     /**
@@ -39,15 +17,8 @@ class TemplateColorVariant extends BaseModel
      * @param \Getresponse\Sdk\Operation\Model\TemplateShortDetails[] $template
      * @param string $htmlContent
      */
-    public function __construct($templateColorId, $name, $colorHex, $preview, $href, array $template, $htmlContent)
+    public function __construct(private $templateColorId, private $name, private $colorHex, private $preview, private $href, private readonly array $template, private $htmlContent)
     {
-        $this->templateColorId = $templateColorId;
-        $this->name = $name;
-        $this->colorHex = $colorHex;
-        $this->preview = $preview;
-        $this->href = $href;
-        $this->template = $template;
-        $this->htmlContent = $htmlContent;
     }
 
 

@@ -5,40 +5,27 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateRssNewsletter extends BaseModel
 {
-    /** @var MessageFlagsArray */
-    private $flags = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\MessageFlagsArray $flags = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $rssFeedUrl = self::FIELD_NOT_SET;
+    private string $rssFeedUrl = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $subject = self::FIELD_NOT_SET;
+    private string $subject = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var StatusEnum */
-    private $status = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\StatusEnum $status = self::FIELD_NOT_SET;
 
-    /** @var MessageEditorEnum */
-    private $editor = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\MessageEditorEnum $editor = self::FIELD_NOT_SET;
 
-    /** @var FromFieldReference */
-    private $fromField = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\FromFieldReference $fromField = self::FIELD_NOT_SET;
 
-    /** @var FromFieldReference */
-    private $replyTo = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\FromFieldReference $replyTo = self::FIELD_NOT_SET;
 
-    /** @var MessageContent */
-    private $content = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\MessageContent $content = self::FIELD_NOT_SET;
 
-    /** @var RssNewsletterSendSettings */
-    private $sendSettings = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\RssNewsletterSendSettings $sendSettings = self::FIELD_NOT_SET;
 
 
-    /**
-     * @param MessageFlagsArray $flags
-     */
     public function setFlags(MessageFlagsArray $flags)
     {
         $this->flags = $flags;
@@ -72,54 +59,36 @@ class UpdateRssNewsletter extends BaseModel
     }
 
 
-    /**
-     * @param StatusEnum $status
-     */
     public function setStatus(StatusEnum $status)
     {
         $this->status = $status;
     }
 
 
-    /**
-     * @param MessageEditorEnum $editor
-     */
     public function setEditor(MessageEditorEnum $editor)
     {
         $this->editor = $editor;
     }
 
 
-    /**
-     * @param FromFieldReference $fromField
-     */
     public function setFromField(FromFieldReference $fromField)
     {
         $this->fromField = $fromField;
     }
 
 
-    /**
-     * @param FromFieldReference $replyTo
-     */
     public function setReplyTo(FromFieldReference $replyTo)
     {
         $this->replyTo = $replyTo;
     }
 
 
-    /**
-     * @param MessageContent $content
-     */
     public function setContent(MessageContent $content)
     {
         $this->content = $content;
     }
 
 
-    /**
-     * @param RssNewsletterSendSettings $sendSettings
-     */
     public function setSendSettings(RssNewsletterSendSettings $sendSettings)
     {
         $this->sendSettings = $sendSettings;

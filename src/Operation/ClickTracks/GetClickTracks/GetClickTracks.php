@@ -9,19 +9,15 @@ class GetClickTracks extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/click-tracks';
+    final const METHOD_URL = '/v3/click-tracks';
 
-    /** @var GetClickTracksSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\ClickTracks\GetClickTracks\GetClickTracksSearchQuery $query = null;
 
-    /** @var GetClickTracksSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\ClickTracks\GetClickTracks\GetClickTracksSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetClickTracksFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\ClickTracks\GetClickTracks\GetClickTracksFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetClickTracks extends QueryOperation
 
 
     /**
-     * @param GetClickTracksSearchQuery $query
      * @return $this
      */
     public function setQuery(GetClickTracksSearchQuery $query)
@@ -45,7 +40,6 @@ class GetClickTracks extends QueryOperation
 
 
     /**
-     * @param GetClickTracksSortParams $sort
      * @return $this
      */
     public function setSort(GetClickTracksSortParams $sort)
@@ -56,7 +50,6 @@ class GetClickTracks extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetClickTracks extends QueryOperation
 
 
     /**
-     * @param GetClickTracksFields $fields
      * @return $this
      */
     public function setFields(GetClickTracksFields $fields)

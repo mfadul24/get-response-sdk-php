@@ -5,14 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewsletterAttachment extends BaseModel
 {
-    /** @var string */
-    private $fileName = self::FIELD_NOT_SET;
+    private string $fileName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $content = self::FIELD_NOT_SET;
+    private string $content = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $mimeType = self::FIELD_NOT_SET;
+    private string $mimeType = self::FIELD_NOT_SET;
 
 
     /**

@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class FolderShort extends BaseModel
 {
-    /** @var string */
-    private $folderId;
-
-
     /**
      * @param string $folderId
      */
-    public function __construct($folderId)
+    public function __construct(private $folderId)
     {
-        $this->folderId = $folderId;
     }
 
 

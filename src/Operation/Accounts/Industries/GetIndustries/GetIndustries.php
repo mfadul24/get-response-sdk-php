@@ -9,13 +9,11 @@ class GetIndustries extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/accounts/industries';
+    final const METHOD_URL = '/v3/accounts/industries';
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetIndustriesFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Accounts\Industries\GetIndustries\GetIndustriesFields $fields = null;
 
 
     /**
@@ -28,7 +26,6 @@ class GetIndustries extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -39,7 +36,6 @@ class GetIndustries extends QueryOperation
 
 
     /**
-     * @param GetIndustriesFields $fields
      * @return $this
      */
     public function setFields(GetIndustriesFields $fields)

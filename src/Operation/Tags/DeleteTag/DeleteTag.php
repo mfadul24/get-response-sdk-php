@@ -9,18 +9,14 @@ class DeleteTag extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/tags/{tagId}';
-
-    /** @var string */
-    private $tagId;
+    final const METHOD_URL = '/v3/tags/{tagId}';
 
 
     /**
      * @param string $tagId
      */
-    public function __construct($tagId)
+    public function __construct(private $tagId)
     {
-        $this->tagId = $tagId;
     }
 
 

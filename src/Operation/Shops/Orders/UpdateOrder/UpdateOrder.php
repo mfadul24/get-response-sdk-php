@@ -11,19 +11,9 @@ class UpdateOrder extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/orders/{orderId}';
+    final const METHOD_URL = '/v3/shops/{shopId}/orders/{orderId}';
 
-    /** @var ModelUpdateOrder */
-    protected $data;
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $orderId;
-
-    /** @var UpdateOrderAdditionalFlags */
-    private $additionalFlags;
+    private ?\Getresponse\Sdk\Operation\Shops\Orders\UpdateOrder\UpdateOrderAdditionalFlags $additionalFlags = null;
 
 
     /**
@@ -31,11 +21,8 @@ class UpdateOrder extends CommandOperation
      * @param string $shopId
      * @param string $orderId
      */
-    public function __construct(ModelUpdateOrder $data, $shopId, $orderId)
+    public function __construct(protected ModelUpdateOrder $data, private $shopId, private $orderId)
     {
-        $this->data = $data;
-        $this->shopId = $shopId;
-        $this->orderId = $orderId;
     }
 
 
@@ -82,7 +69,6 @@ class UpdateOrder extends CommandOperation
 
 
     /**
-     * @param UpdateOrderAdditionalFlags $additionalFlags
      * @return $this
      */
     public function setAdditionalFlags(UpdateOrderAdditionalFlags $additionalFlags)

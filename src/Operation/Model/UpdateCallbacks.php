@@ -5,11 +5,9 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateCallbacks extends BaseModel
 {
-    /** @var string */
-    private $url = self::FIELD_NOT_SET;
+    private string $url = self::FIELD_NOT_SET;
 
-    /** @var CallbackActions */
-    private $actions = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\CallbackActions $actions = self::FIELD_NOT_SET;
 
 
     /**
@@ -21,9 +19,6 @@ class UpdateCallbacks extends BaseModel
     }
 
 
-    /**
-     * @param CallbackActions $actions
-     */
     public function setActions(CallbackActions $actions)
     {
         $this->actions = $actions;

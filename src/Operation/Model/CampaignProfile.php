@@ -5,20 +5,15 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CampaignProfile extends BaseModel
 {
-    /** @var string */
-    private $description = self::FIELD_NOT_SET;
+    private string $description = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $industryTagId = self::FIELD_NOT_SET;
+    private string $industryTagId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $logo = self::FIELD_NOT_SET;
+    private string $logo = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $logoLinkUrl = self::FIELD_NOT_SET;
+    private string $logoLinkUrl = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $title = self::FIELD_NOT_SET;
+    private string $title = self::FIELD_NOT_SET;
 
 
     /**

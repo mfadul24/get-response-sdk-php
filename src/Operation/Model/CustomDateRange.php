@@ -5,21 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CustomDateRange extends BaseModel
 {
-    /** @var string */
-    private $from;
-
-    /** @var string */
-    private $to;
-
-
     /**
      * @param string $from
      * @param string $to
      */
-    public function __construct($from, $to)
+    public function __construct(private $from, private $to)
     {
-        $this->from = $from;
-        $this->to = $to;
     }
 
 

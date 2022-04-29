@@ -9,19 +9,15 @@ class GetWebforms extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/webforms';
+    final const METHOD_URL = '/v3/webforms';
 
-    /** @var GetWebformsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Webforms\GetWebforms\GetWebformsSearchQuery $query = null;
 
-    /** @var GetWebformsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Webforms\GetWebforms\GetWebformsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetWebformsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Webforms\GetWebforms\GetWebformsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetWebforms extends QueryOperation
 
 
     /**
-     * @param GetWebformsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetWebformsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetWebforms extends QueryOperation
 
 
     /**
-     * @param GetWebformsSortParams $sort
      * @return $this
      */
     public function setSort(GetWebformsSortParams $sort)
@@ -56,7 +50,6 @@ class GetWebforms extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetWebforms extends QueryOperation
 
 
     /**
-     * @param GetWebformsFields $fields
      * @return $this
      */
     public function setFields(GetWebformsFields $fields)

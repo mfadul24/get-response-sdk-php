@@ -8,10 +8,9 @@ class GetBilling extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/accounts/billing';
+    final const METHOD_URL = '/v3/accounts/billing';
 
-    /** @var GetBillingFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Accounts\Billing\GetBilling\GetBillingFields $fields = null;
 
 
     /**
@@ -24,7 +23,6 @@ class GetBilling extends QueryOperation
 
 
     /**
-     * @param GetBillingFields $fields
      * @return $this
      */
     public function setFields(GetBillingFields $fields)

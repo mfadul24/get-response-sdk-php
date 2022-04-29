@@ -8,21 +8,16 @@ class GetWebform extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/webforms/{webformId}';
+    final const METHOD_URL = '/v3/webforms/{webformId}';
 
-    /** @var string */
-    private $webformId;
-
-    /** @var GetWebformFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Webforms\GetWebform\GetWebformFields $fields = null;
 
 
     /**
      * @param string $webformId
      */
-    public function __construct($webformId)
+    public function __construct(private $webformId)
     {
-        $this->webformId = $webformId;
     }
 
 
@@ -40,7 +35,6 @@ class GetWebform extends QueryOperation
 
 
     /**
-     * @param GetWebformFields $fields
      * @return $this
      */
     public function setFields(GetWebformFields $fields)

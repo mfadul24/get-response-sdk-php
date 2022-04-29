@@ -5,35 +5,25 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateAccount extends BaseModel
 {
-    /** @var string */
-    private $firstName = self::FIELD_NOT_SET;
+    private string $firstName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $lastName = self::FIELD_NOT_SET;
+    private string $lastName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $companyName = self::FIELD_NOT_SET;
+    private string $companyName = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $phone = self::FIELD_NOT_SET;
+    private string $phone = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $state = self::FIELD_NOT_SET;
+    private string $state = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $city = self::FIELD_NOT_SET;
+    private string $city = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $street = self::FIELD_NOT_SET;
+    private string $street = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $zipCode = self::FIELD_NOT_SET;
+    private string $zipCode = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $numberOfEmployees = self::FIELD_NOT_SET;
+    private string $numberOfEmployees = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $timeFormat = self::FIELD_NOT_SET;
+    private string $timeFormat = self::FIELD_NOT_SET;
 
 
     /**

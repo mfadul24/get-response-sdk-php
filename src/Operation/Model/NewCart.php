@@ -5,26 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewCart extends BaseModel
 {
-    /** @var string */
-    private $contactId;
+    private string|float $totalTaxPrice = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $totalPrice;
+    private string $externalId = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $totalTaxPrice = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $currency;
-
-    /** @var NewCartSelectedProductVariant[] */
-    private $selectedVariants;
-
-    /** @var string */
-    private $externalId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $cartUrl = self::FIELD_NOT_SET;
+    private string $cartUrl = self::FIELD_NOT_SET;
 
 
     /**
@@ -33,12 +18,8 @@ class NewCart extends BaseModel
      * @param string $currency
      * @param NewCartSelectedProductVariant[] $selectedVariants
      */
-    public function __construct($contactId, $totalPrice, $currency, array $selectedVariants)
+    public function __construct(private $contactId, private $totalPrice, private $currency, private readonly array $selectedVariants)
     {
-        $this->contactId = $contactId;
-        $this->totalPrice = $totalPrice;
-        $this->currency = $currency;
-        $this->selectedVariants = $selectedVariants;
     }
 
 

@@ -9,19 +9,15 @@ class GetCampaigns extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/campaigns';
+    final const METHOD_URL = '/v3/campaigns';
 
-    /** @var GetCampaignsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Campaigns\GetCampaigns\GetCampaignsSearchQuery $query = null;
 
-    /** @var GetCampaignsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Campaigns\GetCampaigns\GetCampaignsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetCampaignsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Campaigns\GetCampaigns\GetCampaignsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetCampaigns extends QueryOperation
 
 
     /**
-     * @param GetCampaignsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetCampaignsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetCampaigns extends QueryOperation
 
 
     /**
-     * @param GetCampaignsSortParams $sort
      * @return $this
      */
     public function setSort(GetCampaignsSortParams $sort)
@@ -56,7 +50,6 @@ class GetCampaigns extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetCampaigns extends QueryOperation
 
 
     /**
-     * @param GetCampaignsFields $fields
      * @return $this
      */
     public function setFields(GetCampaignsFields $fields)

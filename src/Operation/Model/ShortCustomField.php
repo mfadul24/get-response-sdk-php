@@ -5,17 +5,13 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class ShortCustomField extends BaseModel
 {
-    /** @var string */
-    private $customFieldId = self::FIELD_NOT_SET;
+    private string $customFieldId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $type = self::FIELD_NOT_SET;
+    private string $type = self::FIELD_NOT_SET;
 
-    /** @var array */
-    private $values = self::FIELD_NOT_SET;
+    private string|array $values = self::FIELD_NOT_SET;
 
 
     /**
@@ -45,9 +41,6 @@ class ShortCustomField extends BaseModel
     }
 
 
-    /**
-     * @param array $values
-     */
     public function setValues(array $values)
     {
         $this->values = $values;

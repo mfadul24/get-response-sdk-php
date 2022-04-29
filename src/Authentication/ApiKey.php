@@ -11,24 +11,17 @@ use Psr\Http\Message\RequestInterface;
  */
 class ApiKey implements AuthenticationProvider
 {
-    const HEADER_PREFIX = 'api-key ';
-
-    /**
-     * @var string
-     */
-    private $apiKey;
+    final const HEADER_PREFIX = 'api-key ';
 
     /**
      * ApiKey constructor.
      * @param string $apiKey
      */
-    public function __construct($apiKey)
+    public function __construct(private $apiKey)
     {
-        $this->apiKey = $apiKey;
     }
 
     /**
-     * @param RequestInterface $request
      * @return RequestInterface
      */
     public function authenticate(RequestInterface $request)

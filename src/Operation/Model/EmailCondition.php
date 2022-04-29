@@ -3,14 +3,11 @@ namespace Getresponse\Sdk\Operation\Model;
 
 class EmailCondition extends ConditionType
 {
-    /** @var string */
-    private $operatorType = self::FIELD_NOT_SET;
+    private string $operatorType = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $operator = self::FIELD_NOT_SET;
+    private string $operator = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $value = self::FIELD_NOT_SET;
+    private string $value = self::FIELD_NOT_SET;
 
 
     public function __construct()

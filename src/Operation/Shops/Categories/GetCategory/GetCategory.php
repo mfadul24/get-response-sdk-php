@@ -8,26 +8,17 @@ class GetCategory extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/categories/{categoryId}';
+    final const METHOD_URL = '/v3/shops/{shopId}/categories/{categoryId}';
 
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $categoryId;
-
-    /** @var GetCategoryFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Shops\Categories\GetCategory\GetCategoryFields $fields = null;
 
 
     /**
      * @param string $shopId
      * @param string $categoryId
      */
-    public function __construct($shopId, $categoryId)
+    public function __construct(private $shopId, private $categoryId)
     {
-        $this->shopId = $shopId;
-        $this->categoryId = $categoryId;
     }
 
 
@@ -45,7 +36,6 @@ class GetCategory extends QueryOperation
 
 
     /**
-     * @param GetCategoryFields $fields
      * @return $this
      */
     public function setFields(GetCategoryFields $fields)

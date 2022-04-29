@@ -9,19 +9,15 @@ class GetLandingPages extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/landing-pages';
+    final const METHOD_URL = '/v3/landing-pages';
 
-    /** @var GetLandingPagesSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\LandingPages\GetLandingPages\GetLandingPagesSearchQuery $query = null;
 
-    /** @var GetLandingPagesSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\LandingPages\GetLandingPages\GetLandingPagesSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetLandingPagesFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\LandingPages\GetLandingPages\GetLandingPagesFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetLandingPages extends QueryOperation
 
 
     /**
-     * @param GetLandingPagesSearchQuery $query
      * @return $this
      */
     public function setQuery(GetLandingPagesSearchQuery $query)
@@ -45,7 +40,6 @@ class GetLandingPages extends QueryOperation
 
 
     /**
-     * @param GetLandingPagesSortParams $sort
      * @return $this
      */
     public function setSort(GetLandingPagesSortParams $sort)
@@ -56,7 +50,6 @@ class GetLandingPages extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetLandingPages extends QueryOperation
 
 
     /**
-     * @param GetLandingPagesFields $fields
      * @return $this
      */
     public function setFields(GetLandingPagesFields $fields)

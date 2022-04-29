@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateBlacklist extends BaseModel
 {
-    /** @var array */
-    private $masks;
-
-
     /**
      * @param array $masks
      */
-    public function __construct(array $masks)
+    public function __construct(private readonly array $masks)
     {
-        $this->masks = $masks;
     }
 
 

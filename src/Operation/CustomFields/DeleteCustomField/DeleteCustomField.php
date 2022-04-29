@@ -9,18 +9,14 @@ class DeleteCustomField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/custom-fields/{customFieldId}';
-
-    /** @var string */
-    private $customFieldId;
+    final const METHOD_URL = '/v3/custom-fields/{customFieldId}';
 
 
     /**
      * @param string $customFieldId
      */
-    public function __construct($customFieldId)
+    public function __construct(private $customFieldId)
     {
-        $this->customFieldId = $customFieldId;
     }
 
 

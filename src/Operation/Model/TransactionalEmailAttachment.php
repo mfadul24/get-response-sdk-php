@@ -5,26 +5,13 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class TransactionalEmailAttachment extends BaseModel
 {
-    /** @var string */
-    private $fileName;
-
-    /** @var string */
-    private $mimeType;
-
-    /** @var string */
-    private $content;
-
-
     /**
      * @param string $fileName
      * @param string $mimeType
      * @param string $content
      */
-    public function __construct($fileName, $mimeType, $content)
+    public function __construct(private $fileName, private $mimeType, private $content)
     {
-        $this->fileName = $fileName;
-        $this->mimeType = $mimeType;
-        $this->content = $content;
     }
 
 

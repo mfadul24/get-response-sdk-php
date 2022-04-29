@@ -5,26 +5,13 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewPredefinedField extends BaseModel
 {
-    /** @var string */
-    private $name;
-
-    /** @var string */
-    private $value;
-
-    /** @var CampaignReference */
-    private $campaign;
-
-
     /**
      * @param string $name
      * @param string $value
      * @param CampaignReference $campaign
      */
-    public function __construct($name, $value, CampaignReference $campaign)
+    public function __construct(private $name, private $value, private readonly CampaignReference $campaign)
     {
-        $this->name = $name;
-        $this->value = $value;
-        $this->campaign = $campaign;
     }
 
 

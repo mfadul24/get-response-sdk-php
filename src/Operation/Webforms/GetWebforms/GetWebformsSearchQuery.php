@@ -42,7 +42,6 @@ class GetWebformsSearchQuery extends SearchQuery
 
 
     /**
-     * @param DateRangeSearch $modifiedOn
      * @return $this
      * @throws \InvalidArgumentException
      */

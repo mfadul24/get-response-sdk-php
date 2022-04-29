@@ -9,23 +9,15 @@ class DeleteCategory extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/categories/{categoryId}';
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $categoryId;
+    final const METHOD_URL = '/v3/shops/{shopId}/categories/{categoryId}';
 
 
     /**
      * @param string $shopId
      * @param string $categoryId
      */
-    public function __construct($shopId, $categoryId)
+    public function __construct(private $shopId, private $categoryId)
     {
-        $this->shopId = $shopId;
-        $this->categoryId = $categoryId;
     }
 
 

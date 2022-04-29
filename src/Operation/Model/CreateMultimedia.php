@@ -5,8 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class CreateMultimedia extends BaseModel
 {
-    /** @var string */
-    private $file = self::FIELD_NOT_SET;
+    private string $file = self::FIELD_NOT_SET;
 
 
     /**

@@ -5,21 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewContactCustomFieldValue extends BaseModel
 {
-    /** @var string */
-    private $customFieldId;
-
-    /** @var array */
-    private $value;
-
-
     /**
      * @param string $customFieldId
      * @param array $value
      */
-    public function __construct($customFieldId, array $value)
+    public function __construct(private $customFieldId, private readonly array $value)
     {
-        $this->customFieldId = $customFieldId;
-        $this->value = $value;
     }
 
 

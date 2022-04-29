@@ -9,16 +9,13 @@ class GetRssNewslettersStatistics extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/rss-newsletters/statistics';
+    final const METHOD_URL = '/v3/rss-newsletters/statistics';
 
-    /** @var GetRssNewslettersStatisticsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\RssNewsletters\Statistics\GetRssNewslettersStatistics\GetRssNewslettersStatisticsSearchQuery $query = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetRssNewslettersStatisticsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\RssNewsletters\Statistics\GetRssNewslettersStatistics\GetRssNewslettersStatisticsFields $fields = null;
 
 
     /**
@@ -31,7 +28,6 @@ class GetRssNewslettersStatistics extends QueryOperation
 
 
     /**
-     * @param GetRssNewslettersStatisticsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetRssNewslettersStatisticsSearchQuery $query)
@@ -42,7 +38,6 @@ class GetRssNewslettersStatistics extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -53,7 +48,6 @@ class GetRssNewslettersStatistics extends QueryOperation
 
 
     /**
-     * @param GetRssNewslettersStatisticsFields $fields
      * @return $this
      */
     public function setFields(GetRssNewslettersStatisticsFields $fields)

@@ -5,21 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewProductImage extends BaseModel
 {
-    /** @var string */
-    private $src = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $position = self::FIELD_NOT_SET;
-
-
     /**
      * @param string $src
      * @param string $position
      */
-    public function __construct($src, $position)
+    public function __construct(private $src, private $position)
     {
-        $this->src = $src;
-        $this->position = $position;
     }
 
 

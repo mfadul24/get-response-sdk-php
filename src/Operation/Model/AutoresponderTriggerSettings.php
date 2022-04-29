@@ -5,17 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class AutoresponderTriggerSettings extends BaseModel
 {
-    /** @var string */
-    private $type;
-
-    /** @var int */
-    private $dayOfCycle;
-
-    /** @var array */
-    private $selectedCampaigns;
-
-    /** @var array */
-    private $selectedSegments = self::FIELD_NOT_SET;
+    private string|array $selectedSegments = self::FIELD_NOT_SET;
 
 
     /**
@@ -23,17 +13,11 @@ class AutoresponderTriggerSettings extends BaseModel
      * @param int $dayOfCycle
      * @param array $selectedCampaigns
      */
-    public function __construct($type, $dayOfCycle, array $selectedCampaigns)
+    public function __construct(private $type, private $dayOfCycle, private readonly array $selectedCampaigns)
     {
-        $this->type = $type;
-        $this->dayOfCycle = $dayOfCycle;
-        $this->selectedCampaigns = $selectedCampaigns;
     }
 
 
-    /**
-     * @param array $selectedSegments
-     */
     public function setSelectedSegments(array $selectedSegments)
     {
         $this->selectedSegments = $selectedSegments;

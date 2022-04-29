@@ -8,21 +8,16 @@ class GetTag extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/tags/{tagId}';
+    final const METHOD_URL = '/v3/tags/{tagId}';
 
-    /** @var string */
-    private $tagId;
-
-    /** @var GetTagFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Tags\GetTag\GetTagFields $fields = null;
 
 
     /**
      * @param string $tagId
      */
-    public function __construct($tagId)
+    public function __construct(private $tagId)
     {
-        $this->tagId = $tagId;
     }
 
 
@@ -40,7 +35,6 @@ class GetTag extends QueryOperation
 
 
     /**
-     * @param GetTagFields $fields
      * @return $this
      */
     public function setFields(GetTagFields $fields)

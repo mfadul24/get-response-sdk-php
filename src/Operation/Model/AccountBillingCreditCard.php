@@ -5,11 +5,9 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class AccountBillingCreditCard extends BaseModel
 {
-    /** @var string */
-    private $number = self::FIELD_NOT_SET;
+    private string $number = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $expirationDate = self::FIELD_NOT_SET;
+    private string $expirationDate = self::FIELD_NOT_SET;
 
 
     /**

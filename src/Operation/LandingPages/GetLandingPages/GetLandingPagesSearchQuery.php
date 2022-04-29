@@ -99,7 +99,6 @@ class GetLandingPagesSearchQuery extends SearchQuery
 
 
     /**
-     * @param DateRangeSearch $createdOn
      * @return $this
      * @throws \InvalidArgumentException
      */

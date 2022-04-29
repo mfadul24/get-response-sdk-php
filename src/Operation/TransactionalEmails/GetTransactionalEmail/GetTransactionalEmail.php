@@ -8,21 +8,16 @@ class GetTransactionalEmail extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/transactional-emails/{transactionalEmailId}';
+    final const METHOD_URL = '/v3/transactional-emails/{transactionalEmailId}';
 
-    /** @var string */
-    private $transactionalEmailId;
-
-    /** @var GetTransactionalEmailFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\TransactionalEmails\GetTransactionalEmail\GetTransactionalEmailFields $fields = null;
 
 
     /**
      * @param string $transactionalEmailId
      */
-    public function __construct($transactionalEmailId)
+    public function __construct(private $transactionalEmailId)
     {
-        $this->transactionalEmailId = $transactionalEmailId;
     }
 
 
@@ -40,7 +35,6 @@ class GetTransactionalEmail extends QueryOperation
 
 
     /**
-     * @param GetTransactionalEmailFields $fields
      * @return $this
      */
     public function setFields(GetTransactionalEmailFields $fields)

@@ -9,27 +9,20 @@ class GetActivities extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/contacts/{contactId}/activities';
+    final const METHOD_URL = '/v3/contacts/{contactId}/activities';
 
-    /** @var string */
-    private $contactId;
+    private ?\Getresponse\Sdk\Operation\Contacts\Activities\GetActivities\GetActivitiesSearchQuery $query = null;
 
-    /** @var GetActivitiesSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var Pagination */
-    private $pagination;
-
-    /** @var GetActivitiesFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Contacts\Activities\GetActivities\GetActivitiesFields $fields = null;
 
 
     /**
      * @param string $contactId
      */
-    public function __construct($contactId)
+    public function __construct(private $contactId)
     {
-        $this->contactId = $contactId;
     }
 
 
@@ -47,7 +40,6 @@ class GetActivities extends QueryOperation
 
 
     /**
-     * @param GetActivitiesSearchQuery $query
      * @return $this
      */
     public function setQuery(GetActivitiesSearchQuery $query)
@@ -58,7 +50,6 @@ class GetActivities extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -69,7 +60,6 @@ class GetActivities extends QueryOperation
 
 
     /**
-     * @param GetActivitiesFields $fields
      * @return $this
      */
     public function setFields(GetActivitiesFields $fields)

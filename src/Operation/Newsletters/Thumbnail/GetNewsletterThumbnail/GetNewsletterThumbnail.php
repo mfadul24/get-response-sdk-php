@@ -8,21 +8,16 @@ class GetNewsletterThumbnail extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/newsletters/{newsletterId}/thumbnail';
+    final const METHOD_URL = '/v3/newsletters/{newsletterId}/thumbnail';
 
-    /** @var string */
-    private $newsletterId;
-
-    /** @var GetNewsletterThumbnailUrlQueryParameters */
-    private $urlParameterQuery;
+    private ?\Getresponse\Sdk\Operation\Newsletters\Thumbnail\GetNewsletterThumbnail\GetNewsletterThumbnailUrlQueryParameters $urlParameterQuery = null;
 
 
     /**
      * @param string $newsletterId
      */
-    public function __construct($newsletterId)
+    public function __construct(private $newsletterId)
     {
-        $this->newsletterId = $newsletterId;
     }
 
 
@@ -40,7 +35,6 @@ class GetNewsletterThumbnail extends QueryOperation
 
 
     /**
-     * @param GetNewsletterThumbnailUrlQueryParameters $urlParameterQuery
      * @return $this
      */
     public function setUrlParameterQuery(GetNewsletterThumbnailUrlQueryParameters $urlParameterQuery)

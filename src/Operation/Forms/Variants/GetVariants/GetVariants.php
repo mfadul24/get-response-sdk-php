@@ -8,21 +8,16 @@ class GetVariants extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/forms/{formId}/variants';
+    final const METHOD_URL = '/v3/forms/{formId}/variants';
 
-    /** @var string */
-    private $formId;
-
-    /** @var GetVariantsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Forms\Variants\GetVariants\GetVariantsFields $fields = null;
 
 
     /**
      * @param string $formId
      */
-    public function __construct($formId)
+    public function __construct(private $formId)
     {
-        $this->formId = $formId;
     }
 
 
@@ -40,7 +35,6 @@ class GetVariants extends QueryOperation
 
 
     /**
-     * @param GetVariantsFields $fields
      * @return $this
      */
     public function setFields(GetVariantsFields $fields)

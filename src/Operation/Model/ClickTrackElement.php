@@ -5,17 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class ClickTrackElement extends BaseModel
 {
-    /** @var string */
-    private $clickTrackId = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $url = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $amount = self::FIELD_NOT_SET;
+    private string $amount = self::FIELD_NOT_SET;
 
 
     /**
@@ -23,11 +13,8 @@ class ClickTrackElement extends BaseModel
      * @param string $name
      * @param string $url
      */
-    public function __construct($clickTrackId, $name, $url)
+    public function __construct(private $clickTrackId, private $name, private $url)
     {
-        $this->clickTrackId = $clickTrackId;
-        $this->name = $name;
-        $this->url = $url;
     }
 
 

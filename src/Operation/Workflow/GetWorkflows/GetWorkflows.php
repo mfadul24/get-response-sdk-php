@@ -9,13 +9,11 @@ class GetWorkflows extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/workflow';
+    final const METHOD_URL = '/v3/workflow';
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetWorkflowsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Workflow\GetWorkflows\GetWorkflowsFields $fields = null;
 
 
     /**
@@ -28,7 +26,6 @@ class GetWorkflows extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -39,7 +36,6 @@ class GetWorkflows extends QueryOperation
 
 
     /**
-     * @param GetWorkflowsFields $fields
      * @return $this
      */
     public function setFields(GetWorkflowsFields $fields)

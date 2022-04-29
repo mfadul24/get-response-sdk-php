@@ -9,24 +9,18 @@ class GetContacts extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/search-contacts/{searchContactId}/contacts';
+    final const METHOD_URL = '/v3/search-contacts/{searchContactId}/contacts';
 
-    /** @var string */
-    private $searchContactId;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var Pagination */
-    private $pagination;
-
-    /** @var GetContactsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\SearchContacts\Contacts\GetContacts\GetContactsFields $fields = null;
 
 
     /**
      * @param string $searchContactId
      */
-    public function __construct($searchContactId)
+    public function __construct(private $searchContactId)
     {
-        $this->searchContactId = $searchContactId;
     }
 
 
@@ -44,7 +38,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -55,7 +48,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param GetContactsFields $fields
      * @return $this
      */
     public function setFields(GetContactsFields $fields)

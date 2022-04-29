@@ -9,23 +9,15 @@ class DeleteMetaField extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/meta-fields/{metaFieldId}';
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $metaFieldId;
+    final const METHOD_URL = '/v3/shops/{shopId}/meta-fields/{metaFieldId}';
 
 
     /**
      * @param string $shopId
      * @param string $metaFieldId
      */
-    public function __construct($shopId, $metaFieldId)
+    public function __construct(private $shopId, private $metaFieldId)
     {
-        $this->shopId = $shopId;
-        $this->metaFieldId = $metaFieldId;
     }
 
 

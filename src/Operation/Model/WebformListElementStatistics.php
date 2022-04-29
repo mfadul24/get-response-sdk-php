@@ -5,21 +5,12 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class WebformListElementStatistics extends BaseModel
 {
-    /** @var string */
-    private $opened = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $subscribed = self::FIELD_NOT_SET;
-
-
     /**
      * @param string $opened
      * @param string $subscribed
      */
-    public function __construct($opened, $subscribed)
+    public function __construct(private $opened, private $subscribed)
     {
-        $this->opened = $opened;
-        $this->subscribed = $subscribed;
     }
 
 

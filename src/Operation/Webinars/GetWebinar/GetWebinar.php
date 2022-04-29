@@ -8,21 +8,16 @@ class GetWebinar extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/webinars/{webinarId}';
+    final const METHOD_URL = '/v3/webinars/{webinarId}';
 
-    /** @var string */
-    private $webinarId;
-
-    /** @var GetWebinarFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Webinars\GetWebinar\GetWebinarFields $fields = null;
 
 
     /**
      * @param string $webinarId
      */
-    public function __construct($webinarId)
+    public function __construct(private $webinarId)
     {
-        $this->webinarId = $webinarId;
     }
 
 
@@ -40,7 +35,6 @@ class GetWebinar extends QueryOperation
 
 
     /**
-     * @param GetWebinarFields $fields
      * @return $this
      */
     public function setFields(GetWebinarFields $fields)

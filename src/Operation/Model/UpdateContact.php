@@ -5,29 +5,23 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateContact extends BaseModel
 {
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var CampaignReference */
-    private $campaign = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\CampaignReference $campaign = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $email = self::FIELD_NOT_SET;
+    private string $email = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $dayOfCycle = self::FIELD_NOT_SET;
+    private string $dayOfCycle = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $scoring = self::FIELD_NOT_SET;
+    private string|float $scoring = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $note = self::FIELD_NOT_SET;
+    private string $note = self::FIELD_NOT_SET;
 
     /** @var NewContactTag[] */
-    private $tags = self::FIELD_NOT_SET;
+    private string|array $tags = self::FIELD_NOT_SET;
 
     /** @var NewContactCustomFieldValue[] */
-    private $customFieldValues = self::FIELD_NOT_SET;
+    private string|array $customFieldValues = self::FIELD_NOT_SET;
 
 
     /**
@@ -39,9 +33,6 @@ class UpdateContact extends BaseModel
     }
 
 
-    /**
-     * @param CampaignReference $campaign
-     */
     public function setCampaign(CampaignReference $campaign)
     {
         $this->campaign = $campaign;

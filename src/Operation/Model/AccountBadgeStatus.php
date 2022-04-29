@@ -5,8 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class AccountBadgeStatus extends BaseModel
 {
-    /** @var string */
-    private $status = self::FIELD_NOT_SET;
+    private string $status = self::FIELD_NOT_SET;
 
 
     /**

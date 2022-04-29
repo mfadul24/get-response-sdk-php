@@ -5,8 +5,7 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class IndustryTagId extends BaseModel
 {
-    /** @var string */
-    private $industryTagId = self::FIELD_NOT_SET;
+    private string $industryTagId = self::FIELD_NOT_SET;
 
 
     /**

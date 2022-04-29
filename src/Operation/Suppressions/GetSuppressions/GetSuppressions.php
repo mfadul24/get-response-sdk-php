@@ -9,19 +9,15 @@ class GetSuppressions extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/suppressions';
+    final const METHOD_URL = '/v3/suppressions';
 
-    /** @var GetSuppressionsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Suppressions\GetSuppressions\GetSuppressionsSearchQuery $query = null;
 
-    /** @var GetSuppressionsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Suppressions\GetSuppressions\GetSuppressionsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetSuppressionsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Suppressions\GetSuppressions\GetSuppressionsFields $fields = null;
 
 
     /**
@@ -34,7 +30,6 @@ class GetSuppressions extends QueryOperation
 
 
     /**
-     * @param GetSuppressionsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetSuppressionsSearchQuery $query)
@@ -45,7 +40,6 @@ class GetSuppressions extends QueryOperation
 
 
     /**
-     * @param GetSuppressionsSortParams $sort
      * @return $this
      */
     public function setSort(GetSuppressionsSortParams $sort)
@@ -56,7 +50,6 @@ class GetSuppressions extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -67,7 +60,6 @@ class GetSuppressions extends QueryOperation
 
 
     /**
-     * @param GetSuppressionsFields $fields
      * @return $this
      */
     public function setFields(GetSuppressionsFields $fields)

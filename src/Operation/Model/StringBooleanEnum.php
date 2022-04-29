@@ -5,8 +5,8 @@ use Getresponse\Sdk\Client\Operation\BaseEnum;
 
 class StringBooleanEnum extends BaseEnum
 {
-    const TRUE = 'true';
-    const FALSE = 'false';
+    final const TRUE = 'true';
+    final const FALSE = 'false';
 
     /**
      * @return bool

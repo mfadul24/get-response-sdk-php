@@ -11,18 +11,14 @@ class CreateContact extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/contacts';
-
-    /** @var NewContact */
-    protected $data;
+    final const METHOD_URL = '/v3/contacts';
 
 
     /**
      * @param NewContact $data
      */
-    public function __construct(NewContact $data)
+    public function __construct(protected NewContact $data)
     {
-        $this->data = $data;
     }
 
 

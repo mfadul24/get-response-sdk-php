@@ -9,23 +9,15 @@ class DeleteOrder extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/orders/{orderId}';
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $orderId;
+    final const METHOD_URL = '/v3/shops/{shopId}/orders/{orderId}';
 
 
     /**
      * @param string $shopId
      * @param string $orderId
      */
-    public function __construct($shopId, $orderId)
+    public function __construct(private $shopId, private $orderId)
     {
-        $this->shopId = $shopId;
-        $this->orderId = $orderId;
     }
 
 

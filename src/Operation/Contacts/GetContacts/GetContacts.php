@@ -9,22 +9,17 @@ class GetContacts extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/contacts';
+    final const METHOD_URL = '/v3/contacts';
 
-    /** @var GetContactsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Contacts\GetContacts\GetContactsSearchQuery $query = null;
 
-    /** @var GetContactsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Contacts\GetContacts\GetContactsSortParams $sort = null;
 
-    /** @var Pagination */
-    private $pagination;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var GetContactsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Contacts\GetContacts\GetContactsFields $fields = null;
 
-    /** @var GetContactsAdditionalFlags */
-    private $additionalFlags;
+    private ?\Getresponse\Sdk\Operation\Contacts\GetContacts\GetContactsAdditionalFlags $additionalFlags = null;
 
 
     /**
@@ -37,7 +32,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param GetContactsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetContactsSearchQuery $query)
@@ -48,7 +42,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param GetContactsSortParams $sort
      * @return $this
      */
     public function setSort(GetContactsSortParams $sort)
@@ -59,7 +52,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -70,7 +62,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param GetContactsFields $fields
      * @return $this
      */
     public function setFields(GetContactsFields $fields)
@@ -81,7 +72,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param GetContactsAdditionalFlags $additionalFlags
      * @return $this
      */
     public function setAdditionalFlags(GetContactsAdditionalFlags $additionalFlags)

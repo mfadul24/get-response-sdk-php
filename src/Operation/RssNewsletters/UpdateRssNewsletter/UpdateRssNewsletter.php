@@ -11,23 +11,15 @@ class UpdateRssNewsletter extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/rss-newsletters/{rssNewsletterId}';
-
-    /** @var ModelUpdateRssNewsletter */
-    protected $data;
-
-    /** @var string */
-    private $rssNewsletterId;
+    final const METHOD_URL = '/v3/rss-newsletters/{rssNewsletterId}';
 
 
     /**
      * @param ModelUpdateRssNewsletter $data
      * @param string $rssNewsletterId
      */
-    public function __construct(ModelUpdateRssNewsletter $data, $rssNewsletterId)
+    public function __construct(protected ModelUpdateRssNewsletter $data, private $rssNewsletterId)
     {
-        $this->data = $data;
-        $this->rssNewsletterId = $rssNewsletterId;
     }
 
 

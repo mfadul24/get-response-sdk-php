@@ -5,17 +5,13 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpdateMetaField extends BaseModel
 {
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $value = self::FIELD_NOT_SET;
+    private string $value = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $valueType = self::FIELD_NOT_SET;
+    private string $valueType = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $description = self::FIELD_NOT_SET;
+    private string $description = self::FIELD_NOT_SET;
 
 
     /**

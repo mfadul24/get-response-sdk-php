@@ -8,16 +8,13 @@ class GetImports extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/imports';
+    final const METHOD_URL = '/v3/imports';
 
-    /** @var GetImportsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Imports\GetImports\GetImportsSearchQuery $query = null;
 
-    /** @var GetImportsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Operation\Imports\GetImports\GetImportsSortParams $sort = null;
 
-    /** @var GetImportsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Imports\GetImports\GetImportsFields $fields = null;
 
 
     /**
@@ -30,7 +27,6 @@ class GetImports extends QueryOperation
 
 
     /**
-     * @param GetImportsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetImportsSearchQuery $query)
@@ -41,7 +37,6 @@ class GetImports extends QueryOperation
 
 
     /**
-     * @param GetImportsSortParams $sort
      * @return $this
      */
     public function setSort(GetImportsSortParams $sort)
@@ -52,7 +47,6 @@ class GetImports extends QueryOperation
 
 
     /**
-     * @param GetImportsFields $fields
      * @return $this
      */
     public function setFields(GetImportsFields $fields)

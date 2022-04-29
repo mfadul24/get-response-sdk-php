@@ -5,11 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseEnum;
 
 class MessageEditorEnum extends BaseEnum
 {
-    const CUSTOM = 'custom';
-    const TEXT = 'text';
-    const GETRESPONSE = 'getresponse';
-    const LEGACY = 'legacy';
-    const HTML2 = 'html2';
+    final const CUSTOM = 'custom';
+    final const TEXT = 'text';
+    final const GETRESPONSE = 'getresponse';
+    final const LEGACY = 'legacy';
+    final const HTML2 = 'html2';
 
     /**
      * @return bool

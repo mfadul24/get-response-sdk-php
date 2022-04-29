@@ -8,21 +8,16 @@ class GetWorkflow extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/workflow/{workflowId}';
+    final const METHOD_URL = '/v3/workflow/{workflowId}';
 
-    /** @var string */
-    private $workflowId;
-
-    /** @var GetWorkflowFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Workflow\GetWorkflow\GetWorkflowFields $fields = null;
 
 
     /**
      * @param string $workflowId
      */
-    public function __construct($workflowId)
+    public function __construct(private $workflowId)
     {
-        $this->workflowId = $workflowId;
     }
 
 
@@ -40,7 +35,6 @@ class GetWorkflow extends QueryOperation
 
 
     /**
-     * @param GetWorkflowFields $fields
      * @return $this
      */
     public function setFields(GetWorkflowFields $fields)

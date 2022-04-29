@@ -9,30 +9,22 @@ class GetContacts extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/campaigns/{campaignId}/contacts';
+    final const METHOD_URL = '/v3/campaigns/{campaignId}/contacts';
 
-    /** @var string */
-    private $campaignId;
+    private ?\Getresponse\Sdk\Operation\Campaigns\Contacts\GetContacts\GetContactsSearchQuery $query = null;
 
-    /** @var GetContactsSearchQuery */
-    private $query;
+    private ?\Getresponse\Sdk\Operation\Campaigns\Contacts\GetContacts\GetContactsSortParams $sort = null;
 
-    /** @var GetContactsSortParams */
-    private $sort;
+    private ?\Getresponse\Sdk\Client\Operation\Pagination $pagination = null;
 
-    /** @var Pagination */
-    private $pagination;
-
-    /** @var GetContactsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\Campaigns\Contacts\GetContacts\GetContactsFields $fields = null;
 
 
     /**
      * @param string $campaignId
      */
-    public function __construct($campaignId)
+    public function __construct(private $campaignId)
     {
-        $this->campaignId = $campaignId;
     }
 
 
@@ -50,7 +42,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param GetContactsSearchQuery $query
      * @return $this
      */
     public function setQuery(GetContactsSearchQuery $query)
@@ -61,7 +52,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param GetContactsSortParams $sort
      * @return $this
      */
     public function setSort(GetContactsSortParams $sort)
@@ -72,7 +62,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param Pagination $pagination
      * @return $this
      */
     public function setPagination(Pagination $pagination)
@@ -83,7 +72,6 @@ class GetContacts extends QueryOperation
 
 
     /**
-     * @param GetContactsFields $fields
      * @return $this
      */
     public function setFields(GetContactsFields $fields)

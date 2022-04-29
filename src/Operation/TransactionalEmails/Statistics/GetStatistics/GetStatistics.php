@@ -8,21 +8,16 @@ class GetStatistics extends QueryOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/transactional-emails/statistics';
+    final const METHOD_URL = '/v3/transactional-emails/statistics';
 
-    /** @var GetStatisticsSearchQuery */
-    private $query;
-
-    /** @var GetStatisticsFields */
-    private $fields;
+    private ?\Getresponse\Sdk\Operation\TransactionalEmails\Statistics\GetStatistics\GetStatisticsFields $fields = null;
 
 
     /**
      * @param GetStatisticsSearchQuery $query
      */
-    public function __construct(GetStatisticsSearchQuery $query)
+    public function __construct(private readonly GetStatisticsSearchQuery $query)
     {
-        $this->query = $query;
     }
 
 
@@ -36,7 +31,6 @@ class GetStatistics extends QueryOperation
 
 
     /**
-     * @param GetStatisticsFields $fields
      * @return $this
      */
     public function setFields(GetStatisticsFields $fields)

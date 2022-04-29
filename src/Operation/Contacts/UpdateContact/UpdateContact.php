@@ -11,23 +11,15 @@ class UpdateContact extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/contacts/{contactId}';
-
-    /** @var ModelUpdateContact */
-    protected $data;
-
-    /** @var string */
-    private $contactId;
+    final const METHOD_URL = '/v3/contacts/{contactId}';
 
 
     /**
      * @param ModelUpdateContact $data
      * @param string $contactId
      */
-    public function __construct(ModelUpdateContact $data, $contactId)
+    public function __construct(protected ModelUpdateContact $data, private $contactId)
     {
-        $this->data = $data;
-        $this->contactId = $contactId;
     }
 
 

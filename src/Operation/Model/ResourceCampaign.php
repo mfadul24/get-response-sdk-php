@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class ResourceCampaign extends BaseModel
 {
-    /** @var string */
-    private $campaignId = self::FIELD_NOT_SET;
-
-
     /**
      * @param string $campaignId
      */
-    public function __construct($campaignId)
+    public function __construct(private $campaignId)
     {
-        $this->campaignId = $campaignId;
     }
 
 

@@ -5,16 +5,11 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class UpsertMetaField extends BaseModel
 {
-    /** @var UpsertSingleMetaField[] */
-    private $metaFields;
-
-
     /**
      * @param UpsertSingleMetaField[] $metaFields
      */
-    public function __construct(array $metaFields)
+    public function __construct(private readonly array $metaFields)
     {
-        $this->metaFields = $metaFields;
     }
 
 

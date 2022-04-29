@@ -9,23 +9,15 @@ class DeleteTax extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/shops/{shopId}/taxes/{taxId}';
-
-    /** @var string */
-    private $shopId;
-
-    /** @var string */
-    private $taxId;
+    final const METHOD_URL = '/v3/shops/{shopId}/taxes/{taxId}';
 
 
     /**
      * @param string $shopId
      * @param string $taxId
      */
-    public function __construct($shopId, $taxId)
+    public function __construct(private $shopId, private $taxId)
     {
-        $this->shopId = $shopId;
-        $this->taxId = $taxId;
     }
 
 

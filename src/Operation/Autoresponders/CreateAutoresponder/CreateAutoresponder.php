@@ -11,18 +11,14 @@ class CreateAutoresponder extends CommandOperation
 {
     use OperationVersionTrait;
 
-    const METHOD_URL = '/v3/autoresponders';
-
-    /** @var NewAutoresponder */
-    protected $data;
+    final const METHOD_URL = '/v3/autoresponders';
 
 
     /**
      * @param NewAutoresponder $data
      */
-    public function __construct(NewAutoresponder $data)
+    public function __construct(protected NewAutoresponder $data)
     {
-        $this->data = $data;
     }
 
 

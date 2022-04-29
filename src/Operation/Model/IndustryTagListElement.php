@@ -5,22 +5,16 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class IndustryTagListElement extends BaseModel
 {
-    /** @var string */
-    private $industryTagId = self::FIELD_NOT_SET;
+    private string $name = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $name = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $description = self::FIELD_NOT_SET;
+    private string $description = self::FIELD_NOT_SET;
 
 
     /**
      * @param string $industryTagId
      */
-    public function __construct($industryTagId)
+    public function __construct(private $industryTagId)
     {
-        $this->industryTagId = $industryTagId;
     }
 
 

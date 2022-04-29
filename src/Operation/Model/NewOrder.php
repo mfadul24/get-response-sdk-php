@@ -5,53 +5,30 @@ use Getresponse\Sdk\Client\Operation\BaseModel;
 
 class NewOrder extends BaseModel
 {
-    /** @var string */
-    private $contactId;
+    private string $orderUrl = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $orderUrl = self::FIELD_NOT_SET;
+    private string $externalId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $externalId = self::FIELD_NOT_SET;
+    private string|float $totalPriceTax = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $totalPrice;
+    private string $status = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $totalPriceTax = self::FIELD_NOT_SET;
+    private string $cartId = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $currency;
+    private string $description = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $status = self::FIELD_NOT_SET;
+    private string|float $shippingPrice = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $cartId = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\NewAddress $shippingAddress = self::FIELD_NOT_SET;
 
-    /** @var string */
-    private $description = self::FIELD_NOT_SET;
+    private string $billingStatus = self::FIELD_NOT_SET;
 
-    /** @var float */
-    private $shippingPrice = self::FIELD_NOT_SET;
+    private string|\Getresponse\Sdk\Operation\Model\NewAddress $billingAddress = self::FIELD_NOT_SET;
 
-    /** @var NewAddress */
-    private $shippingAddress = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $billingStatus = self::FIELD_NOT_SET;
-
-    /** @var NewAddress */
-    private $billingAddress = self::FIELD_NOT_SET;
-
-    /** @var string */
-    private $processedAt = self::FIELD_NOT_SET;
-
-    /** @var NewSelectedProductVariant[] */
-    private $selectedVariants;
+    private string $processedAt = self::FIELD_NOT_SET;
 
     /** @var NewMetaField[] */
-    private $metaFields = self::FIELD_NOT_SET;
+    private string|array $metaFields = self::FIELD_NOT_SET;
 
 
     /**
@@ -60,12 +37,8 @@ class NewOrder extends BaseModel
      * @param string $currency
      * @param NewSelectedProductVariant[] $selectedVariants
      */
-    public function __construct($contactId, $totalPrice, $currency, array $selectedVariants)
+    public function __construct(private $contactId, private $totalPrice, private $currency, private readonly array $selectedVariants)
     {
-        $this->contactId = $contactId;
-        $this->totalPrice = $totalPrice;
-        $this->currency = $currency;
-        $this->selectedVariants = $selectedVariants;
     }
 
 
@@ -132,9 +105,6 @@ class NewOrder extends BaseModel
     }
 
 
-    /**
-     * @param NewAddress $shippingAddress
-     */
     public function setShippingAddress(NewAddress $shippingAddress)
     {
         $this->shippingAddress = $shippingAddress;
@@ -150,9 +120,6 @@ class NewOrder extends BaseModel
     }
 
 
-    /**
-     * @param NewAddress $billingAddress
-     */
     public function setBillingAddress(NewAddress $billingAddress)
     {
         $this->billingAddress = $billingAddress;
